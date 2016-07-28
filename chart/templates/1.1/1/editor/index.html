@@ -1010,7 +1010,7 @@
             <div id="comments" class="container" ng-show="openTab === 'comments'">
               <header>Comments<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="$root.setTab('');" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-comments-v4.png" />
             </div>
-              <div id="examples" class="container" ng-show="openTab === 'examples'" style="overflow: scroll;">
+              <div id="examples" class="container" ng-show="openTab === 'examples'" style="overflow: scroll;" ng-click="getExamples(diagram);">
               <header>Examples<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="$root.setTab('');" /></header><div style="padding: 20px 10px; display: inline-block;">{{diagram}}</div>
 
                            <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -1027,9 +1027,18 @@
                         </svg>
 
 
-                            <div ng-repeat="example in examples">
+                            <div ng-repeat="template in templates | filter: {name: diagram}">
                               <div class="example">
-                              <div style="background:url({{example.preview}}); background-size: contain; background-repeat: no-repeat; background-position: center center; width: 105px; height: 105px;"></div>
+                              <div style="background:url({{template.example1}}); background-size: contain; background-repeat: no-repeat; background-position: center center; width: 105px; height: 105px;"></div>
+                              </div>
+                              <div class="example">
+                              <div style="background:url({{template.example2}}); background-size: contain; background-repeat: no-repeat; background-position: center center; width: 105px; height: 105px;"></div>
+                              </div>
+                              <div class="example">
+                              <div style="background:url({{template.example3}}); background-size: contain; background-repeat: no-repeat; background-position: center center; width: 105px; height: 105px;"></div>
+                              </div>
+                              <div class="example">
+                              <div style="background:url({{template.example4}}); background-size: contain; background-repeat: no-repeat; background-position: center center; width: 105px; height: 105px;"></div>
                               </div>
                           </div>
 

@@ -3246,6 +3246,11 @@ a {
   float: left;
 }
 
+.example:hover{
+  border-color: #3d4752;
+  cursor: pointer;
+}
+
 .component-progress-bar.credentials:hover, .template:hover {
     cursor: pointer;
 }
