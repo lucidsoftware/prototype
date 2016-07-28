@@ -24,3 +24,8 @@ strong{
   transition: .5s ease-in-out all;
   padding: 8px 10px 0px 10px;
 }
+
+span.help:hover{
+  cursor: pointer;
+
+}

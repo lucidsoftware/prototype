@@ -52,7 +52,7 @@
 
 <!--template drawer-->
 <div ng-class="{templateDrawerOnly : secondTemplateDrawer == false, templateDrawer : secondTemplateDrawer == true}" ng-show="templateDrawer" >
-        <div style="color: white; font-weight: bold; text-align: right; margin: 15px 15px 0px 0px;" ng-click="getSecondDrawer();"><span style="color: white; text-align: left;font-weight: normal; margin-left: 15px; text-transform: uppercase; float: left;">Recently Used</span>{{help}}</div>
+        <div style="color: white; font-weight: bold; text-align: right; margin: 15px 15px 0px 0px;" ng-click="getSecondDrawer();"><span style="color: white; text-align: left;font-weight: normal; margin-left: 15px; text-transform: uppercase; float: left;">Recently Used</span><span class="help">{{help}}</span></div>
         
          <div class="animate-repeat" ng-repeat="template in templates | limitTo: 5" style="display: inline-block;">
           <li class="card LoSensitive file" id="filebrowser_132265643" tabindex="-1" nodeid="132265643" style="">
