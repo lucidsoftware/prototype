@@ -3445,3 +3445,32 @@ div#expand-jump-1{
 
 
 
+
+.lucid-modal-wrapper .component-dialog-box .content{
+  padding: 0px;
+}
+
+.lucid-modal-wrapper .lucid-shape-manager {
+    position: static;
+    top: 0;
+    width: 560px;
+    background: rgba(61, 71, 82, 0.95);
+    z-index: 1;
+    margin-left: 0;
+  }
+
+  .lucid-shapes-panel{
+    position: static;
+  }
+
+  .lucid-modal-wrapper .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-new-library.lucid-select-wrapper .lucid-select-dropdown {
+    width: 155px;
+  }
+
+    .lucid-modal-wrapper .lucid-shape-group .lucid-shape, .lucid-shape-group .dndPlaceholder{
+      width: auto;
+      height: auto;
+    }
+
+
+
