@@ -3443,5 +3443,17 @@ div#expand-jump-1{
   opacity: 1;
 }
 
+.mainPreview:hover{
+  cursor: pointer;
+}
+
+.mainPreview.hover:hover{
+  cursor: initial;
+}
+
+.mainPreview a:hover{
+  color: rgb(41,170,225);
+}
+
 
 
