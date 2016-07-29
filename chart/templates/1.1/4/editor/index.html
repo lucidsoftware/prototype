@@ -246,7 +246,7 @@
 
     <!-- START TEMPLATE MANAGER-->
     <div class="lucid-modal-wrapper lucid-beta-tips ng-hide" ng-hide="!$root.showtemplatemanager" ng-init="loadingshapes = true;">
-      <div ng-hide="!$root.showtemplatemanager" style="height:550px; width:560px; background: none;" class="lucid-modal lucid-animate" ng-init="industry = 'none';checkColor='#646464'">
+      <div ng-hide="!$root.showtemplatemanager" style="height:600px; width:560px; background: none;" class="lucid-modal lucid-animate" ng-init="industry = 'none';checkColor='#646464'">
             <div class="component-dialog-box" style="height:550px; width:560px;">
                 <form>
                     <div class="header">
@@ -254,7 +254,7 @@
                         <a ng-click="$root.showtemplatemanager = false"; class="close-icon icn-clear-inverse"></a>
                     </div>
                     
-                    <div class="content" style="height:500px; width:560px; overflow:scroll; background-color: rgb(61, 71, 82); ">
+                    <div class="content" style="height:500px; width:560px; overflow-y:scroll; overflow-x:hidden; background-color: rgb(61, 71, 82); ">
 
 
 
@@ -401,6 +401,13 @@
 
                       
 
+                    </div>
+                    <div class="footer">
+                        <div class="form-buttons">
+                            <input ng-click="$root.showtemplatemanager = false" ;="" type="button" class="component-btn component-btn-primary-gray" value="Cancel">
+                             <input ng-click="showDiagramSection = false; showFieldSection= true;" ng-show="showDiagramSection" ;="" type="submit" class="component-btn component-btn-secondary-blue ng-hide" value="Back">
+                            <input ng-click="getNext();" type="submit" class="component-btn component-btn-secondary-blue" value="Next">
+                        </div>
                     </div>
                 </form>
             </div>

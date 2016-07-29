@@ -3156,7 +3156,7 @@ a {
 
 
   .lucid-beta-tips.lucid-modal-wrapper .lucid-modal{
-    top: 40%;
+    top: 30%;
     right: 40%;
   }
 
@@ -3217,10 +3217,6 @@ a {
 
 .onboarding-tip.share-tip{
   top: 450px;
-}
-
-.component-dialog-box .content{
-  border-radius: 0px 0px 8px 8px;
 }
 
 .circle{
