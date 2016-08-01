@@ -50,16 +50,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
 
         };
 
-        /// Start function for showing the different tabs and buttons around template manager
-           $scope.getNext = function(){
 
-            if($scope.showFieldSection == true){
-                $scope.showFieldSection = false;
-                $scope.showDiagramSection = true;
-            }else{
-                 $scope.$root.showtemplatemanager = false;
-            }
-        };
 
          $scope.setDiagramGroup = function(newIndex, oldIndex) {
             console.log('old index', oldIndex, 'new index', newIndex);
@@ -145,8 +136,6 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             $scope.showFieldSection = false;
             $scope.showDiagramSection = true; 
             $scope.checkColor="#ffffff";
-
-
 
             if(string2=='design'){
 
@@ -288,7 +277,10 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                     {name:'Venn Diagram', preview:'images/shapeLibrary/venn-diagrams.png', recommended: 'false', example1:'images/examples/venn.png', example2:'images/examples/venn.png', example3:'images/examples/venn.png',example4:'images/examples/venn.png', details:'Venn diagrams are perfect for students and teachers, especially when solving logic, probability, and comparison problems. We offer premade templates and easy design options.'},
                     {name:'Video', preview:'images/shapeLibrary/videos-44px.png', recommended: 'false', example1:'images/examples/video.png', example2:'images/examples/video.png', example3:'images/examples/video.png',example4:'images/examples/video.png', details:'The video shape library allows you to upload any Youtube video to your diagram. If you publish the video, everyone--even non-Lucidchart users--can see it.'},        
                 ];
-            }  
+            } 
+
+            console.log($scope.showFieldSection + ' field section');
+             console.log($scope.showDiagramSection + ' diagram section');
         };
 
         ///// Function to save the diagram type someone clicks and load it into the tips and shape library

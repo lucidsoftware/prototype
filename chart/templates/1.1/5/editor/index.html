@@ -22,7 +22,6 @@
 
 
     <!-- Prototype Specific -->
-        <link rel="stylesheet" href="https://d5x2n72glkaxl.cloudfront.net/css/doclist?2016-5-10_16-19-48">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="app.js"></script>
 </head>
@@ -1153,19 +1152,11 @@
 
     <!-- START TEMPLATE MANAGER-->
 
-    
-    <div class="lucid-modal-wrapper lucid-beta-tips ng-hide" ng-hide="!$root.showtemplatemanager">
-      <div ng-hide="!$root.showtemplatemanager" style="height:550px; width:560px; background: none;" class="lucid-modal lucid-animate" ng-init="industry = 'none';checkColor='#646464'">
-            <div class="component-dialog-box" style="height:550px; width:560px;">
-                <form>
-                    <div class="header">
-                        First Time Set Up
-                        <a ng-click="$root.showtemplatemanager = false"; class="close-icon icn-clear-inverse"></a>
-                    </div>
-                    
-                    <div class="content" style="height:500px; width:560px; overflow-y:scroll;">
-                      <div>
-                        <div class="component-progress-bar credentials" >
+
+
+<lucid-modal showmodal="$root.showtemplatemanager" width="526" height="500" title="First Time Set Up" >
+    <!-- Insert modal content here -->
+                        <div class="component-progress-bar credentials" style="margin: 10px;">
                           <div class="import-step credentials-roles" ng-click= "showFieldSection = true; showDiagramSection = false; checkColor='#646464'" ng-class="{current: showDiagramSection || showFieldSection}">
                             <?xml version="1.0" encoding="UTF-8" standalone="no"?>
                             <svg ng-show= "!check1" width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -1213,20 +1204,14 @@
                             </svg>
                           </div>
                         </div>
-                        <div class="component-progress-bar bash hidden">
-                          <div class="import-step credentials-roles current">
-                            <span class="progress-text">SELECT YOUR INDUSTRY</span>
-                          </div>
-                          <div class="import-step bash">
-                            <span class="progress-text">SELECT YOUR DIAGRAM</span>
-                          </div>
-                        </div>
-                      </div>
+
+
+                     
                       
                       <div ng-show="showFieldSection"; ng-init="$root.showFieldSection = true;">
 
                   
-                        <div style="margin-top: 10px;">
+                        <div style="margin: 10px;">
 
                           <div class="field" style="margin-right: 10px;" ng-mouseenter="showIT = true;" ng-mouseleave="showIT = false">
                             <div class="text">IT / Engineering</div>
@@ -1282,6 +1267,7 @@
 
                         </div>
                       </div> 
+
                       <div ng-show="showDiagramSection"; ng-init="$root.showDiagramSection = false"; style="margin-top: 10px;">
                   
                          <section class="image-grid">
@@ -1316,26 +1302,21 @@
 
                               </div>
                           </div>
+                          </section>
                         </div>
-                      </section>
-                      </div>
-                    </div>
-                </form>
-            </div>
-      </div>
-      <div class="lucid-modal-bg lucid-animate" ng-hide="!$root.showtemplatemanager">
-      </div>
-  </div>
+                  
+                   
+</lucid-modal>
 <!-- END TEMPLATE MANAGER-->
 
 
 <!--START TEMPLATE TIPS-->
 
 <lucid-tip class="templateTip" showtip="$root.loaded && !$root.showtemplatemanager" caret="right" style="top: 453px; right: 80px; width:180px;">
-We've loaded {{diagram}} examples in case you need inspiration.
+We've loaded {{diagram}} examples in case you need some inspiration.
 </lucid-tip>
 <lucid-tip class="templateTip" showtip="$root.loaded && !$root.showtemplatemanager" caret="left" style="top:365px; left: 260px; width:200px;">
-We've loaded your {{diagram}} shapes here for you.
+We've loaded {{diagram}} shapes here for you.
 </lucid-tip>
 
 <!--END TEMPLATE TIPS-->
