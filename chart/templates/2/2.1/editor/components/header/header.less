@@ -1,0 +1,198 @@
+#main-header {
+    z-index: 1;
+    height: 40px;
+    background: @blue-steel;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: top .3s;
+    font-size: 14px;
+    button {
+        margin-left: 20px;
+    }
+}
+
+.header-left {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    min-width: 500px;
+}
+.header-middle {
+    flex: 0 1 auto;
+    overflow: hidden;
+}
+.header-right {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    min-width: 250px;
+}
+
+#documents {
+    background: @lucid-orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    svg path {
+        fill: white;
+    }
+}
+
+// #file-menu {
+//     display: inline-block;
+//     margin-left: 20px;
+//     li {
+//         display: inline-block;
+//         margin-right: 20px;
+//     }
+// }
+
+#document-title {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px 0;
+    font-size: 16px;
+    > span {
+        display: block; // edit-in-place fix
+    }
+    .edit-in-place-wrapper .edit-in-place {
+        color: #fff;
+    }
+}
+
+.dd-arrow {
+    position: relative;
+    padding-right: 17px;
+    &:after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        content: '';
+        border-top: 5px solid white;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        position: absolute;
+        top: 6px;
+        right: 0;
+    }
+}
+
+.save-text {
+    color: @blue-steel-secondary;
+    line-height: 20px;
+    opacity: 1;
+    width: 50px;
+    display: inline-block;
+}
+
+.line {
+    display: inline-block;
+    height: 22px;
+    width: 1px;
+    background: @blue-steel-2;
+    margin: 0 10px;
+}
+
+.collaborators {
+    li {
+        border: 1px solid @blue-steel-2;
+        border-bottom: 4px solid @lucid-orange;
+        height: 29px;
+        img {
+            width: 24px;
+        }
+    }
+}
+
+#file-menu {
+    ul {
+        margin-left: 20px;
+        list-style: none;
+        position: relative;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        > li span {
+            margin-right: 20px;
+        }
+        li {
+            display: inline-block;
+            //background-color: #E64A19;
+            position: relative;
+            &.divider,
+            &.divider:hover {
+                padding: 0;
+                margin: 4px -3px;
+                height: 1px;
+                background: @grey-border;
+                width: ~'calc(100% + 6px)';
+            }
+            &.checked {
+                background: url(http://particle.golucid.co/components/2.0/icon/icons/icon-check-18px.svg) no-repeat center left;
+            }
+        }
+    }
+    a {
+        display: block;
+        padding: 0 10px;
+        color: #FFF;
+        font-size: 20px;
+        line-height: 60px;
+        text-decoration: none;
+    }
+    a:hover {
+        //background-color: #000000;
+    }
+    // Hide Dropdowns by Default */
+    ul ul {
+        background: #FFF;
+        color: @blue-steel;
+        //display: none; //removed because of ng-click and ng-mouseenter
+        position: absolute;
+        top: 25px; // the height of the main nav 
+        left: -22px;
+        padding: 3px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    }
+    // Display Dropdowns on Hover */
+    ul li:hover > ul {
+        display: inherit;
+    }
+    // First Tier Dropdown */
+    ul ul li {
+        width: 220px;
+        float: none;
+        display: list-item;
+        position: relative;
+        padding: 4px 10px 4px 20px;
+        font-size: 14px;
+        &:hover {
+            background-color: @grey-1;
+        }
+    }
+    // Second, Third and more Tiers */
+    ul ul ul li {
+        position: relative;
+        top: -60px;
+        left: 170px;
+    }
+    //show caret if there's more
+    li > a:after {
+        content: '>';
+    }
+    li > a:only-child:after {
+        content: '';
+    }
+}

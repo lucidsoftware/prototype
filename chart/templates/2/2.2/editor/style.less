@@ -1,0 +1,603 @@
+/////////////////////////////////////////////////
+//START VARIABLES
+////////////////////////////////////////////////
+@font-stack: 'Source Sans Pro',
+sans-serif;
+//
+//Brand Colors
+@blue-steel: #3D4752;
+@blue-steel-2: #77818C;
+@lucid-blue: #29AAE1;
+@lucid-orange: #FC8D2A;
+@lucidpress-green: #8CBF3F;
+// UI Colors - Greys
+@grey-1: #F0F0F0;
+@grey-2: #E6E6E6;
+@grey-3: #D6D6D8; //COLLAPSE BAR RIGHT
+@grey-4: #CDCED1; //SHAPEGROUP LEFT
+@grey-5: #A5A5A5;
+// Information Colors
+@info-red: #ED6058;
+@info-red-light: #FBDCDA;
+@info-blue: @lucid-blue;
+@info-blue-light: #D2EDF9;
+@info-green: #8CBF3F;
+@info-green-light: #E9F2D9;
+//Secondary Colors
+@blue-steel-dark: #606D79;
+@blue-steel-light: #AFB7BF;
+@lucid-blue-light: #D2EDF9;
+@grey-border: #D2D2D2;
+@grey-border-dark: #A5A5A5;
+//Text Colors
+@standard-text: #5A5A5A;
+@standard-text-light: #828282;
+@standard-text-ghost: #C7C7C7;
+@lucid-blue-dark: #2C84B5;
+/////////////////////////////////////////////////
+//END COLOR VARIABLES
+////////////////////////////////////////////////
+@grey-1: #F0F0F0;
+@grey-2: #E6E6E6;
+@grey-3: #D6D6D8; //COLLAPSE BAR RIGHT
+@grey-4: #CDCED1; //SHAPEGROUP LEFT
+@grey-5: #A5A5A5;
+@behind-canvas: #AAADAE;
+//Top
+@pagedrawer-bg: @grey-3;
+@optionbar-bg: @grey-1; // #EDEDED;
+@popover-bg: @grey-1; //#F3F3F3;
+@popover-secondary-bg: @grey-2;
+//left panel
+@left-panel-bg: @grey-2; //#E1E2E3;
+@shapegroup-top: @grey-4; //#CDCFD1; 
+@zerostate-bg: #DDD;
+@zerostate-border: @grey-5;
+//shapes manager active
+@left-panel-bg-manage: @grey-5;
+@shapegroup-top-manage: @blue-steel-2;
+@shapegroup-bg-manage: @grey-3;
+@pinned-icon-bg: @blue-steel;
+@shapemanager-import: @blue-steel; // #3E4752
+@shapemanager-topbar-bg: @blue-steel-2;
+@shapemanager-topbar-search: #98A5B3; //keep but don't include in colors
+//right-panel
+@right-panel-tabs-bg: @grey-2;
+@right-panel-bg: @grey-1; //#EBECED;
+@right-panel-top: @blue-steel-2;
+@right-panel-collapse-bar: @grey-3;
+//components
+@collapse-bar-icon: @blue-steel-2;
+@button-toggle-active: #D2EDF9; //#CAEFFF;
+@button-toggle-inactive: @grey-3;
+@button-toggle-inactive-border: @grey-5;
+@popover-hover-list: #F5F5F5;
+/////TEMP CSS FOR COMPONENT UPDATE
+#main-container {
+    background: @behind-canvas !important;
+}
+
+// #main-container .page-container{
+//     top:50px !important;
+//     left:160px !important;
+// }
+#right-dock .right-panel .lucid-collapse-bar .collapse-bar-top {
+    background: @right-panel-collapse-bar !important;
+}
+
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path {
+    fill: @collapse-bar-icon !important;
+}
+
+.lucid-toggle .toggle-button {
+    background: @button-toggle-inactive;
+    border: 1px solid @button-toggle-inactive-border;
+    &.active {
+        background: @button-toggle-active;
+    }
+}
+
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
+    background: @popover-hover-list;
+}
+
+.lucid-popover-menu {
+    background: @popover-bg;
+}
+
+.lucid-color-picker .lucid-popover-menu .lucid-colorpicker-wrap {
+    background: @popover-secondary-bg;
+}
+
+.ruler {
+    display: none;
+}
+
+.lucid-popover-menu {
+    background: @grey-1;
+    &:after {
+        border-bottom-color: @grey-1;
+    }
+}
+
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
+    background: @grey-1;
+}
+
+@import 'components/pages/pages.less';
+@import 'components/add-ons/add-ons.less';
+@import 'components/shape-manager/shape-manager.less';
+@import 'components/header/header.less';
+@import 'components/optionbar/optionbar.less';
+@import 'components/canvas/canvas.less';
+@import 'components/advanced-shapes/advanced-shapes.less';
+
+//share modal
+.share-modal .lucid-tab-content,
+.share-modal article {
+    padding: 0;
+}
+
+
+.lucid-shapes-header >span {
+    cursor: pointer;
+}
+
+li.lucid-select-option {
+    display: block !important;
+}
+
+.lucid-shape-manager {
+    z-index: -1;
+}
+
+.lucid-shapes-scroll {
+    background: @left-panel-bg;
+    overflow-y: scroll;
+    max-width: 1116px;
+}
+
+.lucid-manage-shapes .lucid-shapes-scroll {
+    background: @left-panel-bg-manage;
+}
+
+.lucid-shape-manager .lucid-shapes-scroll {
+    background: transparent;
+}
+
+@orange: #F78D1E;
+@border-color: #b7b7b7;
+@blue-steel: #3d4752;
+@blue-steel-secondary: #77818C;
+@lucid-blue: #29AAE1;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    background: #3d4752;
+    user-select: none;
+    .body-wrapper {
+        transition: .5s opacity ease-in-out;
+        opacity: 1;
+        height: 100vh;
+        &.hide-body {
+            opacity: 0;
+        }
+    }
+}
+
+#wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, .25);
+    transition: margin .3s ease-in-out;
+    &.with-mega-menu {
+        margin-left: 200px;
+        #main-container {
+            opacity: .5;
+        }
+        #left-bar,
+        #option-bar,
+        #right-dock,
+        #main-footer,
+        .ruler {
+            opacity: 0;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.reversed-text {
+    font-weight: 300;
+}
+
+.ng-hide-remove .addon-tip {
+    opacity: 0;
+    margin-right: 10px;
+}
+
+.lucid-select-dropdown.no-checkmarks {
+    .lucid-select-option {
+        padding: 5px 15px 5px 15px;
+    }
+}
+
+//////////////////////
+//// IMPORT TO CANVAS
+//////////////////////
+.import-to-canvas-buttcon {
+    cursor: pointer;
+    position: absolute;
+    right: 46px;
+    top: 13px;
+    opacity: 1;
+    &.ng-hide {
+        opacity: 0;
+    }
+    &.ng-animate {
+        transition: .25s ease-in-out all;
+    }
+}
+
+.import-to-canvas {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    >ul {
+        margin-top: 0;
+        transition: margin .25s ease-in-out;
+        li {
+            margin: 10px 15px;
+            padding: 5px 10px;
+            display: block;
+            background: #fff;
+            position: relative;
+            cursor: pointer;
+            line-height: 22px;
+            transition: .25s ease-in-out all;
+            border-radius: 4px;
+            input[type="file"] {
+                cursor: pointer;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+            }
+            .lucid-icon-22 {
+                margin-right: 5px;
+            }
+            &:hover {
+                background: #f1f1f1;
+            }
+            &.hint {
+                font-size: 14px;
+                line-height: 18px;
+                background: transparent;
+                padding: 0 0 5px 0;
+                &:hover {
+                    background: transparent;
+                }
+            }
+        }
+    }
+    &.ng-hide {
+        > ul {
+            margin-top: -20px;
+        }
+        opacity: 0;
+    }
+    &.ng-animate {
+        overflow: hidden;
+        transition: .35s ease-in-out all;
+    }
+}
+
+///// IMPORT OPTIONS INSIDE SHAPE MANAGER
+.import-options {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    border-top: 1px solid #B7B7B7;
+    width: 100%;
+    background: #E8E9EA;
+    z-index: 1;
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+    &.ng-hide {
+        bottom: -50px;
+    }
+    &.ng-animate {
+        transition: .25s ease-in-out all;
+    }
+    .import-to-canvas {
+        padding: 14px;
+        line-height: 22px;
+        cursor: pointer;
+        position: absolute;
+        width: @manage-shapes-panel-width;
+        left: 0;
+        top: 0;
+        >span {
+            padding-left: 5px;
+        }
+        &.ng-hide {
+            left: -250px;
+        }
+        &.ng-animate {
+            transition: .5s ease-in-out all;
+        }
+    }
+    .show-import-options {
+        position: absolute;
+        width: @manage-shapes-panel-width;
+        left: 0;
+        top: 0;
+        &.ng-hide {
+            left: 250px;
+        }
+        &.ng-animate {
+            transition: .5s ease-in-out all;
+        }
+        >ul {
+            text-align: center;
+            font-size: 0;
+            >li {
+                position: relative;
+                padding: 14px 10px;
+                display: inline-block;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.hidden-file-upload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    opacity: 0;
+    overflow: hidden;
+    cursor: pointer;
+    &::-webkit-file-upload-button {
+        cursor: pointer;
+    }
+}
+
+#main-container {
+    z-index: 0; //added so popovers stay on top
+    height: ~"calc(100% - 72px)";
+    width: 100%;
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 32px;
+    position: relative;
+    transition: all .3s;
+    background: #ACAFB0;
+    //background-size: 2000px;
+    .page-container {
+        position: absolute;
+        top: 60px;
+        left: 232px;
+        //border: 2px solid #ccc;
+        //overflow: hidden;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, .25);
+        background: #fff;
+        height: 694px;
+        min-width: 904px;
+    }
+    .page {
+        display: none;
+    }
+}
+
+#sidebar {
+    //z-index:-1;//to show modals on top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    //background: #3d4752;
+    ul {
+        li {
+            line-height: 40px;
+            color: #fff;
+            padding-left: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, .15);
+            cursor: pointer;
+            background: transparent;
+            transition: background .1s;
+            &:first-child {
+                line-height: 53px;
+                background-color: @blue-steel-2;
+            }
+            &:hover {
+                background: rgba(255, 255, 255, .15);
+            }
+            img {
+                vertical-align: middle;
+                width: 22px;
+                margin-right: 10px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+}
+
+.ruler {
+    position: absolute;
+    background: #c4c4c4;
+    opacity: 1;
+    transition: opacity .3s, left .3s ease-in-out;
+}
+
+#ruler-vert {
+    top: 60px;
+    left: 250px;
+    height: 100%;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, .4);
+    img {
+        width: 26px;
+    }
+}
+
+#ruler-hor {
+    top: 60px;
+    left: 250px;
+    width: 100%;
+    box-shadow: 28px 3px 10px rgba(0, 0, 0, .4);
+    img {
+        height: 26px;
+        max-width: none;
+    }
+}
+
+//////////////////////////////
+//ACCOUNT DROPDOWN
+//////////////////////////////
+//////////////////////////////
+//START CANVAS MODES
+//////////////////////////////
+@handle-width: 40px; //hover handle to show panels
+#left-bar {
+    .hover-handle {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        width: @handle-width;
+        z-index: 1;
+        right: -@handle-width;
+    }
+}
+
+.left-panel-hidden {
+    #left-bar {
+        left: -250px;
+        opacity: 0;
+    }
+    #option-bar > ul {
+        margin-left: 10px;
+    }
+    #main-footer {
+        padding-left: 0;
+    }
+    #ruler-vert,
+    #ruler-hor {
+        left: 0;
+    }
+}
+
+#right-dock {
+    .hover-handle {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        width: @handle-width;
+        z-index: 1;
+        left: -@handle-width;
+    }
+}
+
+.right-panel-hidden {
+    #right-dock,
+    #right-dock.open {
+        right: -75px;
+    }
+}
+
+.footer-hidden {
+    #main-footer {
+        bottom: -40px;
+    }
+}
+
+#option-bar {
+    .hover-handle {
+        position: absolute;
+        height: @handle-width;
+        width: 100%;
+        z-index: 1;
+        bottom: -@handle-width*2; // below popovers 
+    }
+}
+
+.toolbar-hidden {
+    #option-bar {
+        position: relative;
+        top: -60px;
+        opacity: 0;
+        left: 0;
+        .hover-handle {
+            bottom: -@handle-width; // top of page
+            width: ~"calc(100vw - 60px)";
+        }
+    }
+    .ruler {
+        opacity: 0;
+    }
+}
+
+.header-hidden {
+    #main-header {
+        top: -54px;
+    }
+    #main-container {
+        margin-top: 0;
+        height: 100%;
+    }
+}
+
+.toggle-canvas-mode {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+}
+
+//////////////////////////////
+//END CANVAS MODES
+//////////////////////////////
+@import 'components/add-ons/add-ons.less';
+@import 'components/advanced-shapes/advanced-shapes.less';
+@import 'components/canvas/canvas.less';
+@import 'components/footer/footer.less';
+@import 'components/header/header.less';
+@import 'components/loading-tips/loading-tips.less';
+//@import 'components/modals/modals.less';
+@import 'components/onboarding-tips/onboarding-tips.less';
+@import 'components/optionbar/optionbar.less';
+@import 'components/pages/pages.less';
+@import 'components/right-dock/right-dock.less';
+@import 'components/shape-manager/shape-manager.less';
+
+
+
+
+//////////
+//ADDITIONAL CLASSES - ADD TO PARTICLE?
+//////////
+.inactive {
+    opacity: .6;
+    transition: opacity .25s ease-in-out;
+}
