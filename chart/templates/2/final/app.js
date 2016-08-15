@@ -175,6 +175,7 @@ angular.module('particleApp',
                 $scope.example3 = false;
                 $scope.example4 = false;
                 $scope.example5 = false;
+                $scope.mainImage = template.example1;
         };
              $scope.templates = [
                     {name:'Android Mockup', category: 'recent', preview:'images/shapeLibrary/android-44px.png', recommended: 'design', example1: 'images/examples/android1.png', example2: 'images/examples/android2.png', example3:'images/examples/android3.png', example4:'images/examples/android4.png', details:'With custom-built Android shapes and elements, you can create mockups and wireframes with less pixelation. We offer the 4 most common Android devices and 60+ GUI elements.'},
