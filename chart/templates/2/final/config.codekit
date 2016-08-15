@@ -1164,6 +1164,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/examples\/aws4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 250912,
+		"inputAbbreviatedPath": "\/images\/examples\/aws4.png",
+		"outputAbbreviatedPath": "\/images\/examples\/aws4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/examples\/aws5.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 85771,
+		"inputAbbreviatedPath": "\/images\/examples\/aws5.png",
+		"outputAbbreviatedPath": "\/images\/examples\/aws5.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/examples\/azure1.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1611,6 +1633,28 @@
 		"initialSize": 229317,
 		"inputAbbreviatedPath": "\/images\/examples\/mind.png",
 		"outputAbbreviatedPath": "\/images\/examples\/mind.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/examples\/mind2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 210029,
+		"inputAbbreviatedPath": "\/images\/examples\/mind2.png",
+		"outputAbbreviatedPath": "\/images\/examples\/mind2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/examples\/mind3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 714328,
+		"inputAbbreviatedPath": "\/images\/examples\/mind3.png",
+		"outputAbbreviatedPath": "\/images\/examples\/mind3.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2898,6 +2942,17 @@
 		"initialSize": 774,
 		"inputAbbreviatedPath": "\/images\/shapeLibrary\/tech-clipart-44px.png",
 		"outputAbbreviatedPath": "\/images\/shapeLibrary\/tech-clipart-44px.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/shapeLibrary\/timeline-44px.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 843,
+		"inputAbbreviatedPath": "\/images\/shapeLibrary\/timeline-44px.png",
+		"outputAbbreviatedPath": "\/images\/shapeLibrary\/timeline-44px.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
