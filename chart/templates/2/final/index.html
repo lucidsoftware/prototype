@@ -242,7 +242,7 @@
                     <lucid-finger-tab name="All" selected>
                                <div ng-repeat="template in templates" class="image__cell is-collapsed" ng-class="{'is-expanded': expanded == true}" click-outside="expanded=false;" >
                                   <div class="image--basic">
-                                    <a href="#expand-jump-1" ng-click="expanded = !expanded; mainImage = template.example1; currentExample = template.example1;" style="display: inline-block; position: relative; background: #e6e6e6; border-radius: 4px; height: 89px; width: 100%;">
+                                    <a href="#expand-jump-1" ng-click="expanded = !expanded; mainImage = template.example1; reset();" style="display: inline-block; position: relative; background: #e6e6e6; border-radius: 4px; height: 89px; width: 100%;">
                                       <div class="title">{{template.name}}</div>
                                       <div style="height: 40px; width: 50px; margin: 10px auto; background:url({{template.preview}});  background-repeat: no-repeat; background-size:contain; background-position: center center;"></div>
                                        <div class="recommended" ng-if="template.recommended == 'true'">Recommended</div>

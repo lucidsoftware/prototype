@@ -4664,6 +4664,17 @@ angular.module('particleApp',
                 $scope.currentExample = template.example4;
             }
         };
+
+
+
+         $scope.reset = function(string, template) {
+                $scope.showButton = false;
+                $scope.example1 = false;
+                $scope.example2 = false;
+                $scope.example3 = false;
+                $scope.example4 = false;
+                $scope.example5 = false;
+        };
              $scope.templates = [
                     {name:'Android Mockup', category: 'recent', preview:'images/shapeLibrary/android-44px.png', recommended: 'design', example1: 'images/examples/android1.png', example2: 'images/examples/android2.png', example3:'images/examples/android3.png', example4:'images/examples/android4.png', details:'With custom-built Android shapes and elements, you can create mockups and wireframes with less pixelation. We offer the 4 most common Android devices and 60+ GUI elements.'},
                     {name:'AWS Architecture', preview:'images/shapeLibrary/aws-44px.png', recommended: 'it', example1:'images/examples/aws1.png', example2:'images/examples/aws2.png', example3:'images/examples/aws3.png', example4:'images/examples/aws4.png', details: 'Accurately diagram AWS architecture with the official AWS Simple Icons. You can chart with network shapes, database symbols, and a variety of other Amazon Web Services elements.'},
