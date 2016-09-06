@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <h1>Colors & LESS</h1>
+    <div class="hr"></div>
+    <p>Click on the hex color or the LESS variable to copy to clipboard.</p>
+    <div class="icon-search">
+        <input ng-model="searchResults" placeholder="Search colors">
+        <img src="http://particle.golucid.co/components/2.0/icon/icons/icon-search-18px.svg">
+    </div>
+    <div ng-repeat="colorgroup in colors | filter: searchResults" class="color-view">
+        <h2>{{colorgroup.colorgroup}}</h2>
+        <div class="clearfix {{class}}">
+            <div class="particle-icon-wrapper" ng-repeat="color in colorgroup.colors | filter:searchResults" ng-controller="colorCtrl">
+                <div class="lucid-color-block" style="background-color: {{color.hex}}" clipboard text="color.hex" on-copied="copyItem(color.hex)">
+                    <div class="copied-text {{color.light}}" ng-if="copied">
+                        {{copied}}
+                        <br>COPIED!
+                    </div>
+                </div>
+                <div class="text-wrapper" clipboard text="color.less" on-copied="copyItem(color.less)" >
+                    <h6 ng-bind="color.less"></h6>
+                    <h6><span ng-bind="color.description"></span></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

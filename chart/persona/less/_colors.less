@@ -1,0 +1,87 @@
+@block-width: 70px;
+@block-height: 70px;
+@card-width: 280px;
+@card-height: 70px;
+.lucid-color-block {
+    width: @block-width;
+    height: @block-height;
+    position: relative;
+    display: table;
+    cursor: pointer;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    overflow: hidden;
+}
+
+.color-view {
+    margin-bottom: 40px;
+    width: 50%;
+    float: left;
+    @media(max-width: 946px) {
+        width: 100%;
+    }
+    >h2 {
+        margin-bottom: 10px;
+    }
+    .particle-icon-wrapper {
+        width: @card-width;
+        margin: 10px 20px 10px 0;
+        height: @card-height;
+        position: relative;
+        min-height: 0;
+        display: block;
+        //border: 1px solid @grey-border;
+        //float:none;
+        .text-wrapper {
+            position: absolute;
+            width: @card-width - @block-width - 10px;
+            top: 0;
+            right: 0px;
+            cursor: pointer;
+            height: 100%;
+            h6 {
+                display: block;
+                width: 100%;
+                text-align: left;
+                font-weight: 600;
+                font-size: 16px;
+                margin-top: 5px;
+                >span {
+                    font-size: 14px;
+                    line-height: 16px;
+                    font-weight: 400;
+                    color: @text-light;
+                }
+            }
+        }
+    }
+    .copied-text {
+        text-align: center;
+        color: #fff;
+        font-weight: 300;
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        line-height: 20px;
+        font-size: 14px;
+        padding-top: 5px;
+        &.light {
+            color: #333;
+            font-weight: 400;
+        }
+        transition: .25s ease-in-out all;
+        &.ng-enter {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        &.ng-enter-active {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        &.ng-leave-active {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+    }
+}
