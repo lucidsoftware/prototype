@@ -1,0 +1,192 @@
+<div class="wrapper" style="padding: 0px; max-width: 100% !important;">
+
+    <div class="subwrapper" style="width: calc(100% - 300px); height: auto; display: inline-block; padding: 20px;">
+        <div class="filters" style="margin-bottom: 10px;">
+            <div class="icon-search" style="margin: 0;">
+                <input style="float:left; display: inline-block;" ng-model="searchResults" placeholder="Search">
+                <img src="http://particle.golucid.co/components/2.0/icon/icons/icon-search-18px.svg">
+            </div>
+                <lucid-select ng-model="personaSelected" ng-init="persona = ''" style="display: inline-block;"  class="condensed" options="['Persona', 'IT Consultant', 'Network Engineer', 'Director / Head of', 'Technical Sales', 'General Software Engineer']"></lucid-select>
+                <lucid-select ng-model="fluencySelected" style="display: inline-block;"  class="condensed" options="['Fluency', 'Advanced', 'Intermediate', 'Beginner']"></lucid-select>
+                <lucid-select ng-model="orgSelected" style="display: inline-block;" class="condensed" options="['Org Size', 'Large', 'Medium', 'Small']"></lucid-select>
+                <lucid-select ng-model="subSelected" style="display: inline-block;" class="condensed" options="['Subscription', 'Free', 'Team', 'Pro', 'Enterprise']"></lucid-select>
+
+                <lucid-select ng-model="actionsSelected" ng-init = "reserve = false" style="float: right; display: inline-block;" class="condensed" options="['Actions', 'Email', 'Release Group']"></lucid-select>
+        </div>
+        <h2>{{reachout.groupName}}</h2>
+        <table style="width:100%" class="main">
+          <tr style="margin-top: 20px; width: 100%; background: #D2EDF9; border-radius: 10px;height: 30px; margin-bottom: 5px; font-size: 14px; overflow: hidden; padding: 8px; border-radius: 5px;" ng-click="getUserInfo(user); nameClicked=true;">
+            <td style="padding-bottom: 10px;" ><input ng-checked= "!checked" ng-click= "checked=!checked" type="checkbox"></input></td>
+            <td style="padding-bottom: 10px;">Name</td>
+            <td style="padding-bottom: 10px;">Org Name</td> 
+            <td style="padding-bottom: 10px;">Job Title</td>
+            <td style="padding-bottom: 10px;">Persona</td>
+            <td style="padding-bottom: 10px;">Contacted</td>
+            <td style="padding-bottom: 10px;">Status</td>
+          </tr>
+
+            <tr class="reserved" ng-repeat="user in checkedUsers | filter:searchResults | filter: personaDrop(personaSelected) | filter: fluencyDrop(fluencySelected) | filter: orgDrop(orgSelected) | filter: subDrop(subSelected)  "   style="width: 100%; background: #F0F0F0; border-radius: 10px;height: 30px; margin-bottom: 5px; font-size: 14px; overflow: hidden; padding: 8px; border-radius: 5px;" ng-click="getUserInfo(user); nameClicked=true;">
+            <td><input ng-checked="!checked" type="checkbox" ng-click="addUser(user);"></input></td>
+            <td>{{user.name | limitTo: 20}}</td>
+            <td style="padding-bottom: 10px;">{{user.companyName}}</td> 
+            <td style="padding-bottom: 10px;">{{user.jobTitle}}</td>
+            <td style="padding-bottom: 10px;">{{user.persona}}</td>
+            <td style="padding-bottom: 10px;">{{user.contacted}}</td>
+            <td style="padding-bottom: 10px;">{{user.status}}</td>
+          </tr>
+
+        </table>
+
+    </div>
+    <div class="rightBar" style=" padding: 20px; padding-bottom: 75px; width: 300px; height: 100%; overflow: scroll;  background: #F0F0F0; position: fixed; top: 64px; right: 0;">
+
+
+        <div ng-show="nameClicked" style="font-size: 14px;">
+            <div style="padding-bottom: 10px; display: inline-block; width: 100%;" class="nameHeader">
+                <h2 style="padding-bottom: 10px; display: inline-block;">{{name}}</h2><span class="edit" style="color: #2C84B5; float: right;">(Edit)</span>
+            </div>
+            <table style="width: 100%; padding: 10px;">
+               <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Persona</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{personaSummary}}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Title</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{jobTitle}}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Company</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{companyName}}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Company Size</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{companySize}}</td>
+              </tr>
+             <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Status</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{status}}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Email</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{email}}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">User ID</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{userID}}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Team Size</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{teamSize}}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Account Size</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{accountSize}}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Account Type</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{accountType}}</td>
+              </tr>
+               <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Usage</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{usage}}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Contacted</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{contacted}}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Gift Card</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{giftCard}}</td>
+              </tr>
+              <tr>
+                <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">Fluency</td>
+                <td style="padding-bottom: 10px; width: 50%;">{{fluency}}</td>
+              </tr>
+            </table>
+            <div class="sidebar-divider"></div>
+            <div style="padding-bottom: 10px; display: inline-block; width: 100%;" class="nameHeader">
+                <h2 style="padding-bottom: 10px; display: inline-block;">Notes</h2>
+                <span ng-click="importModal=true" class="edit" style="color: #2C84B5; float: right;">
+                    <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"><path d="M11 2c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 16c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7zm1-11h-2v3H7v2h3v3h2v-3h3v-2h-3V7z" fill="#3D4752" fill-rule="evenodd"/></svg>
+                </span>
+            </div>
+            <div class="notes">
+                <div style="color: #A5A5A5; padding-bottom: 10px;">{{contacted}}</div>
+                <div>
+                -Previously used {{previousTool}}<br>-Reasons for switch: {{reasonsForSwitch}}<br> -Diagram types include {{diagramTypes}}<br>-Tools used: {{toolsUsed}} <br>-Possible feature improvements they mentioned include {{featureImprovements}}
+                </div>
+            </div>
+
+
+
+             <div class="sidebar-divider"></div>
+            <div style="padding-bottom: 10px; display: inline-block; width: 100%;" class="nameHeader">
+                <h2 style="padding-bottom: 10px; display: inline-block;">Contact History</h2>
+               
+            </div>
+            <div class="contact">
+                 <table style="width: 100%; padding: 10px;">
+                   <tr>
+                    <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">{{contacted}}</td>
+                    <td style="padding-bottom: 10px; width: 50%;">Taylor Palmer</td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom: 10px; color: #A5A5A5; width: 30%; text-align: right; padding-right: 10px;">6/5/2015</td>
+                    <td style="padding-bottom: 10px; width: 50%;">Leigh Lyman</td>
+                  </tr>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<lucid-modal showmodal="importModal" width="526" height="292" title="Save Note" confirm="Save" cancel="Nevermind" confirm-function="saveNote();">
+    <div style="padding: 20px">
+        <div style="color:#A5a5a5; padding-bottom: 10px;">9/7/2016</div>
+        <textarea ng-model="newNoteText" placeholder="Note..." name="Text1" cols="40" rows="5" style="width: 100%; height: 200px;"></textarea>
+    </div>
+    
+</lucid-modal>
+
+<style>
+.lucid-select-wrapper.condensed .selected-option-wrapper .lucid-selected-option{
+
+background: #77818C;
+color: white;
+}
+
+table.main{
+    border-collapse: collapse;
+}
+table.main td{
+    padding: 10px;
+    border-bottom: 5px solid white;
+}
+
+table.main tr.reserved td{
+    border-bottom: 0px;
+}
+
+table.main tr.second:hover{
+    cursor: pointer;
+}
+
+.edit:hover{
+cursor: pointer;
+}
+
+
+.lucid-select-wrapper.condensed .lucid-select-dropdown{
+    width: 200px;
+}
+.sidebar-divider {
+    height: 1px;
+    background: #D8D8D8;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.lucid-button.lucid-blue[disabled]{
+    background: gray;
+}
+</style>

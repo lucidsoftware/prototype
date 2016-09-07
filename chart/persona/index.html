@@ -33,7 +33,7 @@
     <script src="js/snippets-data.js"></script>
 </head>
 
-<body ng-controller="mainController" ng-class="{ 'landing-page': isActive('/','overview') }">
+<body ng-controller="mainController">
     <!-- TOP NAVIGATION -->
     <nav id="top-navigation">
         <div id="logo">
@@ -41,19 +41,15 @@
                 <ng-include src="'img/lucid-particle-logo.svg'"></ng-include>
             </a>
         </div>
-        <ul>
-            <li><a href="#/overview" ng-class="{ 'active': isActive('/','overview') }">WELCOME</a></li>
-            <li><a href="#/codepen" ng-class="{ 'active': !isActive('/','overview') }">MORE</a></li>
-        </ul>
     </nav>
     <!-- STATIC SIDEBAR -->
     <section id="sidebar">
         <ul class="reversed-text">
             <li class="list-header">
-                <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-compass-22px.svg'"></ng-include> Personas
+                <ng-include class="lucid-icon-22" src="'components/3.0/icon/icons/icon-person-18px.svg'"></ng-include> Personas
             </li>
+             <li><a href="#/codepen" ng-class="{ 'active': isActive('/','codepen') }">Network Engineer</a></li>
             <li><a href="#/persona-it" ng-class="{ 'active': isActive('/','persona-it') }">IT Consultant</a></li>
-            <li><a href="#/codepen" ng-class="{ 'active': isActive('/','codepen') }">Network Engineer</a></li>
             <li><a href="#/persona-director" ng-class="{ 'active': isActive('/','persona-director') }">Director / Manager</a></li>
             <li><a href="#/persona-tech" ng-class="{ 'active': isActive('/','persona-tech') }">Technical Sales</a></li>
             <li><a href="#/persona-engineer" ng-class="{ 'active': isActive('/','persona-engineer') }">General Software Engineer</a></li>
@@ -63,7 +59,7 @@
             <li class="list-header">
                 <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-compass-22px.svg'"></ng-include> User Research
             </li>
-            <li><a href="#/icons" ng-class="{ 'active': isActive('/icons', '') }">Search</a></li>
+            <li><a href="#/search" ng-class="{ 'active': isActive('/search', '') }">Search</a></li>
             <li><a href="#/reserved" ng-class="{ 'active': isActive('/reserved', '') }">Reserved</a></li>
         </ul>
     </section>
