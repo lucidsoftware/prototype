@@ -9,8 +9,8 @@
             <div style="display: inline-block; border-radius: 8px;">
                 <lucid-select ng-model="personaSelected" ng-init="persona = ''" style="display: inline-block; float: left;"  class="condensed" options="['Persona', 'IT Consultant', 'Network Engineer', 'Director / Head of', 'Technical Sales', 'General Software Engineer']"></lucid-select>
                 <lucid-select ng-model="fluencySelected" style="display: inline-block; float: left;"  class="condensed" options="['Fluency', 'Advanced', 'Intermediate', 'Beginner']"></lucid-select>
-                <lucid-select ng-model="orgSelected" style="display: inline-block; float: left;" class="condensed" options="['Org Size', 'Large', 'Medium', 'Small']"></lucid-select>
                 <lucid-select ng-model="subSelected" style="display: inline-block; float: left;" class="condensed" options="['Subscription', 'Free', 'Team', 'Pro', 'Enterprise']"></lucid-select>
+                 <lucid-select ng-model="orgSelected" style="display: inline-block; float: left;" class="condensed" options="['Org Size', 'Large', 'Medium', 'Small']"></lucid-select>
               </div>
                 <button class="lucid-button lucid-blue" style="float: right;" ng-init = "reserve = false" ng-click="reserveModal=true;" >Reserve</button>
         </div>
@@ -134,10 +134,10 @@
                 <h2 style="padding-bottom: 10px; display: inline-block;">Documents</h2><span class="edit" style="color: #2C84B5; float: right;">(Edit)</span>
             </div>
             <div class="documents">
-              <img style="padding-bottom: 10px;" src='img/previews/preview1.png'>
-              <img style="padding-bottom: 10px;" src='img/previews/preview2.png'>
-              <img style="padding-bottom: 10px;" src='img/previews/preview3.png'>
-              <img style="padding-bottom: 10px;" src='img/previews/preview4.png'>
+              <img style="padding-bottom: 10px;" src='img/previews/preview1.png' ng-click="image = 'img/previews/preview1.png'; showImageModal=true;">
+              <img style="padding-bottom: 10px;" src='img/previews/preview2.png' ng-click="image = 'img/previews/preview2.png'; showImageModal=true;">
+              <img style="padding-bottom: 10px;" src='img/previews/preview3.png' ng-click="image = 'img/previews/preview3.png'; showImageModal=true;">
+              <img style="padding-bottom: 10px;" src='img/previews/preview4.png' ng-click="image = 'img/previews/preview4.png'; showImageModal=true;">
             </div>
 
 
@@ -175,6 +175,13 @@
         <textarea ng-model="newNoteText" name="Text1" cols="40" rows="5" style="width: 100%; height: 100px;"></textarea>
         <div style="color:#A5a5a5; padding: 10px 0px;">Product Suggestions</div>
         <textarea ng-model="newNoteText" name="Text1" cols="40" rows="5" style="width: 100%; height: 100px;"></textarea>
+    </div>
+    
+</lucid-modal>
+
+<lucid-modal showmodal="showImageModal" width="800" height="500" title="Image Preview" cancel="Nevermind">
+    <div style="padding: 10px 20px 20px 20px; height: auto; overflow: scroll;">
+        <img src="{{image}}">
     </div>
     
 </lucid-modal>
@@ -287,6 +294,11 @@ cursor: pointer;
 }
 
 span.persona:hover{
+  cursor: pointer;
+
+}
+
+.documents img:hover{
   cursor: pointer;
 
 }

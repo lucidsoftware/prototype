@@ -121,6 +121,7 @@ particleApp.controller('mainController', function($scope, $location, lucidCompon
         $scope.checkedUsers.push(newuser);
     }
 
+
     $scope.goToPersona = function(string){
         if(string == 'IT Consultant'){
             $location.path('/persona-it');
