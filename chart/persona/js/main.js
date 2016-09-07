@@ -121,6 +121,22 @@ particleApp.controller('mainController', function($scope, $location, lucidCompon
         $scope.checkedUsers.push(newuser);
     }
 
+    $scope.goToPersona = function(string){
+        if(string == 'IT Consultant'){
+            $location.path('/persona-it');
+        }else if( string == 'Network Engineer'){
+             $location.path('/persona-network');
+        }else if( string == 'Technical Sales'){
+             $location.path('/persona-tech');
+        }else if( string == 'Director / Head of'){
+             $location.path('/persona-director');
+        }else if( string == 'General Software Engineer'){
+             $location.path('/persona-engineer');
+        }else{
+
+        }
+    }
+
     $scope.reachout = function(groupName){
        console.log($scope.checkedUsers);
        for(var i = 0; i<$scope.checkedUsers.length; i++)
@@ -210,7 +226,7 @@ particleApp.controller('mainController', function($scope, $location, lucidCompon
 $scope.users = [
   {
     "name": "Michael Stuart",
-    "persona": "(Not IT?)",
+    "persona": "IT Consultant",
     "jobTitle": "Business & IT Consultant",
     "previousTool": "Visio",
     "reasonsForSwitch": "Multiple devices, cross-OS, Collaboration",
@@ -232,7 +248,7 @@ $scope.users = [
   },
   {
     "name": "Adamu Ibrahim",
-    "persona": "(Not IT?)",
+    "persona": "IT Consultant",
     "jobTitle": "Systems Analyst",
     "previousTool": "Visio",
     "reasonsForSwitch": "",
@@ -254,7 +270,7 @@ $scope.users = [
   },
   {
     "name": "Aaron Hatton",
-    "persona": "?",
+    "persona": "Technical Sales",
     "jobTitle": "IT specialist",
     "previousTool": "Visio, Powerpoint",
     "reasonsForSwitch": "Collaboration, Used it at previous job, heard at Conference (AutoTask?)",
@@ -320,7 +336,7 @@ $scope.users = [
   },
   {
     "name": "Christopher Devairakkam",
-    "persona": "Generic Software / Analysis",
+    "persona": "General Software Engineer",
     "jobTitle": "Analyst",
     "previousTool": "Visio,Cadpro",
     "reasonsForSwitch": "Free (university), Already available at org",
@@ -342,7 +358,7 @@ $scope.users = [
   },
   {
     "name": "Tony Geistkemper",
-    "persona": "Generic Software / Analysis",
+    "persona": "General Software Engineer",
     "jobTitle": "Managing Director",
     "previousTool": "Visio",
     "reasonsForSwitch": "",
@@ -364,7 +380,7 @@ $scope.users = [
   },
   {
     "name": "Kenny Wong",
-    "persona": "Generic Software / Analysis",
+    "persona": "General Software Engineer",
     "jobTitle": "Senior Software Developer",
     "previousTool": "Visio, Google Charts, Power Point",
     "reasonsForSwitch": "Already available at org",
@@ -386,7 +402,7 @@ $scope.users = [
   },
   {
     "name": "Alexey Shockov",
-    "persona": "Generic Software / Analysis",
+    "persona": "General Software Engineer",
     "jobTitle": "Senior Software Developer",
     "previousTool": "White board, nomnoml UML, MS Visio.",
     "reasonsForSwitch": "",
@@ -408,7 +424,7 @@ $scope.users = [
   },
   {
     "name": "Jeffrey Barney",
-    "persona": "Generic Software / Analysis",
+    "persona": "General Software Engineer",
     "jobTitle": "Engineering Manager",
     "previousTool": "Visio, MindMup",
     "reasonsForSwitch": "Collaboration, exporting, revision history",
@@ -430,7 +446,7 @@ $scope.users = [
   },
   {
     "name": "Leo Funes",
-    "persona": "Generic Software / Analysis",
+    "persona": "General Software Engineer",
     "jobTitle": "Senior Manager Client Solutions",
     "previousTool": "Visio",
     "reasonsForSwitch": "Collaboration, price",
@@ -452,7 +468,7 @@ $scope.users = [
   },
   {
     "name": "Ben Perry",
-    "persona": "Generic Software / Analysis",
+    "persona": "General Software Engineer",
     "jobTitle": "VP of Technology",
     "previousTool": "Visio, Gliffy",
     "reasonsForSwitch": "Collaboration, Cross platform",
