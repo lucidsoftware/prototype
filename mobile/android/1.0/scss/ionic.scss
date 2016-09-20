@@ -44,7 +44,9 @@ $item-icon-font-size: 24px;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
-
+body, body *{
+	cursor: url(../img/tap.png), auto !important;
+}
 // Include all of Ionic
 @import "../lib/ionic/scss/ionic.scss";
 @import "custom.scss";
