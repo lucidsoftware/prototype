@@ -45,8 +45,9 @@ angular.module('lucidCanvas', [])
                 var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
                 var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
 
-                item.metrics.x = event.pageX - canvasX - (item.metrics.width / 2);
-                item.metrics.y = event.pageY - canvasY - (item.metrics.height / 2);
+                //console.log(event.pageX, event.pageY);
+                item.metrics.x = event.x - canvasX - (item.metrics.width / 2);
+                item.metrics.y = event.y - canvasY - (item.metrics.height / 2);
 
                 //console.log('shape', item, event.pageX, event.pageY, 'total: ', event);
 

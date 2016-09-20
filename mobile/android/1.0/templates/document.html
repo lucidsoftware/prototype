@@ -1,12 +1,17 @@
 <ion-view view-title="{{currentDocument.name}}" can-swipe-back="false">
     <ion-nav-buttons side="right">
     <button ng-click="" class="button buttons button-clear header-item"><i class="icon material-icons">content_copy</i></button>
-        <button ng-click="" class="button buttons button-clear header-item"><i class="icon ion-android-more-vertical"></i></button>
+        <button ng-click="" class="button buttons button-clear header-item"><i class="material-icons">more_vert</i></button>
     </ion-nav-buttons>
     <ion-content scroll="false">
         <div class="canvas">
             <ng-include src="'templates/canvas/canvas.html'"></ng-include>
         </div>
+        <div class="bar-light bottom" ng-show="$root.openStyleShape">
+                <i class="icon material-icons" ng-click="$root.openStyleShape = false">close</i>
+                Select a shape to change it's properties
+            </div>
+            <div ng-drag-clone="" class="shape-manager-shape clone" ng-bind-html="clonedData.svg | sanitize"></div>
     </ion-content>
     <div class="ng-hide bottom-up" ng-controller="shapeManagerCtrl" ng-show="$root.openShapeLibrary">
         <div class="small-navigation">
@@ -17,24 +22,21 @@
             </div>
             <ion-content class="fill-height">
                 <ion-list 
-                    ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 0}"
                     ng-drop="true"
-                    ng-drop-success="dropFromCanvas($data, $event, shapegroup);"
-
-                    dnd-list="shapegroup.shapes"
-                    dnd-allowed-types="[shapegroup.custom]"
-                    dnd-horizontal-list="true"
-                    dnd-external-sources="false"
-                    dnd-dragover="dragoverCallback(event, index, external, type)"
-                    dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
-                    dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
+                    ng-drop-success="dropFromCanvas($data, $event, shapegroup);">
                     <div ng-repeat="shapegroup in pinnedShapeGroups" ng-if="shapegroup.pinned">
-                        <ion-item class="item-icon-right" ng-class="{'rotate-icon': shapegroup.open}" ng-click="shapegroup.open = !shapegroup.open">
+                        <ion-item class="item-icon-right" ng-class="{'rotate-icon': !shapegroup.closed}" ng-click="shapegroup.closed = !shapegroup.closed">
                             {{shapegroup.groupname}}
                             <i class="icon ion-ios-arrow-forward"></i>
                         </ion-item>
-                        <div class="slide-toggle" ng-show="shapegroup.open">
-                            <div ng-drag="true" ng-drag-data="shape" ng-drag-success="onDragComplete($data,$event)" ng-center-anchor="true" ng-repeat="shape in shapegroup.shapes" ng-bind-html="shape.svg | sanitize"> </div>
+                        <div class="slide-toggle" ng-show="!shapegroup.closed">
+                            <div class="shape-manager-shape" 
+                                ng-drag="true" 
+                                ng-drag-data="shape" 
+                                ng-drag-success="onDragComplete($data,$event)" 
+                                ng-center-anchor="true" 
+                                ng-repeat="shape in shapegroup.shapes" 
+                                ng-bind-html="shape.svg | sanitize"> </div>
                         </div>
                     </div>
                 </ion-list>
@@ -43,31 +45,80 @@
     </div>
     <div class="ng-hide bottom-up" ng-controller="shapeManagerCtrl" ng-show="$root.openStyleShape && $root.selectedType != 'nothing';">
         <lucid-top-tabs>
-            <lucid-top-tab name="Styles" selected>
+            <lucid-top-tab name="Styles">
                 <ion-content class="fill-height">
                     <ion-list>
-                    stuff
+                    
                     </ion-list>
                 </ion-content>
             </lucid-top-tab>
-            <lucid-top-tab name="Shape">
+            <lucid-top-tab name="Shape" selected>
                 <ion-content class="fill-height">
                     <ion-list>
-                    stuff
+                        <ion-item class="item-icon-right">
+                            Corners
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Border Style
+                            <span class="float-right">Roboto</span>
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Border Weight
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Fill Color
+                            <div class="color-swatch" style="background-color: {{$root.selectedBlock.swatch.text}}"></div>
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
                     </ion-list>
                 </ion-content>
             </lucid-top-tab>
             <lucid-top-tab name="Line">
                 <ion-content class="fill-height">
                     <ion-list>
-                    stuff
+                        <ion-item class="item-icon-right">
+                            Line Style
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Line Shape
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Line Weight
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Line Color
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
                     </ion-list>
                 </ion-content>
             </lucid-top-tab>
             <lucid-top-tab name="Text">
                 <ion-content class="fill-height">
                     <ion-list>
-                    stuff
+                        <ion-item class="item-icon-right">
+                            BOLD ITALIC U
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Font
+                            <span class="float-right">Roboto</span>
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Font Size
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Text Color
+                            <div class="color-swatch" style="background-color: {{$root.selectedBlock.swatch.text}}"></div>
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
                     </ion-list>
                 </ion-content>
             </lucid-top-tab>

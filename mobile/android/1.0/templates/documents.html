@@ -13,9 +13,8 @@
             </div>
             <div class="item-divider padding" ng-if="documents.length>0">Files</div>
             <div class="row">
-                <div class="col-50" ng-repeat="document in documents" ui-sref="app.document({documentID:'{{document.id}}'})">
-                    <img class="full-image" src="img/thumb.jpg">
-                    <ion-item class="item-stable item-icon-right">
+                <div class="col-50 font-zero" ng-repeat="document in documents" ui-sref="app.document({documentID:'{{document.id}}'})">
+                    <img class="full-image" src="img/thumb.jpg"><ion-item class="item-stable item-icon-right">
                         {{document.name}}
                         <i class="icon ion-android-more-vertical" ng-click="$event.stopPropagation(); showDrawer()"></i>
                     </ion-item>

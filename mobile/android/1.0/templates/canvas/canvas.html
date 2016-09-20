@@ -1,20 +1,20 @@
 <div class="page-container">
-    <div ng-drag-clone="">
-            <img ng-src="{{clonedData .link}}" width="100px">
-        </div>
-    <div id="lucid-canvas" ng-drop="true" ng-drop-success="dropToCanvas($data,$event)" ng-click="deselectBlock(); $root.selectedType = 'nothing'" style="background-color:{{$root.currentPage.canvasBG}};" ng-controller="canvasCtrl">
+    
+    <div id="lucid-canvas" 
+        ng-drop="true" 
+        ng-drop-success="dropToCanvas($data, $event)" 
+        ng-click="deselectBlock(); $root.selectedType = 'nothing'" 
+        style="background-color:{{$root.currentPage.canvasBG}};" 
+        ng-controller="canvasCtrl">
         <div class="lucid-canvas-layer" ng-click="editThisBlock(defaultBlock);"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="900" height="690" viewBox="0 0 900 690">
-           
-            
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="900" height="690" viewBox="0 0 900 690"></svg>
         <ul dnd-list="$root.currentPage.blocks" dnd-allowed-types="['custom']" dnd-horizontal-list="true" dnd-external-sources="true" ng-if="$root.currentPage.blocks.length" dnd-drop="dropToCanvas(item, event)" dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
             <!-- START CANVAS BLOCK/SHAPE -->
             <li ng-repeat="block in $root.currentPage.blocks track by $index" 
                 ng-if="block.metrics" 
                 ng-drag="true" 
                 ng-drag-data="block" 
-                ng-drag-success="onDragSuccess($data,$event, block)" 
+                ng-drag-success="onDragSuccess($data, $event, block)" 
                 ng-center-anchor="true" 
                 ng-click="$root.selectedBlock = block; $event.stopPropagation(); $root.selectedType = 'block'" class="lucid-chart-block lucid-animate" 
                 ng-class="{'manage-shapes': $root.manageshapes, 'shrink-block' : $root.selectedBlock == block && $root.mouseInLeftPanel}" 
