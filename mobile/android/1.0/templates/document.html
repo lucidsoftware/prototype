@@ -10,8 +10,8 @@
     </ion-content>
     <div class="ng-hide bottom-up" ng-controller="shapeManagerCtrl" ng-show="$root.openShapeLibrary">
         <div class="small-navigation">
-            <div class="bar-light" ng-click="$root.openShapeLibrary = false">
-                <i class="icon material-icons">close</i>
+            <div class="bar-light" >
+                <i class="icon material-icons" ng-click="$root.openShapeLibrary = false">close</i>
                 Shapes
                 <span class="float-right" ng-click="$event.stopPropagation(); showShapeManager();">Manage</span>
             </div>
