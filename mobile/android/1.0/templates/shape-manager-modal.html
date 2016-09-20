@@ -1,0 +1,33 @@
+<ion-modal-view class="shape-manager">
+    <ion-header-bar class="bar bar-header bar-stable">
+
+        <div class="buttons buttons-left header-item" ng-show="!search.show">
+            <button class="button button-clear button-primary" ng-click="cancel()"><i class="icon material-icons">close</i></button>
+        </div>
+        <h1 class="title" ng-show="!search.show">Manage Shapes</h1>
+        <div class="buttons buttons-right" ng-show="!search.show" >
+            <span class="right-buttons">
+                <button class="button button-clear button-primary" ng-click="search.show = true"><i class="icon material-icons">search</i></button>
+            </span>
+        </div>
+        <div class="buttons buttons-left header-item" ng-show="search.show">
+            <button class="button button-clear button-primary" ng-click="$root.filter = ''; search.show = false; "><i class="material-icons">arrow_back</i></button>
+        </div>
+        <input class="header-search" select-on-load ng-model="$root.filter" placeholder="Search" ng-if="search.show">
+    </ion-header-bar>
+    <ion-content class="fill-height">
+        <ion-list ng-controller="shapeManagerCtrl">
+            <div ng-repeat="shapegroup in pinnedShapeGroups | filter: $root.filter">
+                <ion-item class="item-icon-left item-icon-right" ng-class="{'rotate-icon': shapegroup.open}" ng-click="shapegroup.open = !shapegroup.open">
+                <i class="icon material-icons" ng-click="$event.stopPropagation(); shapegroup.pinned = !shapegroup.pinned" ng-if="shapegroup.pinned">check_circle</i>
+                <i class="icon material-icons" ng-click="$event.stopPropagation(); shapegroup.pinned = !shapegroup.pinned" ng-if="!shapegroup.pinned">radio_button_unchecked</i>
+                    {{shapegroup.groupname}}
+                    <i class="icon ion-ios-arrow-forward"></i>
+                </ion-item>
+                <div class="slide-toggle" ng-show="shapegroup.open">
+                    <div ng-repeat="shape in shapegroup.shapes" ng-bind-html="shape.svg | sanitize"> </div>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

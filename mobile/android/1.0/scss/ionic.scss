@@ -1,0 +1,50 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:*/
+
+$light:                           #fff !default;
+$stable:                          #212C35 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #353C42 !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #000 !default;
+
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+$font-family-base: "Roboto", sans-serif !important;
+$lucid-orange: #FC8D2A;
+$postitive: #353C42;
+$base-color: $stable !default;
+$base-background-color: #353C42;
+
+$bar-stable-text: $stable;
+$bar-stable-text: $lucid-orange;
+$bar-stable-border: $stable;
+$bar-height: 56px;
+
+$item-stable-bg: #4A4F53;
+$item-stable-text: #fff;
+$item-stable-border: #353C42;
+$item-font-size: 14px;
+$item-padding: 15px;
+$item-stable-active-bg: $base-background-color;
+
+$item-divider-bg: $base-background-color;
+$item-divider-color: #fff;
+$item-divider-border: $base-background-color; 
+
+$button-color: $stable;
+$item-icon-font-size: 24px;
+// $item-icon-fill-font-size: 24px;
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "../lib/ionic/scss/ionic.scss";
+@import "custom.scss";
