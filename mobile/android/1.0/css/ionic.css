@@ -5723,7 +5723,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   .item .item-content.active.item-light,
   .item .item-content.activated.item-light {
     border-color: #ccc;
-    background-color: #fafafa; }
+    background-color: #fff; }
     .item.active.item-light.item-complex > .item-content,
     .item.activated.item-light.item-complex > .item-content,
     .item-complex.active .item-content.item-light.item-complex > .item-content,
@@ -5731,7 +5731,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
     .item .item-content.active.item-light.item-complex > .item-content,
     .item .item-content.activated.item-light.item-complex > .item-content {
       border-color: #ccc;
-      background-color: #fafafa; }
+      background-color: #fff; }
   .item.active.item-stable,
   .item.activated.item-stable,
   .item-complex.active .item-content.item-stable,
@@ -5952,10 +5952,10 @@ a.item-content {
   color: #444; }
   .item-complex.item-light > .item-content.active, .item-complex.item-light > .item-content:active {
     border-color: #ccc;
-    background-color: #fafafa; }
+    background-color: #fff; }
     .item-complex.item-light > .item-content.active.item-complex > .item-content, .item-complex.item-light > .item-content:active.item-complex > .item-content {
       border-color: #ccc;
-      background-color: #fafafa; }
+      background-color: #fff; }
 .item-complex.item-stable > .item-content {
   border-color: #353C42;
   background-color: #4A4F53;
@@ -9903,3 +9903,25 @@ input.header-search {
   display: inline-block; }
   .shape-manager-shape svg {
     transform: scale(2); }
+
+.menu-content.pane.menu-animated {
+  transform: none !important;
+  z-index: -1; }
+
+.menu.menu-left {
+  left: -275px;
+  transition: left .25s ease-in-out;
+  z-index: 10000; }
+  .menu.menu-left .icon {
+    color: #77818C; }
+  .menu.menu-left .item {
+    border: none; }
+  .menu.menu-left .item.active {
+    color: #FC8D2A; }
+    .menu.menu-left .item.active > .item-content {
+      background: #fff; }
+    .menu.menu-left .item.active .icon {
+      color: #FC8D2A; }
+
+.menu-open .menu.menu-left {
+  left: 0; }

@@ -415,3 +415,37 @@ input.header-search {
         transform: scale(2);
     }
 }
+
+//MENU
+.menu-content.pane.menu-animated {
+    transform: none !important;
+    z-index: -1;
+}
+
+.menu.menu-left {
+    left: -275px;
+    transition: left .25s ease-in-out;
+    z-index: 10000;
+    .icon {
+        color: #77818C;
+    }
+    .item{
+        border:none;
+    }
+    .item.active {
+        color: $lucid-orange;
+        >.item-content {
+            background: #fff;
+        }
+        .icon {
+            color: $lucid-orange;
+        }
+    }
+    // .divider{
+    //     border-top:1px solid blue !important;
+    // }
+}
+
+.menu-open .menu.menu-left {
+    left: 0;
+}
