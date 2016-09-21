@@ -1,9 +1,9 @@
 <ion-view view-title="{{folderName}}">
     <ion-content>
         <ion-list>
-            <div class="item-divider padding" ng-if="folders.length>0">Folders</div>
+            <div class="item-divider padding" ng-if="filteredFolders.length>0">Folders</div>
             <div class="row">
-                <div class="col-50" ng-repeat="folder in folders = (folders | filter: filter)">
+                <div class="col-50" ng-repeat="folder in filteredFolders = (folders | filter: {insideFolder:folderID, group:filter})">
                     <ion-item class="item-stable item-icon-left item-icon-right" ui-sref="app.folder({folderID:'{{folder.id}}'})">
                         <i class="icon material-icons" ng-if="!folder.shared">folder</i>
                         <i class="icon material-icons" ng-if="folder.shared">folder_shared</i>{{folder.name}}
@@ -11,10 +11,10 @@
                     </ion-item>
                 </div>
             </div>
-            <div class="item-divider padding" ng-if="documents.length>0">Files</div>
+            <div class="item-divider padding" ng-if="FilteredDocuments.length>0">Files</div>
             <div class="row">
-                <div class="col-50" ng-repeat="document in documents = (documents | filter: filter)" ui-sref="app.document({documentID:'{{document.id}}'})">
-                    <img class="full-image" src="img/thumb.jpg"><ion-item class="item-stable item-icon-right">
+                <div class="col-50" ng-repeat="document in FilteredDocuments = (documents | filter: {insideFolder:folderID, group:filter})" ng-click="openDocument(document.id)">
+                    <img class="full-image" ng-src="{{document.thumb}}"><ion-item class="item-stable item-icon-right">
                         {{document.name}}
                         <i class="icon ion-android-more-vertical" ng-click="$event.stopPropagation(); showDrawer()"></i>
                     </ion-item>
@@ -22,4 +22,7 @@
             </div>
         </ion-list>
     </ion-content>
+    <ion-footer-bar align-title="left" class="bar-stable">
+    10 Remaining documents
+</ion-footer-bar>
 </ion-view>

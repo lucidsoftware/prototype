@@ -1,13 +1,19 @@
-<ion-view view-title="{{currentDocument.name}}" can-swipe-back="false">
-    <ion-nav-buttons side="right">
-    <button ng-click="" class="button buttons button-clear header-item"><i class="icon material-icons">content_copy</i></button>
-        <button ng-click="" class="button buttons button-clear header-item"><i class="material-icons">more_vert</i></button>
-    </ion-nav-buttons>
+<ion-modal-view class="shape-manager">
+    <ion-header-bar class="bar bar-header bar-stable">
+        <div class="buttons buttons-left header-item">
+            <button class="button button-clear button-primary" ng-click="close()"><i class="material-icons">arrow_back</i></button>
+        </div>
+        <h1 class="title">{{currentDocument.name}}</h1>
+        <div class="buttons">
+        <button ng-click="" class="button button-clear header-item"><i class="icon material-icons">content_copy</i></button>
+        <button ng-click="" class="button button-clear header-item"><i class="material-icons">more_vert</i></button>
+    </div>
+    </ion-header-bar>
     <ion-content scroll="false">
         <div class="canvas">
             <ng-include src="'templates/canvas/canvas.html'"></ng-include>
         </div>
-        <div class="bar-light bottom" ng-show="$root.openStyleShape">
+        <div class="bar-light bottom ng-hide" ng-show="$root.openStyleShape">
                 <i class="icon material-icons" ng-click="$root.openStyleShape = false">close</i>
                 Select a shape to change it's properties
             </div>
@@ -141,4 +147,4 @@
             <button class="button"><i class="icon material-icons">add</i></button>
         </div>
     </ion-footer-bar>
-</ion-view>
+</ion-modal-view>

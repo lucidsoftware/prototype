@@ -1,0 +1,15 @@
+<div class="lucid-fab-wrap" ng-controller="fabCtrl">
+    <ul class="mini-fabs">
+        <li>
+            <label>New Folder</label>
+            <button class="lucid-fab mini one" ng-show="openFab">
+                <i class="material-icons">create_new_folder</i>
+            </button>
+        </li>
+    </ul>
+    <button class="lucid-fab" ng-click="clickFab()" ng-class="{'scale-fab': scaleFab}">
+        <i class="icon material-icons" ng-show="!openFab">add</i>
+        <i class="icon material-icons" ng-show="openFab">edit</i>
+    </button>
+    <div class="action-sheet-backdrop" ng-show="openFab" ng-class="{'active': openFab}" ng-click="openFab = false"></div>
+</div>

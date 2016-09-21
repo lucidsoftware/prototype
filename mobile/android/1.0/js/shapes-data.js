@@ -153,7 +153,7 @@ angular.module('lucidShapesData', [])
                     "height": 75
                 }
             }],
-            "pinned": false
+            "pinned": true
 
         }, {
             "id": 3,
@@ -250,7 +250,7 @@ angular.module('lucidShapesData', [])
                 "url": "assets/icon-shapes-rectangle.svg",
                 "svg": '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M26 14c0 6.627-5.373 12-12 12S2 20.627 2 14 7.373 2 14 2s12 5.373 12 12z" stroke="#000" stroke-width="2" fill="#fff"></path><path d="M2 14h24M14 2v24" stroke="#000" stroke-width="2" fill="none"></path></svg>'
             }],
-            "pinned": false,
+            "pinned": true,
 
         }, {
             "id": 4,
@@ -282,7 +282,7 @@ angular.module('lucidShapesData', [])
                 "url": "assets/icon-shapes-triangle.svg",
                 "svg": '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M21.5 5A4.5 4.5 0 0 1 26 9.5v9a4.5 4.5 0 0 1-4.5 4.5h-15A4.5 4.5 0 0 1 2 18.5v-9A4.5 4.5 0 0 1 6.5 5z" stroke="#000" stroke-width="2" fill="none"></path></svg>'
             }],
-            "pinned": true,
+            "pinned": false,
 
         }, {
             "id": 5,

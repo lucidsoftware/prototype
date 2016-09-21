@@ -21,29 +21,13 @@ angular.module('lucidMobile', ['ionic', 'lucidMobile.controllers', 'lucidMobile.
         });
     }])
     .config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider', function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
-      ionic.Platform.setPlatform('android');
+        ionic.Platform.setPlatform('android');
         $stateProvider
             .state('app', {
                 url: '/app',
                 abstract: true,
                 templateUrl: 'templates/menu.html',
-                controller: 'AppCtrl'
-            })
-            .state('app.search', {
-                url: '/search',
-                views: {
-                    'menuContent': {
-                        templateUrl: 'templates/search.html'
-                    }
-                }
-            })
-            .state('app.browse', {
-                url: '/browse',
-                views: {
-                    'menuContent': {
-                        templateUrl: 'templates/browse.html'
-                    }
-                }
+                controller: 'appCtrl'
             })
             .state('app.documents', {
                 url: '/documents/:filter',
@@ -60,15 +44,6 @@ angular.module('lucidMobile', ['ionic', 'lucidMobile.controllers', 'lucidMobile.
                     'menuContent': {
                         templateUrl: 'templates/documents.html',
                         controller: 'documentsCtrl'
-                    }
-                }
-            })
-            .state('app.document', {
-                url: '/document/:documentID',
-                views: {
-                    'menuContent': {
-                        templateUrl: 'templates/document.html',
-                        controller: 'documentCtrl'
                     }
                 }
             });

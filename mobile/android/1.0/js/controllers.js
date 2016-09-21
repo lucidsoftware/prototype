@@ -1,5 +1,5 @@
 angular.module('lucidMobile.controllers', [])
-    .controller('AppCtrl', ['$scope', '$ionicModal', '$location', function($scope, $ionicModal, $location) {
+    .controller('appCtrl', ['$scope', '$location', function($scope, $location) {
         //to set active tab in menu
         $scope.getClass = function(path) {
             return ($location.path() === path) ? 'active' : '';
@@ -11,47 +11,22 @@ angular.module('lucidMobile.controllers', [])
         //$scope.$on('$ionicView.enter', function(e) {
         //});
 
-        // Form data for the login modal
-        $scope.loginData = {};
-
-        // Create the login modal that we will use later
-        $ionicModal.fromTemplateUrl('templates/login.html', {
-            scope: $scope
-        }).then(function(modal) {
-            $scope.modal = modal;
-        });
-
-        // Triggered in the login modal to close it
-        $scope.closeLogin = function() {
-            $scope.modal.hide();
-        };
-
-        // Open the login modal
-        $scope.login = function() {
-            $scope.modal.show();
-        };
-
-        // Perform the login action when the user submits the login form
-        $scope.doLogin = function() {
-            console.log('Doing login', $scope.loginData);
-            $scope.closeLogin();
-
-        };
-
 
     }])
     .controller('documentsCtrl', ['$scope', 'documents', 'folders', '$stateParams', '$ionicActionSheet',
         function($scope, documents, folders, $stateParams, $ionicActionSheet) {
+            $scope.folderID = $stateParams.folderID || 0;
+            console.log($scope.folderID);
+            $scope.folders = folders.all();
+            $scope.documents = documents.all();
+
             if ($stateParams.folderID) {
-                //console.log(folders.getByID($stateParams.folderID));
                 $scope.folderName = folders.getByID($stateParams.folderID).name;
-                $scope.folders = folders.getFromFolder($stateParams.folderID);
-                $scope.documents = documents.getFromFolder($stateParams.folderID);
             } else {
-                $scope.filter = $stateParams.filter;
+                if ($stateParams.filter) {
+                    $scope.filter = $stateParams.filter;
+                }
                 $scope.folderName = $stateParams.filter || 'My Documents';
-                $scope.documents = documents.getFromFolder(0);
-                $scope.folders = folders.getFromFolder(0);
             }
             $scope.showDrawer = function() {
 
@@ -76,17 +51,15 @@ angular.module('lucidMobile.controllers', [])
                         return true;
                     }
                 });
-
-                // For example's sake, hide the sheet after two seconds
+            };
+            $scope.openDocument = function(documentID) {
+                //console.log('manage shapes');
+                documents.openDocument(documentID);
 
             };
 
         }
     ])
-    .controller('documentCtrl', ['$scope', '$stateParams', 'documents', '$rootScope', function($scope, $stateParams, documents, $rootScope) {
-        $scope.currentDocument = documents.getByID($stateParams.documentID);
-        $rootScope.currentPage = documents.getByID($stateParams.documentID).pages[0];
-    }])
     .controller('shapeManagerCtrl', ['$scope', 'lucidShapesData', '$rootScope', '$ionicModal', function($scope, lucidShapesData, $rootScope, $ionicModal) {
         $scope.pinnedShapeGroups = lucidShapesData.lucidShapeGroups();
         $scope.search = {};
@@ -100,15 +73,32 @@ angular.module('lucidMobile.controllers', [])
             }).then(function(modal) {
                 $scope.modal = modal;
                 $scope.modal.show();
-
-
-
-
-                $scope.cancel = function() {
+                $scope.close = function() {
                     $scope.modal.hide().then(function() {
                         $scope.modal.remove();
                     });
                 };
             });
         };
-    }]);
+    }])
+    .controller('fabCtrl', ['$scope', 'documents', '$stateParams', '$state',
+        function($scope, documents, $stateParams) {
+            $scope.clickFab = function() {
+                if ($scope.openFab) {
+                    $scope.createDocument();
+                    $scope.openFab = false;
+                } else {
+
+                    $scope.openFab = true;
+                }
+            };
+            $scope.createDocument = function() {
+                console.log('doc create');
+                //insert folderID into create doc
+                var documentID = documents.all().length +1;
+                documents.create(documentID, $stateParams.folderID);
+                documents.openDocument(documentID);
+                console.log(documents.all());
+            };
+        }
+    ]);

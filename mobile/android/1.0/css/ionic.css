@@ -9598,19 +9598,21 @@ a.button {
   right: 0; }
 
 .row {
-  padding: 0; }
+  padding: 0;
+  flex-wrap: wrap; }
 
 .col-50 {
   padding: 8px; }
-  .col-50:first-child {
+  .col-50:nth-child(odd) {
     padding-right: 4px; }
-  .col-50:last-child {
+  .col-50:nth-child(even) {
     padding-left: 4px; }
   .col-50 .item.item-stable {
     margin-top: -7px; }
 
 .action-sheet-has-icons .icon {
-  margin: 8px 0; }
+  margin: 8px 0;
+  color: #77818C; }
 
 .bar-footer .col-20 .button {
   width: 100%; }
@@ -9945,3 +9947,75 @@ input.header-search {
   background-color: #D6D5D5;
   padding: 0px;
   margin: 8px 0; }
+
+.lucid-fab-wrap {
+  position: fixed;
+  bottom: 32px;
+  right: 16px;
+  z-index: 10; }
+
+.lucid-fab {
+  outline: none;
+  border: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #FC8D2A;
+  box-sizing: border-box;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  z-index: 12;
+  transition: .25s ease-in-out all; }
+  .lucid-fab.scale-fab {
+    transform: scale(0.01); }
+  .lucid-fab i {
+    color: #fff;
+    z-index: 1;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    transition: .25s ease-in-out all; }
+    .lucid-fab i.ng-hide {
+      opacity: 0;
+      transform: rotateZ(90deg); }
+      .lucid-fab i.ng-hide.ng-hide-add {
+        transform: rotateZ(-90deg); }
+  .lucid-fab:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #FC8D2A;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: -1; }
+  .lucid-fab.activated:before {
+    transition: .2s ease-in-out all;
+    content: '';
+    background: #fc9a43;
+    width: 56px;
+    height: 56px;
+    top: 0;
+    left: 0; }
+  .lucid-fab.mini {
+    width: 40px;
+    background: #fafafa;
+    transition: all .25s ease-in-out; }
+    .lucid-fab.mini:before {
+      background: #fafafa; }
+    .lucid-fab.mini.activated:before {
+      background: #ededed; }
+    .lucid-fab.mini i {
+      color: #77818C;
+      top: 8px;
+      left: 8px; }
+    .lucid-fab.mini.one {
+      height: 40px;
+      top: -100px; }
+    .lucid-fab.mini.ng-hide {
+      top: -28px;
+      right: 8px; }

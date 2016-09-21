@@ -1,20 +1,22 @@
-.bar.bar-stable .title:first-letter{
- text-transform: capitalize;
+.bar.bar-stable .title:first-letter {
+    text-transform: capitalize;
 }
+
 .col-50 .item-icon-right .icon {
     right: 0;
 }
 
 .row {
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .col-50 {
     padding: 8px;
-    &:first-child {
+    &:nth-child(odd) {
         padding-right: 4px;
     }
-    &:last-child {
+    &:nth-child(even){
         padding-left: 4px;
     }
     .item.item-stable {
@@ -24,6 +26,7 @@
 
 .action-sheet-has-icons .icon {
     margin: 8px 0;
+    color: #77818C;
 }
 
 .bar-footer .col-20 {
@@ -467,11 +470,101 @@ input.header-search {
     .item-icon-left .icon {
         left: 16px;
     }
-    .item-divider{
-        height:1px;
+    .item-divider {
+        height: 1px;
         min-height: 0;
         background-color: #D6D5D5;
-        padding:0px;
+        padding: 0px;
         margin: 8px 0;
+    }
+}
+
+.lucid-fab-wrap {
+    position: fixed;
+    bottom: 32px;
+    right: 16px;
+    z-index: 10;
+}
+
+.lucid-fab {
+    outline: none;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: $lucid-orange;
+    box-sizing: border-box;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .9);
+    overflow: hidden;
+    z-index: 12;
+    transition: .25s ease-in-out all;
+    &.scale-fab{
+        transform: scale(.01);
+        // transform-origin: center;
+    }
+    i {
+        color: #fff;
+        z-index: 1;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        transition: .25s ease-in-out all;
+        &.ng-hide {
+            opacity: 0;
+            transform: rotateZ(90deg);
+            &.ng-hide-add {
+                transform: rotateZ(-90deg);
+            }
+        }
+    }
+    //ripple - kind of
+    &:before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $lucid-orange;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        z-index: -1;
+    }
+    &.activated {
+        &:before {
+            transition: .2s ease-in-out all;
+            content: '';
+            background: lighten($lucid-orange, 5%);
+            width: 56px;
+            height: 56px;
+            top: 0;
+            left: 0;
+        }
+    }
+    &.mini {
+        width: 40px;
+        background: #fafafa;
+        transition: all .25s ease-in-out;
+        &:before {
+            background: #fafafa;
+        }
+        &.activated:before {
+            background: darken(#fafafa, 5%);
+        }
+        i {
+            color: #77818C;
+            top: 8px;
+            left: 8px;
+        }
+        &.one {
+            height: 40px;
+            top: -100px;
+        }
+        &.ng-hide {
+            top: -28px;
+            right: 8px;
+        }
     }
 }
