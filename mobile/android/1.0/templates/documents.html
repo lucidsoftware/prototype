@@ -3,7 +3,7 @@
         <ion-list>
             <div class="item-divider padding" ng-if="folders.length>0">Folders</div>
             <div class="row">
-                <div class="col-50" ng-repeat="folder in folders">
+                <div class="col-50" ng-repeat="folder in folders = (folders | filter: filter)">
                     <ion-item class="item-stable item-icon-left item-icon-right" ui-sref="app.folder({folderID:'{{folder.id}}'})">
                         <i class="icon material-icons" ng-if="!folder.shared">folder</i>
                         <i class="icon material-icons" ng-if="folder.shared">folder_shared</i>{{folder.name}}
@@ -13,7 +13,7 @@
             </div>
             <div class="item-divider padding" ng-if="documents.length>0">Files</div>
             <div class="row">
-                <div class="col-50 font-zero" ng-repeat="document in documents" ui-sref="app.document({documentID:'{{document.id}}'})">
+                <div class="col-50" ng-repeat="document in documents = (documents | filter: filter)" ui-sref="app.document({documentID:'{{document.id}}'})">
                     <img class="full-image" src="img/thumb.jpg"><ion-item class="item-stable item-icon-right">
                         {{document.name}}
                         <i class="icon ion-android-more-vertical" ng-click="$event.stopPropagation(); showDrawer()"></i>

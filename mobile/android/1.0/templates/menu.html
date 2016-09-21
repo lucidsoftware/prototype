@@ -16,16 +16,16 @@
         </ion-header-bar>
         <ion-content>
             <ion-list>
-                <ion-item class="item-icon-left active" menu-close href="#/app/documents">
+                <ion-item class="item-icon-left" menu-close href="#/app/documents/" ng-class="getClass('/app/documents/')">
                     <i class="icon material-icons">folder</i>My Documents
                 </ion-item>
-                <ion-item class="item-icon-left" menu-close href="#/app/documents">
+                <ion-item class="item-icon-left" menu-close href="#/app/documents/shared" ng-class="getClass('/app/documents/shared')">
                     <i class="icon material-icons">folder_shared</i>Shared with me
                 </ion-item>
-                <ion-item class="item-icon-left" menu-close href="#/app/documents">
+                <ion-item class="item-icon-left" menu-close href="#/app/documents/recent" ng-class="getClass('/app/documents/recent')">
                     <i class="icon material-icons">access_time</i>Recent
                 </ion-item>
-                <div class="divider padding"></div>
+                <div class="item-divider"></div>
                 <ion-item class="item-icon-left" menu-close href="#/app/documents">
                     <i class="icon material-icons">account_circle</i>My Account
                 </ion-item>

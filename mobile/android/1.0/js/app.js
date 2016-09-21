@@ -46,7 +46,7 @@ angular.module('lucidMobile', ['ionic', 'lucidMobile.controllers', 'lucidMobile.
                 }
             })
             .state('app.documents', {
-                url: '/documents',
+                url: '/documents/:filter',
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/documents.html',
@@ -73,7 +73,7 @@ angular.module('lucidMobile', ['ionic', 'lucidMobile.controllers', 'lucidMobile.
                 }
             });
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/documents');
+        $urlRouterProvider.otherwise('/app/documents/');
         $sceDelegateProvider.resourceUrlWhitelist([
             // Allow same origin resource loads.
             'self',

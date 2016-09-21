@@ -5612,7 +5612,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   z-index: 2;
   display: block;
   margin: -1px;
-  padding: 15px;
+  padding: 14px;
   border-width: 1px;
   border-style: solid;
   font-size: 14px; }
@@ -5649,12 +5649,12 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
     display: -ms-flexbox;
     display: flex;
     position: absolute;
-    top: 15px;
-    right: 30px; }
+    top: 14px;
+    right: 28px; }
   .item.item-button-right .badge {
-    right: 65px; }
+    right: 63px; }
   .item.item-divider .badge {
-    top: 8px; }
+    top: 7px; }
   .item .badge + .badge {
     margin-right: 5px; }
   .item.item-light {
@@ -5905,7 +5905,7 @@ button.item.item-complex {
 .item-radio .item-content {
   position: relative;
   z-index: 2;
-  padding: 15px 45px 15px 15px;
+  padding: 14px 42px 14px 14px;
   border: none;
   background-color: #fff; }
 
@@ -6070,24 +6070,24 @@ a.item-content {
   font-size: 28px; }
 
 .item-icon-left {
-  padding-left: 50px; }
+  padding-left: 47px; }
   .item-icon-left .icon {
     left: 10px; }
 
 .item-complex.item-icon-left {
   padding-left: 0; }
   .item-complex.item-icon-left .item-content {
-    padding-left: 50px; }
+    padding-left: 47px; }
 
 .item-icon-right {
-  padding-right: 50px; }
+  padding-right: 47px; }
   .item-icon-right .icon {
     right: 10px; }
 
 .item-complex.item-icon-right {
   padding-right: 0; }
   .item-complex.item-icon-right .item-content {
-    padding-right: 50px; }
+    padding-right: 47px; }
 
 .item-icon-left.item-icon-right .icon:first-child {
   right: auto; }
@@ -6102,10 +6102,10 @@ a.item-content {
   font-size: 16px; }
 
 .item-icon-left .icon-accessory {
-  left: 3px; }
+  left: 2px; }
 
 .item-icon-right .icon-accessory {
-  right: 3px; }
+  right: 2px; }
 
 /**
  * Item Button
@@ -6113,7 +6113,7 @@ a.item-content {
  * An item button is a child button inside an .item (not the entire .item)
  */
 .item-button-left {
-  padding-left: 68px; }
+  padding-left: 63px; }
 
 .item-button-left > .button,
 .item-button-left .item-content > .button {
@@ -6129,7 +6129,7 @@ a.item-content {
   -moz-align-items: center;
   align-items: center;
   position: absolute;
-  top: 8px;
+  top: 7px;
   left: 10px;
   min-width: 26px;
   min-height: 26px;
@@ -6151,7 +6151,7 @@ a.item-content {
 .item-button-right,
 a.item.item-button-right,
 button.item.item-button-right {
-  padding-right: 75px; }
+  padding-right: 70px; }
 
 .item-button-right > .button,
 .item-button-right .item-content > .button,
@@ -6169,8 +6169,8 @@ button.item.item-button-right {
   -moz-align-items: center;
   align-items: center;
   position: absolute;
-  top: 8px;
-  right: 15px;
+  top: 7px;
+  right: 14px;
   min-width: 26px;
   min-height: 26px;
   font-size: 18px;
@@ -6202,8 +6202,8 @@ button.item.item-button-right {
 .item-avatar .item-content,
 .item-avatar-left,
 .item-avatar-left .item-content {
-  padding-left: 70px;
-  min-height: 70px; }
+  padding-left: 68px;
+  min-height: 68px; }
   .item-avatar > img:first-child,
   .item-avatar .item-image,
   .item-avatar .item-content > img:first-child,
@@ -6213,8 +6213,8 @@ button.item.item-button-right {
   .item-avatar-left .item-content > img:first-child,
   .item-avatar-left .item-content .item-image {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 14px;
+    left: 14px;
     max-width: 40px;
     max-height: 40px;
     width: 100%;
@@ -6223,15 +6223,15 @@ button.item.item-button-right {
 
 .item-avatar-right,
 .item-avatar-right .item-content {
-  padding-right: 70px;
-  min-height: 70px; }
+  padding-right: 68px;
+  min-height: 68px; }
   .item-avatar-right > img:first-child,
   .item-avatar-right .item-image,
   .item-avatar-right .item-content > img:first-child,
   .item-avatar-right .item-content .item-image {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 14px;
+    right: 14px;
     max-width: 40px;
     max-height: 40px;
     width: 100%;
@@ -6240,8 +6240,8 @@ button.item.item-button-right {
 
 .item-thumbnail-left,
 .item-thumbnail-left .item-content {
-  padding-top: 7.5px;
-  padding-left: 105px;
+  padding-top: 7px;
+  padding-left: 104px;
   min-height: 100px; }
   .item-thumbnail-left > img:first-child,
   .item-thumbnail-left .item-image,
@@ -6263,8 +6263,8 @@ button.item.item-button-right {
 
 .item-thumbnail-right,
 .item-thumbnail-right .item-content {
-  padding-top: 7.5px;
-  padding-right: 105px;
+  padding-top: 7px;
+  padding-right: 104px;
   min-height: 100px; }
   .item-thumbnail-right > img:first-child,
   .item-thumbnail-right .item-image,
@@ -6292,16 +6292,16 @@ button.item.item-button-right {
 
 .item-body {
   overflow: auto;
-  padding: 15px;
+  padding: 14px;
   text-overflow: inherit;
   white-space: normal; }
   .item-body h1, .item-body h2, .item-body h3, .item-body h4, .item-body h5, .item-body h6, .item-body p {
-    margin-top: 15px;
-    margin-bottom: 15px; }
+    margin-top: 14px;
+    margin-bottom: 14px; }
 
 .item-divider {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   min-height: 30px;
   background-color: #353C42;
   color: #fff;
@@ -7495,7 +7495,7 @@ textarea {
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 10px; }
+  padding: 9.3333333333px; }
 
 .item-input-wrapper {
   display: -webkit-box;
@@ -7528,7 +7528,7 @@ textarea {
   line-height: 18px; }
 
 .item-input-wrapper ~ .button {
-  margin-left: 10px; }
+  margin-left: 9.3333333333px; }
 
 .input-label {
   display: table;
@@ -7877,21 +7877,21 @@ input:checked + .checkbox-icon:after {
   opacity: 1; }
 
 .item-checkbox {
-  padding-left: 58px; }
+  padding-left: 56px; }
   .item-checkbox.active {
     box-shadow: none; }
 
 .item-checkbox .checkbox {
   position: absolute;
   top: 50%;
-  right: 7.5px;
-  left: 7.5px;
+  right: 7px;
+  left: 7px;
   z-index: 3;
   margin-top: -21px; }
 
 .item-checkbox.item-checkbox-right {
-  padding-right: 58px;
-  padding-left: 15px; }
+  padding-right: 56px;
+  padding-left: 14px; }
 
 .item-checkbox-right .checkbox input,
 .item-checkbox-right .checkbox-icon {
@@ -8004,15 +8004,15 @@ input:checked + .checkbox-icon:after {
 
 .item-toggle,
 .item-toggle.item-complex .item-content {
-  padding-right: 96px; }
+  padding-right: 93px; }
 
 .item-toggle.item-complex {
   padding-right: 0; }
 
 .item-toggle .toggle {
   position: absolute;
-  top: 9.5px;
-  right: 15px;
+  top: 9px;
+  right: 14px;
   z-index: 3; }
 
 .toggle input:disabled + .track {
@@ -8085,7 +8085,7 @@ input:checked + .checkbox-icon:after {
 
 .item-radio .item-content {
   /* give some room to the right for the checkmark icon */
-  padding-right: 60px; }
+  padding-right: 56px; }
 
 .item-radio .radio-icon {
   /* checkmark icon will be hidden by default */
@@ -8094,7 +8094,7 @@ input:checked + .checkbox-icon:after {
   right: 0;
   z-index: 3;
   visibility: hidden;
-  padding: 13px;
+  padding: 12px;
   height: 100%;
   font-size: 24px; }
 
@@ -8293,7 +8293,7 @@ input:checked + .checkbox-icon:after {
     top: 0;
     bottom: 0;
     right: 0;
-    padding: 0 45px 0 15px;
+    padding: 0 42px 0 14px;
     max-width: 65%;
     border: none;
     background: #fff;
@@ -8311,7 +8311,7 @@ input:checked + .checkbox-icon:after {
   .item-select:after {
     position: absolute;
     top: 50%;
-    right: 15px;
+    right: 14px;
     margin-top: -3px;
     width: 0;
     height: 0;
@@ -9591,6 +9591,9 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.bar.bar-stable .title {
+  text-transform: capitalize; }
+
 .col-50 .item-icon-right .icon {
   right: 0; }
 
@@ -9906,7 +9909,8 @@ input.header-search {
 
 .menu-content.pane.menu-animated {
   transform: none !important;
-  z-index: -1; }
+  z-index: -1;
+  transition: opacity .25s ease-in-out; }
 
 .menu.menu-left {
   left: -275px;
@@ -9923,5 +9927,21 @@ input.header-search {
     .menu.menu-left .item.active .icon {
       color: #FC8D2A; }
 
+.pane.view {
+  background: #212C35; }
+
+.menu-open .menu-content.pane.menu-animated {
+  opacity: .7; }
 .menu-open .menu.menu-left {
   left: 0; }
+
+.menu .item-complex.item-icon-left .item-content {
+  padding-left: 72px; }
+.menu .item-icon-left .icon {
+  left: 16px; }
+.menu .item-divider {
+  height: 1px;
+  min-height: 0;
+  background-color: #D6D5D5;
+  padding: 0px;
+  margin: 8px 0; }

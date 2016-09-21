@@ -1,6 +1,9 @@
 angular.module('lucidMobile.controllers', [])
-    .controller('AppCtrl', ['$scope', '$ionicModal', '$timeout', function($scope, $ionicModal, $timeout) {
-
+    .controller('AppCtrl', ['$scope', '$ionicModal', '$location', function($scope, $ionicModal, $location) {
+        //to set active tab in menu
+        $scope.getClass = function(path) {
+            return ($location.path() === path) ? 'active' : '';
+        };
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
         // To listen for when this page is active (for example, to refresh data),
@@ -31,12 +34,11 @@ angular.module('lucidMobile.controllers', [])
         // Perform the login action when the user submits the login form
         $scope.doLogin = function() {
             console.log('Doing login', $scope.loginData);
-            // Simulate a login delay. Remove this and replace with your login
-            // code if using a login system
-            $timeout(function() {
-                $scope.closeLogin();
-            }, 1000);
+            $scope.closeLogin();
+
         };
+
+
     }])
     .controller('documentsCtrl', ['$scope', 'documents', 'folders', '$stateParams', '$ionicActionSheet',
         function($scope, documents, folders, $stateParams, $ionicActionSheet) {
@@ -46,7 +48,8 @@ angular.module('lucidMobile.controllers', [])
                 $scope.folders = folders.getFromFolder($stateParams.folderID);
                 $scope.documents = documents.getFromFolder($stateParams.folderID);
             } else {
-                $scope.folderName = 'My Documents';
+                $scope.filter = $stateParams.filter;
+                $scope.folderName = $stateParams.filter || 'My Documents';
                 $scope.documents = documents.getFromFolder(0);
                 $scope.folders = folders.getFromFolder(0);
             }

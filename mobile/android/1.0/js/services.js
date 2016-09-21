@@ -78,7 +78,8 @@ angular.module('lucidMobile.services', [])
         }, {
             id: 1,
             name: 'Doc 2 title',
-            insideFolder: 1
+            insideFolder: 1,
+            group: 'Recent'
         }];
         var documentFunctions = {
             all: function() {
@@ -99,11 +100,13 @@ angular.module('lucidMobile.services', [])
             id: 1,
             name: 'UX Group',
             insideFolder: 0,
-            shared: true
+            shared: true,
+            group: 'Shared'
         }, {
             id: 2,
             name: 'My Folder',
-            insideFolder: 0
+            insideFolder: 0,
+            group: 'Recent'
         }, {
             id: 3,
             name: 'Android Concepts',
