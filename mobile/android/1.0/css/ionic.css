@@ -9591,7 +9591,7 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.bar.bar-stable .title {
+.bar.bar-stable .title:first-letter {
   text-transform: capitalize; }
 
 .col-50 .item-icon-right .icon {

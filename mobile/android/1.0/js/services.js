@@ -101,7 +101,7 @@ angular.module('lucidMobile.services', [])
             name: 'UX Group',
             insideFolder: 0,
             shared: true,
-            group: 'Shared'
+            group: 'Shared with me'
         }, {
             id: 2,
             name: 'My Folder',
