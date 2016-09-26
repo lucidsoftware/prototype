@@ -1,4 +1,4 @@
-<ion-modal-view class="shape-manager">
+<ion-modal-view>
     <ion-header-bar class="bar bar-header bar-stable">
         <div class="buttons buttons-left header-item">
             <button class="button button-clear button-primary" ng-click="close()"><i class="material-icons">arrow_back</i></button>
@@ -17,7 +17,7 @@
                 <i class="icon material-icons" ng-click="$root.openStyleShape = false">close</i>
                 Select a shape to change it's properties
             </div>
-            <div ng-drag-clone="" class="shape-manager-shape clone" ng-bind-html="clonedData.svg | sanitize"></div>
+            <div ng-drag-clone="" class="draggable-shape clone" ng-bind-html="clonedData.svg | sanitize"></div>
     </ion-content>
     <div class="ng-hide bottom-up" ng-controller="shapeManagerCtrl" ng-show="$root.openShapeLibrary">
         <div class="small-navigation">
@@ -36,7 +36,7 @@
                             <i class="icon ion-ios-arrow-forward"></i>
                         </ion-item>
                         <div class="slide-toggle" ng-show="!shapegroup.closed">
-                            <div class="shape-manager-shape" 
+                            <div class="draggable-shape" 
                                 ng-drag="true" 
                                 ng-drag-data="shape" 
                                 ng-drag-success="onDragComplete($data,$event)" 

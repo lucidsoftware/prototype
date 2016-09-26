@@ -20,7 +20,7 @@
         padding-left: 4px;
     }
     .item.item-stable {
-        margin-top: -7px;
+        margin-top: -8px;
     }
     &.ng-enter {
         animation: .25s appear;
@@ -144,9 +144,10 @@ input.header-search {
     font-size: 19px;
     color: $bar-stable-text;
     height: 28px;
-    margin-top: 9px;
-    margin-left: 19px;
     border-bottom: 2px solid $lucid-orange;
+    position: fixed;
+    top: 13px;
+    left: 52px;
     &::-webkit-input-placeholder {
         color: rgba($bar-stable-text, .5) !important;
     }
@@ -435,13 +436,25 @@ input.header-search {
 .slide-toggle {
     transition: .3s ease-in-out all;
 }
-
-.shape-manager-shape {
+.shape-manager{
+    .slide-toggle > div{
+        display:inline-block;
+        padding: 8px;
+    }
+}
+//from drag area
+.draggable-shape {
     width: 25%;
     padding: 20px;
     display: inline-block;
+    transition: scale .25s ease-in-out;
     svg {
         transform: scale(2);
+    }
+    &.clone {
+        svg {
+            transform: scale(2.5);
+        }
     }
 }
 
@@ -526,6 +539,7 @@ input.header-search {
     box-shadow: 0 3px 10px rgba(0, 0, 0, .9);
     overflow: hidden;
     z-index: 13;
+    padding: 0;
     i {
         color: #fff;
         z-index: 1;
@@ -642,4 +656,32 @@ input.header-search {
 .remaining-docs {
     padding: 10px;
     font-size: 16px;
+}
+
+.item-divider {
+    transition: all .25s ease-in-out;
+    &.ng-leave {
+        animation: dividerLeave .25s;
+    }
+}
+
+@keyframes dividerLeave {
+    from {
+        margin-top: 0;
+        opacity: 1;
+    }
+    to {
+        margin-top: -40px;
+        opacity: 0;
+    }
+}
+
+.row {
+    transition: all .25s ease-in-out;
+    margin-top: 0;
+    opacity: 1;
+    &.ng-hide {
+        margin-top: -57px;
+        opacity: 0;
+    }
 }

@@ -14,6 +14,7 @@ angular.module('lucidCanvas', [])
             var index = $rootScope.currentPage.blocks.indexOf(item);
 
             if (index === -1 && item) {
+                item = angular.copy(item);
                 //if dragging shape with no metrics such as a star, etc.
                 if (!item.metrics) {
                     item = {
@@ -48,6 +49,7 @@ angular.module('lucidCanvas', [])
                 //console.log(event.pageX, event.pageY);
                 item.metrics.x = event.x - canvasX - (item.metrics.width / 2);
                 item.metrics.y = event.y - canvasY - (item.metrics.height / 2);
+                item.svg = null;
 
                 //console.log('shape', item, event.pageX, event.pageY, 'total: ', event);
 

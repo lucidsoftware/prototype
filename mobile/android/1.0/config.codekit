@@ -1052,17 +1052,6 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/templates\/canvas\/min\/canvas-min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/templates\/canvas\/min\/canvas-min.js",
-		"outputAbbreviatedPath": "\/templates\/canvas\/min\/min\/canvas-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/templates\/document-modal.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1104,15 +1093,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/templates\/shape-manager-modal.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/templates\/shape-manager.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/templates\/shape-manager.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

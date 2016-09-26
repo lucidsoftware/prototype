@@ -2,8 +2,8 @@
     <ion-content>
         <ion-list>
             <div class="item-divider padding" ng-if="filteredFolders.length>0">Folders</div>
-            <div class="row">
-                <div class="col-50" ng-repeat="folder in filteredFolders = (folders | filter: {insideFolder:folderID, group:filter})">
+            <div class="row" ng-show="filteredFolders.length>0">
+                <div class="col-50" ng-repeat="folder in filteredFolders = (folders | filter: {insideFolder:folderID, group:filter} | filter: $root.search)">
                     <ion-item class="item-stable item-icon-left item-icon-right" ui-sref="app.folder({folderID:'{{folder.id}}'})">
                         <i class="icon material-icons" ng-if="!folder.shared">folder</i>
                         <i class="icon material-icons" ng-if="folder.shared">folder_shared</i>{{folder.name}}
@@ -12,8 +12,8 @@
                 </div>
             </div>
             <div class="item-divider padding" ng-if="FilteredDocuments.length>0">Files</div>
-            <div class="row">
-                <div class="col-50" ng-repeat="document in FilteredDocuments = (documents | filter: {insideFolder:folderID, group:filter})" ng-click="openDocument(document.id)">
+            <div class="row" ng-show="FilteredDocuments.length>0">
+                <div class="col-50" ng-repeat="document in FilteredDocuments = (documents | filter: {insideFolder:folderID, group:filter} | filter: $root.search)" ng-click="openDocument(document.id)">
                     <img class="full-image" ng-src="{{document.thumb}}">
                     <ion-item class="item-stable item-icon-right">
                         {{document.name}}

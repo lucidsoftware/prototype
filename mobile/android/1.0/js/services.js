@@ -38,9 +38,7 @@ angular.module('lucidMobile.services', [])
                         "y": 75,
                         "width": 120,
                         "height": 100
-                    },
-                    "svg": '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g class="lucid-shapes-fill-stroke" sketch:type="MSArtboardGroup" stroke="#979797" stroke-width="2" fill="#FFFFFF"><rect id="Rectangle-32-Copy-3" sketch:type="MSShapeGroup" x="1" y="2" width="28" height="26" rx="2"></rect></g>'
-
+                    }
                 }, {
                     "customcolor": false,
                     "swatch": {
@@ -115,8 +113,7 @@ angular.module('lucidMobile.services', [])
                         "y": 75,
                         "width": 120,
                         "height": 100
-                    },
-                    "svg": '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g class="lucid-shapes-fill-stroke" sketch:type="MSArtboardGroup" stroke="#979797" stroke-width="2" fill="#FFFFFF"><rect id="Rectangle-32-Copy-3" sketch:type="MSShapeGroup" x="1" y="2" width="28" height="26" rx="2"></rect></g>'
+                    }
 
                 }, {
                     "customcolor": false,

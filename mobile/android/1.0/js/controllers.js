@@ -90,6 +90,10 @@ angular.module('lucidMobile.controllers', [])
     ])
     .controller('shapeManagerCtrl', ['$scope', 'lucidShapesData', '$rootScope', '$ionicModal', function($scope, lucidShapesData, $rootScope, $ionicModal) {
         $scope.pinnedShapeGroups = lucidShapesData.lucidShapeGroups();
+        angular.forEach($scope.pinnedShapeGroups, function(shapegroup){
+         //open all shapegroups when opening the shapemanager
+         shapegroup.openInManager = true;
+        });
         $scope.search = {};
         $scope.showShapeManager = function() {
             //console.log('manage shapes');
