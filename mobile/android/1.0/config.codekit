@@ -40,6 +40,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/placeholder\/selected-shape_line.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 25973,
+		"inputAbbreviatedPath": "\/img\/placeholder\/selected-shape_line.png",
+		"outputAbbreviatedPath": "\/img\/placeholder\/selected-shape_line.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/placeholder\/selected-shape_shape.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 32511,
+		"inputAbbreviatedPath": "\/img\/placeholder\/selected-shape_shape.png",
+		"outputAbbreviatedPath": "\/img\/placeholder\/selected-shape_shape.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/placeholder\/selected-shape_styles.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9014,
+		"inputAbbreviatedPath": "\/img\/placeholder\/selected-shape_styles.png",
+		"outputAbbreviatedPath": "\/img\/placeholder\/selected-shape_styles.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/placeholder\/selected-shape_text.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 25416,
+		"inputAbbreviatedPath": "\/img\/placeholder\/selected-shape_text.png",
+		"outputAbbreviatedPath": "\/img\/placeholder\/selected-shape_text.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/tap.png": {
 		"fileType": 32768,
 		"ignore": 0,
