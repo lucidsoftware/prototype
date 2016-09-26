@@ -3513,10 +3513,10 @@ ion-infinite-scroll {
   top: 161px; }
 
 .has-footer {
-  bottom: 56px; }
+  bottom: 48px; }
 
 .has-subfooter {
-  bottom: 112px; }
+  bottom: 104px; }
 
 .has-tabs,
 .bar-footer.has-tabs {
@@ -3527,10 +3527,10 @@ ion-infinite-scroll {
     height: auto; }
 
 .bar-subfooter.has-tabs {
-  bottom: 105px; }
+  bottom: 97px; }
 
 .has-footer.has-tabs {
-  bottom: 105px; }
+  bottom: 97px; }
 
 .pane {
   -webkit-transform: translate3d(0, 0, 0);
@@ -4278,12 +4278,12 @@ a.subdued {
   border-top-width: 1px;
   border-bottom-width: 0;
   background-position: top;
-  height: 56px; }
+  height: 48px; }
   .bar-footer.item-input-inset {
     position: absolute; }
   .bar-footer .title {
-    height: 55px;
-    line-height: 56px; }
+    height: 47px;
+    line-height: 48px; }
 
 .bar-tabs {
   padding: 0; }
@@ -4296,7 +4296,7 @@ a.subdued {
     line-height: 56px; }
 
 .bar-subfooter {
-  bottom: 56px;
+  bottom: 48px;
   height: 56px; }
   .bar-subfooter .title {
     height: 55px;
@@ -9609,7 +9609,26 @@ a.button {
     padding-left: 4px; }
   .col-50 .item.item-stable {
     margin-top: -7px; }
+  .col-50.ng-enter {
+    animation: .25s appear;
+    z-index: -1; }
+  .col-50.ng-leave {
+    animation: .25s appear;
+    animation-direction: reverse;
+    z-index: -1; }
+  .col-50.ng-enter-stagger {
+    transition-delay: .15s;
+    animation-delay: .15s; }
 
+@keyframes appear {
+  from {
+    z-index: -1;
+    opacity: 0;
+    margin-left: -50%; }
+  to {
+    z-index: -1;
+    opacity: 1;
+    margin-left: 0; } }
 .action-sheet-has-icons .icon {
   margin: 8px 0;
   color: #77818C; }
@@ -9967,10 +9986,7 @@ input.header-search {
   box-sizing: border-box;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.9);
   overflow: hidden;
-  z-index: 12;
-  transition: .25s ease-in-out all; }
-  .lucid-fab.scale-fab {
-    transform: scale(0.01); }
+  z-index: 13; }
   .lucid-fab i {
     color: #fff;
     z-index: 1;
@@ -9981,8 +9997,12 @@ input.header-search {
     .lucid-fab i.ng-hide {
       opacity: 0;
       transform: rotateZ(90deg); }
-      .lucid-fab i.ng-hide.ng-hide-add {
+      .lucid-fab i.ng-hide.pencil {
         transform: rotateZ(-90deg); }
+      .lucid-fab i.ng-hide.ng-hide-add {
+        transform: rotateZ(90deg); }
+        .lucid-fab i.ng-hide.ng-hide-add.pencil {
+          transform: rotateZ(-90deg); }
   .lucid-fab:before {
     content: '';
     width: 10px;
@@ -10001,21 +10021,57 @@ input.header-search {
     height: 56px;
     top: 0;
     left: 0; }
-  .lucid-fab.mini {
-    width: 40px;
-    background: #fafafa;
-    transition: all .25s ease-in-out; }
-    .lucid-fab.mini:before {
-      background: #fafafa; }
-    .lucid-fab.mini.activated:before {
-      background: #ededed; }
-    .lucid-fab.mini i {
-      color: #77818C;
-      top: 8px;
-      left: 8px; }
-    .lucid-fab.mini.one {
-      height: 40px;
-      top: -100px; }
-    .lucid-fab.mini.ng-hide {
-      top: -28px;
-      right: 8px; }
+
+.mini-fabs li {
+  transition: all .3s ease-in-out;
+  right: 8px;
+  position: absolute;
+  z-index: 12; }
+  .mini-fabs li label {
+    font-size: 10px;
+    padding: 5px;
+    background: #4A4F53;
+    color: #fff;
+    border-radius: 2px;
+    position: relative;
+    right: 65px;
+    top: -12px;
+    white-space: nowrap;
+    transition: .15s ease-in-out all;
+    transition-delay: .25s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05); }
+  .mini-fabs li.zero {
+    top: -30px; }
+  .mini-fabs li.one {
+    top: -90px; }
+  .mini-fabs li.two {
+    top: -140px; }
+  .mini-fabs li.three {
+    top: -190px; }
+  .mini-fabs li.ng-hide {
+    top: -20px;
+    right: 8px; }
+    .mini-fabs li.ng-hide label {
+      transition: .15s ease-in-out all;
+      transition-delay: 0s;
+      opacity: 0; }
+.mini-fabs .mini {
+  width: 40px;
+  height: 40px;
+  background: #fafafa; }
+  .mini-fabs .mini:before {
+    background: #fafafa; }
+  .mini-fabs .mini.activated:before {
+    background: #ededed; }
+  .mini-fabs .mini i {
+    color: #77818C;
+    top: 8px;
+    left: 8px; }
+    .mini-fabs .mini i.lucid-icon {
+      left: 9px; }
+      .mini-fabs .mini i.lucid-icon svg path {
+        fill: #77818C; }
+
+.remaining-docs {
+  padding: 10px;
+  font-size: 16px; }

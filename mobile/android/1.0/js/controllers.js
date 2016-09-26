@@ -28,8 +28,8 @@ angular.module('lucidMobile.controllers', [])
                 }
                 $scope.folderName = $stateParams.filter || 'My Documents';
             }
-            $scope.showDrawer = function() {
-
+            $scope.showFileOptions = function(editDocument) {
+             console.log('action sheet', editDocument);
                 // Show the action sheet
                 $ionicActionSheet.show({
                     buttons: [
@@ -44,10 +44,38 @@ angular.module('lucidMobile.controllers', [])
                     },
                     buttonClicked: function(index) {
                         console.log(index);
+                        if(index === 1){
+                         documents.copy(editDocument);
+                        }
                         return true;
                     },
                     destructiveButtonClicked: function() {
-                        console.log('delete');
+                        console.log('delete', editDocument);
+                        documents.delete(editDocument.id);
+                        return true;
+                    }
+                });
+            };
+            $scope.showFolderOptions = function(editFolder) {
+             console.log('action sheet', editFolder);
+                // Show the action sheet
+                $ionicActionSheet.show({
+                    buttons: [
+                        { text: '<i class="icon material-icons">text_format</i>Rename' },
+                        { text: '<i class="icon material-icons">folder</i>Move' },
+                        { text: '<i class="icon material-icons">people</i>Share' }
+                    ],
+                    destructiveText: '<i class="icon material-icons">delete</i>Delete',
+                    cancel: function() {
+                        // add cancel code..
+                    },
+                    buttonClicked: function(index) {
+                        console.log(index);
+                        return true;
+                    },
+                    destructiveButtonClicked: function() {
+                        console.log('delete', editFolder);
+                        folders.delete(editFolder.id);
                         return true;
                     }
                 });

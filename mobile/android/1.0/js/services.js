@@ -162,13 +162,27 @@ angular.module('lucidMobile.services', [])
                 var filterDocs = $filter('filter')(documents, { id: documentID });
                 return filterDocs[0];
             },
+            copy: function(newDocument) {
+                var copyDocument = angular.copy(newDocument);
+                copyDocument.name = copyDocument.name + ' (Copy)';
+                copyDocument.id = documentFunctions.all().length + 1;
+                documents.push(copyDocument);
+            },
+            delete: function(documentID) {
+                var i;
+                for (i = documentFunctions.all().length - 1; i >= 0; i--) {
+                    if (documentFunctions.all()[i].id === documentID) {
+                        documentFunctions.all().splice(i, 1);
+                    }
+                }
+            },
             getFromFolder: function(folderID) {
                 return $filter('filter')(documents, { insideFolder: folderID });
             },
             create: function(documentID, folderID) {
                 var newDoc = {
                     id: documentID,
-                    name: 'Doc' +Number(documents.length) +1,
+                    name: 'Doc' + Number(documents.length) + 1,
                     insideFolder: folderID || 0,
                     thumb: 'img/thumb.jpg',
                     group: 'Recent',
@@ -238,6 +252,14 @@ angular.module('lucidMobile.services', [])
             getByID: function(folderID) {
                 var filterFolders = $filter('filter')(folders, { id: folderID });
                 return filterFolders[0];
+            },
+            delete: function(folderID) {
+                var i;
+                for (i = folderFunctions.all().length - 1; i >= 0; i--) {
+                    if (folderFunctions.all()[i].id === folderID) {
+                        folderFunctions.all().splice(i, 1);
+                    }
+                }
             },
             getFromFolder: function(folderID) {
                 return $filter('filter')(folders, { insideFolder: folderID });
