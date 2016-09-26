@@ -594,7 +594,7 @@ input.header-search {
         z-index: 12;
         label {
             font-size: 10px;
-            padding: 5px;
+            padding: 5px 10px;
             background: #4A4F53;
             color: #fff;
             border-radius: 2px;
@@ -684,4 +684,7 @@ input.header-search {
         margin-top: -57px;
         opacity: 0;
     }
+}
+.platform-android .action-sheet-backdrop.active{
+    background: rgba(33, 44, 54, 0.4);
 }
