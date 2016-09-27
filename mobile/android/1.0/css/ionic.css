@@ -5,6 +5,9 @@ in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:*/
 @import "https://fonts.googleapis.com/css?family=Roboto";
+.platform-android .bar .title {
+  margin-left: 21px; }
+
 body, body * {
   cursor: url(../img/tap.png), auto !important; }
 
@@ -3870,7 +3873,7 @@ a.subdued {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 11px;
   width: 100%;
   height: 56px;
   border-width: 0;
@@ -4026,7 +4029,7 @@ a.subdued {
       font-size: 17px; }
       .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
         vertical-align: top;
-        font-size: 24px;
+        font-size: 29px;
         line-height: 32px; }
     .bar .button.button-clear, .bar button.button-clear {
       padding-right: 2px;
@@ -4034,7 +4037,7 @@ a.subdued {
       font-weight: 300;
       font-size: 17px; }
       .bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before, .bar button.button-clear .icon:before, .bar button.button-clear.icon:before, .bar button.button-clear.icon-left:before, .bar button.button-clear.icon-right:before {
-        font-size: 24px;
+        font-size: 29px;
         line-height: 32px; }
     .bar .button.back-button, .bar button.back-button {
       display: block;
@@ -8688,7 +8691,7 @@ progress {
   line-height: 53px; }
   .button-large .icon:before, .button-large.icon:before, .button-large.icon-left:before, .button-large.icon-right:before {
     padding-bottom: 2px;
-    font-size: 24px;
+    font-size: 29px;
     line-height: 51px; }
 
 .button-icon {
@@ -8704,7 +8707,7 @@ progress {
     box-shadow: none;
     opacity: 0.3; }
   .button-icon .icon:before, .button-icon.icon:before {
-    font-size: 24px; }
+    font-size: 29px; }
 
 .button-clear {
   -webkit-transition: opacity 0.1s;
@@ -9704,9 +9707,14 @@ input.header-search {
   border-bottom: 2px solid #FC8D2A;
   position: fixed;
   top: 13px;
-  left: 52px; }
+  left: 70px; }
   input.header-search::-webkit-input-placeholder {
     color: rgba(252, 141, 42, 0.5) !important; }
+
+i.icon.ion-android-search:before {
+  font-size: 24px !important;
+  margin-right: 5px;
+  margin-top: 2px; }
 
 .float-right {
   float: right; }

@@ -39,13 +39,16 @@ $item-divider-border: $base-background-color;
 
 $button-color: $stable;
 $item-icon-font-size: 24px;
-$button-large-icon-size: 24px;
+$button-large-icon-size: 29px;
+$bar-padding-portrait: 11px;
 $item-light-active-bg: #fff;
 $item-light-active-text: $lucid-orange;
 // $item-icon-fill-font-size: 24px;
 $bar-footer-height: 48px;
 
-
+.platform-android .bar .title {
+    margin-left: 21px;
+}
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;

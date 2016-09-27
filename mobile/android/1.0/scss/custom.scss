@@ -147,10 +147,15 @@ input.header-search {
     border-bottom: 2px solid $lucid-orange;
     position: fixed;
     top: 13px;
-    left: 52px;
+    left: 70px;
     &::-webkit-input-placeholder {
         color: rgba($bar-stable-text, .5) !important;
     }
+}
+i.icon.ion-android-search:before {
+    font-size: 24px !important;
+    margin-right:5px;
+    margin-top:2px;
 }
 
 .float-right {
