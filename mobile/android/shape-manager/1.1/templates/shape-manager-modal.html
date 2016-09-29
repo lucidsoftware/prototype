@@ -16,7 +16,7 @@
     </ion-header-bar>
     <ion-content>
         <ion-list ng-controller="shapeManagerCtrl">
-            <div ng-repeat="shapegroup in pinnedShapeGroups | filter: $root.filter">
+            <div ng-repeat="shapegroup in shapeGroups | filter: $root.filter">
                 <ion-item class="item-icon-left item-icon-right" ng-class="{'rotate-icon': shapegroup.openInManager}" ng-click="shapegroup.openInManager = !shapegroup.openInManager">
                 <i class="icon material-icons" ng-click="$event.stopPropagation(); shapegroup.pinned = !shapegroup.pinned" ng-if="shapegroup.pinned">check_circle</i>
                 <i class="icon material-icons" ng-click="$event.stopPropagation(); shapegroup.pinned = !shapegroup.pinned" ng-if="!shapegroup.pinned">radio_button_unchecked</i>

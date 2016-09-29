@@ -27,19 +27,26 @@
                 Shapes
                 <span class="float-right" ng-click="$event.stopPropagation(); showShapeManager();">Manage</span>
             </div>
-            <ion-content class="fill-height">
-              <ion-slides  options="{loop:true}" slider="data.slider">
-                <ion-slide-page ng-repeat="shapegroup in pinnedShapeGroups" ng-if="shapegroup.pinned">
-                  <div class="draggable-shape" 
-                                ng-drag="true" 
-                                ng-drag-data="shape" 
-                                ng-drag-success="onDragComplete($data,$event)" 
-                                ng-center-anchor="true" 
-                                ng-repeat="shape in shapegroup.shapes" 
-                                ng-bind-html="shape.svg | sanitize"> </div>
-                </ion-slide-page>
-              </ion-slides>
-            </ion-content>
+            <ion-scroll class="lucid-top-tabs" direction="x" scrollbar-x="false" overflow-scroll="false">
+                <ul >
+                    <li ng-repeat="shapegroup in pinnedShapeGroups = (shapeGroups | filter: {pinned: true})" ng-class="{ selected: $index === swiper.activeIndex, 'col-50' : pinnedShapeGroups.length == 2, 'col-33' : pinnedShapeGroups.length == 3, 'col-25' : pinnedShapeGroups.length >= 4 }" class="lucid-top-tab col-25" ng-click="goToSlide($index)">
+                        <span>{{shapegroup.groupname}}</span>
+                    </li>
+                </ul>
+            </ion-scroll>
+                <ion-content class="fill-height with-top-tabs">
+                  <ion-slides  options="swiperOptions" slider="swiper">
+                    <ion-slide-page ng-repeat="shapegroup in pinnedShapeGroups = (shapeGroups | filter: {pinned: true})">
+                      <div class="draggable-shape" 
+                            ng-drag="true" 
+                            ng-drag-data="shape" 
+                            ng-drag-success="onDragComplete($data,$event)" 
+                            ng-center-anchor="true" 
+                            ng-repeat="shape in shapegroup.shapes" 
+                            ng-bind-html="shape.svg | sanitize"> </div>
+                    </ion-slide-page>
+                  </ion-slides>
+                </ion-content>
 
             <!-- <ion-content class="fill-height">
                 <ion-list 
@@ -63,6 +70,7 @@
                 </ion-list>
             </ion-content> -->
         </div>
+        <!-- <div ng-controller="shapeManagerCtrl" ng-if="$root.openShapeLibrary"></div> -->
     </div>
     <div class="ng-hide bottom-up" ng-show="$root.openStyleShape && $root.selectedType != 'nothing';">
         <lucid-top-tabs>

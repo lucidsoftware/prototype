@@ -29,7 +29,7 @@ angular.module('lucidMobile.controllers', [])
                 $scope.folderName = $stateParams.filter || 'My Documents';
             }
             $scope.showFileOptions = function(editDocument) {
-             console.log('action sheet', editDocument);
+                console.log('action sheet', editDocument);
                 // Show the action sheet
                 $ionicActionSheet.show({
                     buttons: [
@@ -44,8 +44,8 @@ angular.module('lucidMobile.controllers', [])
                     },
                     buttonClicked: function(index) {
                         console.log(index);
-                        if(index === 1){
-                         documents.copy(editDocument);
+                        if (index === 1) {
+                            documents.copy(editDocument);
                         }
                         return true;
                     },
@@ -57,7 +57,7 @@ angular.module('lucidMobile.controllers', [])
                 });
             };
             $scope.showFolderOptions = function(editFolder) {
-             console.log('action sheet', editFolder);
+                console.log('action sheet', editFolder);
                 // Show the action sheet
                 $ionicActionSheet.show({
                     buttons: [
@@ -88,31 +88,54 @@ angular.module('lucidMobile.controllers', [])
 
         }
     ])
-    .controller('shapeManagerCtrl', ['$scope', 'lucidShapesData', '$rootScope', '$ionicModal', function($scope, lucidShapesData, $rootScope, $ionicModal) {
-        $scope.pinnedShapeGroups = lucidShapesData.lucidShapeGroups();
-        angular.forEach($scope.pinnedShapeGroups, function(shapegroup){
-         //open all shapegroups when opening the shapemanager
-         shapegroup.openInManager = true;
-        });
-        $scope.search = {};
-        $scope.showShapeManager = function() {
-            //console.log('manage shapes');
-            var $scope = $rootScope.$new();
-            $ionicModal.fromTemplateUrl('templates/shape-manager-modal.html', {
-                scope: $scope,
-                animation: 'slide-in-up',
-                focusFirstInput: true
-            }).then(function(modal) {
-                $scope.modal = modal;
-                $scope.modal.show();
-                $scope.close = function() {
-                    $scope.modal.hide().then(function() {
-                        $scope.modal.remove();
-                    });
-                };
+    .controller('shapeManagerCtrl', ['$scope', 'lucidShapesData', '$rootScope', '$ionicModal',
+        function($scope, lucidShapesData, $rootScope, $ionicModal) {
+            console.log('shape manager ctrl run');
+            $scope.shapeGroups = lucidShapesData.lucidShapeGroups();
+            angular.forEach($scope.shapeGroups, function(shapegroup) {
+                //open all shapegroups when opening the shapemanager
+                shapegroup.openInManager = true;
             });
-        };
-    }])
+            $scope.search = {};
+            $scope.swiperOptions = {
+                /* Whatever options */
+                effect: 'slide',
+                initialSlide: 0,
+                /* Initialize a scope variable with the swiper */
+                onInit: function(swiper) {
+                    $scope.swiper = swiper;
+                },
+                // onSlideChangeEnd: function(swiper) {
+                //     console.log('The active index is ' + swiper.activeIndex);
+                //     //$scope.activeIndex = swiper.activeIndex;
+                // }
+            };
+            $scope.goToSlide = function(index) {
+                console.log(index);
+                console.log($scope.swiper);
+                $scope.swiper._slideTo(index, 400, function(){
+                    console.log('slide to finished');
+                });
+            };
+            $scope.showShapeManager = function() {
+                //console.log('manage shapes');
+                var $scope = $rootScope.$new();
+                $ionicModal.fromTemplateUrl('templates/shape-manager-modal.html', {
+                    scope: $scope,
+                    animation: 'slide-in-up',
+                    focusFirstInput: true
+                }).then(function(modal) {
+                    $scope.modal = modal;
+                    $scope.modal.show();
+                    $scope.close = function() {
+                        $scope.modal.hide().then(function() {
+                            $scope.modal.remove();
+                        });
+                    };
+                });
+            };
+        }
+    ])
     .controller('fabCtrl', ['$scope', 'documents', '$stateParams', '$state',
         function($scope, documents, $stateParams) {
             $scope.clickFab = function() {
@@ -127,7 +150,7 @@ angular.module('lucidMobile.controllers', [])
             $scope.createDocument = function() {
                 console.log('doc create');
                 //insert folderID into create doc
-                var documentID = documents.all().length +1;
+                var documentID = documents.all().length + 1;
                 documents.create(documentID, $stateParams.folderID);
                 documents.openDocument(documentID);
                 console.log(documents.all());

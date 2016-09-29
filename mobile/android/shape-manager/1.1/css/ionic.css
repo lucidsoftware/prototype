@@ -9644,7 +9644,7 @@ a.button {
   display: inline-block; }
 
 .bottom-up {
-  height: 200px;
+  height: 250px;
   width: 100%;
   background: #f1f1f1;
   position: absolute;
@@ -9653,13 +9653,15 @@ a.button {
   transition: all .25s ease-in-out;
   background: #fff; }
   .bottom-up.ng-hide {
-    bottom: -200px; }
+    bottom: -250px; }
   .bottom-up .scroll-content.fill-height {
     border-top: 1px solid #ddd;
     bottom: 0;
     top: 43px; }
     .bottom-up .scroll-content.fill-height .list {
       margin-top: -2px; }
+    .bottom-up .scroll-content.fill-height.with-top-tabs {
+      top: 87px; }
 
 .bar-light {
   height: 44px;
@@ -9887,32 +9889,38 @@ i.icon.ion-android-search:before {
     overflow: auto;
     background: #FFF; }
 
-.lucid-top-tabs .lucid-top-tab {
-  text-align: center;
-  cursor: pointer;
-  display: inline-block;
-  background: #f0f0f0;
-  border: none;
-  color: #77818C;
-  border-bottom: 2px solid #f0f0f0;
-  font-size: 14px;
-  padding: 10px 0;
+.lucid-top-tabs {
   white-space: nowrap;
-  box-sizing: border-box;
-  text-transform: uppercase; }
-  .lucid-top-tabs .lucid-top-tab:first-child {
-    border-left: none; }
-  .lucid-top-tabs .lucid-top-tab.col-25 {
-    width: 25%; }
-  .lucid-top-tabs .lucid-top-tab.col-33 {
-    width: 33.333333%; }
-  .lucid-top-tabs .lucid-top-tab.col-50 {
-    width: 50%; }
-  .lucid-top-tabs .lucid-top-tab.selected {
-    background: #f0f0f0;
-    color: #212C35;
-    border-bottom: 2px solid #F78D1E;
-    font-weight: 500; }
+  background: #f0f0f0;
+  width: 100%; }
+  .lucid-top-tabs .scroll-bar-indicator {
+    display: none; }
+  .lucid-top-tabs .lucid-top-tab {
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    max-width: none;
+    border: none;
+    color: #77818C;
+    border-bottom: 2px solid #f0f0f0;
+    font-size: 14px;
+    padding: 10px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    text-transform: uppercase; }
+    .lucid-top-tabs .lucid-top-tab:first-child {
+      border-left: none; }
+    .lucid-top-tabs .lucid-top-tab.col-25 {
+      min-width: 25%; }
+    .lucid-top-tabs .lucid-top-tab.col-33 {
+      min-width: 33.333333%; }
+    .lucid-top-tabs .lucid-top-tab.col-50 {
+      min-width: 50%; }
+    .lucid-top-tabs .lucid-top-tab.selected {
+      background: #f0f0f0;
+      color: #212C35;
+      border-bottom: 2px solid #F78D1E;
+      font-weight: 500; }
 
 .color-swatch {
   width: 28px;

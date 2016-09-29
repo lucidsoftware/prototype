@@ -74,8 +74,8 @@
     }
 }
 
+$shape-library-height: 250px;
 .bottom-up {
-    $shape-library-height: 200px;
     height: $shape-library-height;
     width: 100%;
     background: #f1f1f1;
@@ -93,6 +93,9 @@
         top: 43px;
         .list {
             margin-top: -2px;
+        }
+        &.with-top-tabs {
+            top: 87px;
         }
     }
 }
@@ -398,16 +401,25 @@ i.icon.ion-android-search:before {
 }
 
 .lucid-top-tabs {
+    white-space: nowrap;
+    //overflow-x: scroll;
+    background: #f0f0f0;
+    //z-index: 100;
+    //position: absolute;
+    width: 100%;
+    .scroll-bar-indicator {
+        display: none;
+    }
     .lucid-top-tab {
         text-align: center;
         cursor: pointer;
         display: inline-block;
-        background: #f0f0f0;
+        max-width: none;
         border: none;
         color: #77818C;
         border-bottom: 2px solid #f0f0f0;
         font-size: 14px;
-        padding: 10px 0;
+        padding: 10px;
         white-space: nowrap;
         box-sizing: border-box;
         text-transform: uppercase;
@@ -415,13 +427,13 @@ i.icon.ion-android-search:before {
             border-left: none;
         }
         &.col-25 {
-            width: 25%;
+            min-width: 25%;
         }
         &.col-33 {
-            width: 33.333333%;
+            min-width: 33.333333%;
         }
         &.col-50 {
-            width: 50%;
+            min-width: 50%;
         }
         &.selected {
             background: #f0f0f0;
