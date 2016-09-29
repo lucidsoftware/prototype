@@ -1,0 +1,153 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-stable">
+        <div class="buttons buttons-left header-item">
+            <button class="button button-clear button-primary" ng-click="close()"><i class="material-icons">arrow_back</i></button>
+        </div>
+        <h1 class="title">{{currentDocument.name}}</h1>
+        <div class="buttons">
+        <button ng-click="" class="button button-clear header-item"><i class="icon material-icons">content_copy</i></button>
+        <button ng-click="" class="button button-clear header-item"><i class="material-icons">more_vert</i></button>
+    </div>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <div class="canvas">
+            <ng-include src="'templates/canvas/canvas.html'"></ng-include>
+        </div>
+        <div class="bar-light bottom ng-hide" ng-show="$root.openStyleShape">
+                <i class="icon material-icons" ng-click="$root.openStyleShape = false">close</i>
+                Select a shape to change it's properties
+            </div>
+            <div ng-drag-clone="" class="draggable-shape clone" ng-bind-html="clonedData.svg | sanitize"></div>
+    </ion-content>
+    <div class="ng-hide bottom-up" ng-controller="shapeManagerCtrl" ng-show="$root.openShapeLibrary">
+        <div class="small-navigation">
+            <div class="bar-light" >
+                <i class="icon material-icons" ng-click="$root.openShapeLibrary = false">close</i>
+                Shapes
+                <span class="float-right" ng-click="$event.stopPropagation(); showShapeManager();">Manage</span>
+            </div>
+            <ion-content class="fill-height">
+                <ion-list 
+                    ng-drop="true"
+                    ng-drop-success="dropFromCanvas($data, $event, shapegroup);">
+                    <div ng-repeat="shapegroup in pinnedShapeGroups" ng-if="shapegroup.pinned">
+                        <ion-item class="item-icon-right" ng-class="{'rotate-icon': !shapegroup.closed}" ng-click="shapegroup.closed = !shapegroup.closed">
+                            {{shapegroup.groupname}}
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <div class="slide-toggle" ng-show="!shapegroup.closed">
+                            <div class="draggable-shape" 
+                                ng-drag="true" 
+                                ng-drag-data="shape" 
+                                ng-drag-success="onDragComplete($data,$event)" 
+                                ng-center-anchor="true" 
+                                ng-repeat="shape in shapegroup.shapes" 
+                                ng-bind-html="shape.svg | sanitize"> </div>
+                        </div>
+                    </div>
+                </ion-list>
+            </ion-content>
+        </div>
+    </div>
+    <div class="ng-hide bottom-up" ng-controller="shapeManagerCtrl" ng-show="$root.openStyleShape && $root.selectedType != 'nothing';">
+        <lucid-top-tabs>
+            <lucid-top-tab name="Styles">
+                <ion-content class="fill-height">
+                <img class="placeholder-image" src="img/placeholder/selected-shape_styles.png">
+                    <!-- <ion-list>
+                    
+                    </ion-list> -->
+                </ion-content>
+            </lucid-top-tab>
+            <lucid-top-tab name="Shape" selected>
+                <ion-content class="fill-height">
+                <img class="placeholder-image" src="img/placeholder/selected-shape_shape.png">
+                    <!-- <ion-list>
+                        <ion-item class="item-icon-right">
+                            Corners
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Border Style
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Border Weight
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Fill Color
+                            <div class="color-swatch" style="background-color: {{$root.selectedBlock.swatch.text}}"></div>
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                    </ion-list> -->
+                </ion-content>
+            </lucid-top-tab>
+            <lucid-top-tab name="Line">
+                <ion-content class="fill-height">
+                <img class="placeholder-image" src="img/placeholder/selected-shape_line.png">
+                    <!-- <ion-list>
+                        <ion-item class="item-icon-right">
+                            Line Style
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Line Shape
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Line Weight
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Line Color
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                    </ion-list> -->
+                </ion-content>
+            </lucid-top-tab>
+            <lucid-top-tab name="Text">
+                <ion-content class="fill-height">
+                <img class="placeholder-image" src="img/placeholder/selected-shape_text.png">
+                    <!-- <ion-list>
+                        <ion-item class="item-icon-right">
+                            BOLD ITALIC U
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Font
+                            <span class="float-right">Roboto</span>
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Font Size
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                        <ion-item class="item-icon-right">
+                            Text Color
+                            <div class="color-swatch" style="background-color: {{$root.selectedBlock.swatch.text}}"></div>
+                            <i class="icon ion-ios-arrow-forward"></i>
+                        </ion-item>
+                    </ion-list> -->
+                </ion-content>
+            </lucid-top-tab>
+        </lucid-top-tabs>
+    </div>
+    <ion-footer-bar align-title="left" class="bar-stable">
+        <div class="buttons col-20">
+            <button class="button"><i class="icon material-icons">delete</i></button>
+        </div>
+        <div class="buttons col-20" ng-click="doSomething()">
+            <button class="button"><i class="icon material-icons">undo</i></button>
+        </div>
+        <div class="buttons col-20" ng-click="$root.openStyleShape = !$root.openStyleShape">
+            <button class="button"><i class="icon material-icons">format_shapes</i></button>
+        </div>
+        <div class="buttons col-20" ng-click="doSomething()">
+            <button class="button"><i class="icon material-icons">settings</i></button>
+        </div>
+        <div class="buttons col-20" ng-click="$root.openShapeLibrary = true">
+            <button class="button"><i class="icon material-icons">add</i></button>
+        </div>
+    </ion-footer-bar>
+</ion-modal-view>
