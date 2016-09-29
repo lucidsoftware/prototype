@@ -2,8 +2,8 @@ angular.module('lucidMobile.services', [])
     .factory('documents', ['$filter', '$rootScope', '$ionicModal', function($filter, $rootScope, $ionicModal) {
         var documents = [{
             id: 0,
-            thumb: 'img/thumb.jpg',
-            name: 'Doc Title',
+            thumb: 'img/thumb-1.png',
+            name: 'Blank Diagram',
             insideFolder: 0,
             pages: [{
                 'name': 'Page 1',
@@ -76,9 +76,10 @@ angular.module('lucidMobile.services', [])
             }]
         }, {
             id: 1,
-            name: 'Doc 2 title',
-            insideFolder: 1,
-            thumb: 'img/thumb.jpg',
+            name: 'Blank Diagram',
+            insideFolder: 0,
+            shared: true,
+            thumb: 'img/thumb-2.png',
             group: 'Recent',
             pages: [{
                 'name': 'Page 1',
@@ -150,6 +151,30 @@ angular.module('lucidMobile.services', [])
                 }],
                 'linecolor': '#333'
             }]
+        }, {
+            id: 3,
+            name: 'ERD & Data Flow',
+            insideFolder: 0,
+            shared: true,
+            thumb: 'img/thumb-3.png',
+            group: 'Recent',
+            pages: [{}]
+        },{
+            id: 4,
+            name: 'ERD & Data Flow',
+            insideFolder: 0,
+            shared: true,
+            thumb: 'img/thumb-4.png',
+            group: 'Recent',
+            pages: [{}]
+        }, {
+            id: 5,
+            name: 'ERD & Data Flow',
+            insideFolder: 0,
+            shared: true,
+            thumb: 'img/thumb-5.png',
+            group: 'Recent',
+            pages: [{}]
         }];
         var documentFunctions = {
             all: function() {
@@ -224,19 +249,19 @@ angular.module('lucidMobile.services', [])
     .factory('folders', ['$filter', function($filter) {
         var folders = [{
             id: 1,
-            name: 'UX Group',
+            name: 'Cory\'s Stuff',
             insideFolder: 0,
             shared: true,
             group: 'Shared with me'
         }, {
             id: 2,
-            name: 'My Folder',
-            insideFolder: 0,
+            name: 'Sub Folder',
+            insideFolder: 1,
             group: 'Recent'
         }, {
             id: 3,
-            name: 'Android Concepts',
-            insideFolder: 1
+            name: 'Cory\'s Doc',
+            insideFolder: 2
         }, {
             id: 4,
             name: '1.0',

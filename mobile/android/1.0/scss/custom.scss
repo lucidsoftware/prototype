@@ -4,6 +4,9 @@
 
 .col-50 .item-icon-right .icon {
     right: 0;
+    &.ion-android-more-vertical{
+        padding-left: 10px;
+    }
 }
 
 .row {
@@ -12,29 +15,30 @@
 }
 
 .col-50 {
-    padding: 8px;
+    padding: 4px;
+    padding-bottom:2px;
     &:nth-child(odd) {
-        padding-right: 4px;
+        padding-right: 2px;
     }
     &:nth-child(even) {
-        padding-left: 4px;
+        padding-left: 2px;
     }
     .item.item-stable {
-        margin-top: -8px;
+        border-top:none;
     }
-    &.ng-enter {
-        animation: .25s appear;
-        z-index: -1;
-    }
+    // &.ng-enter {
+    //     animation: .25s appear;
+    //     z-index: -1;
+    // }
     &.ng-leave {
         animation: .25s appear;
         animation-direction: reverse;
         z-index: -1;
     }
-    &.ng-enter-stagger {
-        transition-delay: .15s;
-        animation-delay: .15s;
-    }
+    // &.ng-enter-stagger {
+    //     transition-delay: .15s;
+    //     animation-delay: .15s;
+    // }
 }
 
 @keyframes appear {
@@ -152,10 +156,11 @@ input.header-search {
         color: rgba($bar-stable-text, .5) !important;
     }
 }
+
 i.icon.ion-android-search:before {
     font-size: 24px !important;
-    margin-right:5px;
-    margin-top:2px;
+    margin-right: 5px;
+    margin-top: 2px;
 }
 
 .float-right {
@@ -439,14 +444,16 @@ i.icon.ion-android-search:before {
 }
 
 .slide-toggle {
-    transition: .3s ease-in-out all;
+    transition: .3s ease-out all;
 }
-.shape-manager{
-    .slide-toggle > div{
-        display:inline-block;
+
+.shape-manager {
+    .slide-toggle > div {
+        display: inline-block;
         padding: 8px;
     }
 }
+
 //from drag area
 .draggable-shape {
     width: 25%;
@@ -690,10 +697,22 @@ i.icon.ion-android-search:before {
         opacity: 0;
     }
 }
-.platform-android .action-sheet-backdrop.active{
+
+.platform-android .action-sheet-backdrop.active {
     background: rgba(33, 44, 54, 0.4);
 }
-img.placeholder-image{
+
+img.placeholder-image {
+    width: 100%;
+    margin-top: -2px;
+}
+.doc-thumb-image{
     width:100%;
-    margin-top:-2px;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#fff;
+}
+.scroll .list {
+    padding-bottom: 50px;
 }

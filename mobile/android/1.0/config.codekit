@@ -95,13 +95,57 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/thumb.jpg": {
-		"fileType": 16384,
+	"\/img\/thumb-1.png": {
+		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 29449,
-		"inputAbbreviatedPath": "\/img\/thumb.jpg",
-		"outputAbbreviatedPath": "\/img\/thumb.jpg",
+		"initialSize": 20414,
+		"inputAbbreviatedPath": "\/img\/thumb-1.png",
+		"outputAbbreviatedPath": "\/img\/thumb-1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/thumb-2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 18600,
+		"inputAbbreviatedPath": "\/img\/thumb-2.png",
+		"outputAbbreviatedPath": "\/img\/thumb-2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/thumb-3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 33760,
+		"inputAbbreviatedPath": "\/img\/thumb-3.png",
+		"outputAbbreviatedPath": "\/img\/thumb-3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/thumb-4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 44074,
+		"inputAbbreviatedPath": "\/img\/thumb-4.png",
+		"outputAbbreviatedPath": "\/img\/thumb-4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/thumb-5.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 61506,
+		"inputAbbreviatedPath": "\/img\/thumb-5.png",
+		"outputAbbreviatedPath": "\/img\/thumb-5.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

@@ -3919,9 +3919,9 @@ a.subdued {
     border-color: #212C35;
     background-color: #212c35;
     background-image: linear-gradient(0deg, #212C35, #212C35 50%, transparent 50%);
-    color: #FC8D2A; }
+    color: #F78D1E; }
     .bar.bar-stable .title {
-      color: #FC8D2A; }
+      color: #F78D1E; }
     .bar.bar-stable.bar-footer {
       background-image: linear-gradient(180deg, #212C35, #212C35 50%, transparent 50%); }
   .bar.bar-positive {
@@ -4107,9 +4107,9 @@ a.subdued {
 .bar-stable .button {
   border-color: #212C35;
   background-color: #212c35;
-  color: #FC8D2A; }
+  color: #F78D1E; }
   .bar-stable .button:hover {
-    color: #FC8D2A;
+    color: #F78D1E;
     text-decoration: none; }
   .bar-stable .button.active, .bar-stable .button.activated {
     border-color: #a2a2a2;
@@ -4118,7 +4118,7 @@ a.subdued {
     border-color: transparent;
     background: none;
     box-shadow: none;
-    color: #FC8D2A;
+    color: #F78D1E;
     font-size: 17px; }
   .bar-stable .button.button-icon {
     border-color: transparent;
@@ -9599,29 +9599,26 @@ a.button {
 
 .col-50 .item-icon-right .icon {
   right: 0; }
+  .col-50 .item-icon-right .icon.ion-android-more-vertical {
+    padding-left: 10px; }
 
 .row {
   padding: 0;
   flex-wrap: wrap; }
 
 .col-50 {
-  padding: 8px; }
+  padding: 4px;
+  padding-bottom: 2px; }
   .col-50:nth-child(odd) {
-    padding-right: 4px; }
+    padding-right: 2px; }
   .col-50:nth-child(even) {
-    padding-left: 4px; }
+    padding-left: 2px; }
   .col-50 .item.item-stable {
-    margin-top: -8px; }
-  .col-50.ng-enter {
-    animation: .25s appear;
-    z-index: -1; }
+    border-top: none; }
   .col-50.ng-leave {
     animation: .25s appear;
     animation-direction: reverse;
     z-index: -1; }
-  .col-50.ng-enter-stagger {
-    transition-delay: .15s;
-    animation-delay: .15s; }
 
 @keyframes appear {
   from {
@@ -9695,21 +9692,21 @@ a.button {
 .modal-wrapper .bar-header .buttons {
   padding-top: 6px; }
 .modal-wrapper .item-icon-left .material-icons {
-  color: #FC8D2A; }
+  color: #F78D1E; }
 
 input.header-search {
   background: #212C35;
   outline: none;
   border: none;
   font-size: 19px;
-  color: #FC8D2A;
+  color: #F78D1E;
   height: 28px;
-  border-bottom: 2px solid #FC8D2A;
+  border-bottom: 2px solid #F78D1E;
   position: fixed;
   top: 13px;
   left: 70px; }
   input.header-search::-webkit-input-placeholder {
-    color: rgba(252, 141, 42, 0.5) !important; }
+    color: rgba(247, 141, 30, 0.5) !important; }
 
 i.icon.ion-android-search:before {
   font-size: 24px !important;
@@ -9807,10 +9804,10 @@ i.icon.ion-android-search:before {
     left: -5px;
     bottom: -5px;
     right: -5px;
-    border: #FC8D2A 1px solid;
+    border: #F78D1E 1px solid;
     z-index: 0; }
     .lucid-chart-block .lucid-selected-block .lucid-corner-drag {
-      border: #FC8D2A 1px solid;
+      border: #F78D1E 1px solid;
       position: absolute;
       width: 24px;
       height: 24px;
@@ -9852,7 +9849,7 @@ i.icon.ion-android-search:before {
         top: 1px;
         left: 0;
         font-size: 21px;
-        color: #FC8D2A;
+        color: #F78D1E;
         text-align: center;
         width: 22px; }
       .lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-top-left:before {
@@ -9861,7 +9858,7 @@ i.icon.ion-android-search:before {
         top: 1px;
         left: 0;
         font-size: 18px;
-        color: #FC8D2A;
+        color: #F78D1E;
         text-align: center;
         width: 22px; }
   .lucid-chart-block.shrink-block {
@@ -9914,7 +9911,7 @@ i.icon.ion-android-search:before {
   .lucid-top-tabs .lucid-top-tab.selected {
     background: #f0f0f0;
     color: #212C35;
-    border-bottom: 2px solid #FC8D2A;
+    border-bottom: 2px solid #F78D1E;
     font-weight: 500; }
 
 .color-swatch {
@@ -9928,7 +9925,7 @@ i.icon.ion-android-search:before {
   box-sizing: border-box; }
 
 .slide-toggle {
-  transition: .3s ease-in-out all; }
+  transition: .3s ease-out all; }
 
 .shape-manager .slide-toggle > div {
   display: inline-block;
@@ -9958,11 +9955,11 @@ i.icon.ion-android-search:before {
   .menu.menu-left .item {
     border: none; }
   .menu.menu-left .item.active {
-    color: #FC8D2A; }
+    color: #F78D1E; }
     .menu.menu-left .item.active > .item-content {
       background: #fff; }
     .menu.menu-left .item.active .icon {
-      color: #FC8D2A; }
+      color: #F78D1E; }
 
 .pane.view {
   background: #212C35; }
@@ -9998,7 +9995,7 @@ i.icon.ion-android-search:before {
   position: absolute;
   bottom: 0;
   right: 0;
-  background: #FC8D2A;
+  background: #F78D1E;
   box-sizing: border-box;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.9);
   overflow: hidden;
@@ -10025,7 +10022,7 @@ i.icon.ion-android-search:before {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #FC8D2A;
+    background: #F78D1E;
     position: absolute;
     top: 25px;
     left: 25px;
@@ -10033,7 +10030,7 @@ i.icon.ion-android-search:before {
   .lucid-fab.activated:before {
     transition: .2s ease-in-out all;
     content: '';
-    background: #fc9a43;
+    background: #f89937;
     width: 56px;
     height: 56px;
     top: 0;
@@ -10119,3 +10116,13 @@ i.icon.ion-android-search:before {
 img.placeholder-image {
   width: 100%;
   margin-top: -2px; }
+
+.doc-thumb-image {
+  width: 100%;
+  height: 160px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff; }
+
+.scroll .list {
+  padding-bottom: 50px; }
