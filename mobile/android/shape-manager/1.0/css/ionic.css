@@ -9938,7 +9938,7 @@ i.icon.ion-android-search:before {
   transition: .3s ease-out all; }
 
 .shape-manager .slide-toggle {
-  padding: 10px 0;
+  padding: 10px 0 0 0;
   float: left;
   width: 100%; }
   .shape-manager .slide-toggle > div {
