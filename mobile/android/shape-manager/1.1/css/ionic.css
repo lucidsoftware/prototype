@@ -9701,18 +9701,15 @@ a.button {
     transition: none;
     padding: 0 10px;
     margin-right: -10px; }
-
-.rotate-icon {
+.shape-manager .pinned-group {
   color: #F78D1E; }
-  .rotate-icon .icon.ion-ios-arrow-forward,
-  .rotate-icon .icon.ion-android-arrow-dropright {
-    transform: rotateZ(90deg);
-    color: #F78D1E; }
+
+.rotate-icon .icon.ion-ios-arrow-forward,
+.rotate-icon .icon.ion-android-arrow-dropright {
+  transform: rotateZ(90deg); }
 
 .modal-wrapper .bar-header .buttons {
   padding-top: 6px; }
-.modal-wrapper .item-icon-left .material-icons {
-  color: #F78D1E; }
 
 input.header-search {
   background: #212C35;
@@ -9953,10 +9950,9 @@ i.icon.ion-android-search:before {
 .slide-toggle {
   transition: .3s ease-out all; }
 
-.shape-manager .slide-toggle > div {
-  padding-left: 54px; }
-  .shape-manager .slide-toggle > div .item {
-    border: none; }
+.shape-manager .slide-toggle .item {
+  padding-left: 62px;
+  border: none; }
 
 .draggable-shape {
   width: 25%;

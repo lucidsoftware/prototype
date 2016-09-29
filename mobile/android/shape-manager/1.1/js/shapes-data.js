@@ -3451,91 +3451,91 @@ angular.module('lucidShapesData', [])
             },
             parentGroups: function() {
                 return [{
-                    name: "Default",
+                    groupname: "Default",
                     icon: ""
                 }, {
-                    name: "Flowchart",
+                    groupname: "Flowchart",
                     icon: ""
                 }, {
-                    name: "Geometric",
+                    groupname: "Geometric",
                     icon: ""
                 }, {
-                    name: "Android Mockup",
+                    groupname: "Android Mockup",
                     icon: ""
                 }, {
-                    name: "Entity Relationship",
+                    groupname: "Entity Relationship",
                     icon: ""
                 }, {
-                    name: "iOS Mockup",
+                    groupname: "iOS Mockup",
                     icon: ""
                 }, {
-                    name: "Site Map",
+                    groupname: "Site Map",
                     icon: ""
                 }, {
-                    name: "UI Mockup",
+                    groupname: "UI Mockup",
                     icon: ""
                 }, {
-                    name: "UML",
+                    groupname: "UML",
                     icon: ""
                 }, {
-                    name: "BPMN 2.0",
+                    groupname: "BPMN 2.0",
                     icon: ""
                 }, {
-                    name: "Org Chart",
+                    groupname: "Org Chart",
                     icon: ""
                 }, {
-                    name: "Table",
+                    groupname: "Table",
                     icon: ""
                 }, {
-                    name: "Value Stream",
+                    groupname: "Value Stream",
                     icon: ""
                 }, {
-                    name: "AWS Architecture",
+                    groupname: "AWS Architecture",
                     icon: ""
                 }, {
-                    name: "Azure",
+                    groupname: "Azure",
                     icon: ""
                 }, {
-                    name: "Cisco Network Diagram",
+                    groupname: "Cisco Network Diagram",
                     icon: ""
                 }, {
-                    name: "Network Infrastructure",
+                    groupname: "Network Infrastructure",
                     icon: ""
                 }, {
-                    name: "Video",
+                    groupname: "Video",
                     icon: ""
                 }, {
-                    name: "Server Rack Diagram",
+                    groupname: "Server Rack Diagram",
                     icon: ""
                 }, {
-                    name: "Tech Clipart",
+                    groupname: "Tech Clipart",
                     icon: ""
                 }, {
-                    name: "Circuit Diagram",
+                    groupname: "Circuit Diagram",
                     icon: ""
                 }, {
-                    name: "Data Flow Diagram",
+                    groupname: "Data Flow Diagram",
                     icon: ""
                 }, {
-                    name: "Enterprise Integration",
+                    groupname: "Enterprise Integration",
                     icon: ""
                 }, {
-                    name: "Timeline",
+                    groupname: "Timeline",
                     icon: ""
                 }, {
-                    name: "Equation",
+                    groupname: "Equation",
                     icon: ""
                 }, {
-                    name: "Floor Plan",
+                    groupname: "Floor Plan",
                     icon: ""
                 }, {
-                    name: "Mind Map",
+                    groupname: "Mind Map",
                     icon: ""
                 }, {
-                    name: "Process Engineering",
+                    groupname: "Process Engineering",
                     icon: ""
                 }, {
-                    name: "Venn Diagram",
+                    groupname: "Venn Diagram",
                     icon: ""
                 }];
             }

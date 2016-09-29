@@ -92,7 +92,6 @@ angular.module('lucidMobile.controllers', [])
         function($scope, lucidShapesData, $rootScope, $ionicModal) {
             console.log('shape manager ctrl run');
             $scope.shapeGroups = lucidShapesData.lucidShapeGroups();
-            $scope.parentGroups = lucidShapesData.parentGroups();
             angular.forEach($scope.shapeGroups, function(shapegroup) {
                 //open all shapegroups when opening the shapemanager
                 shapegroup.openInManager = true;
@@ -128,6 +127,49 @@ angular.module('lucidMobile.controllers', [])
                 }).then(function(modal) {
                     $scope.modal = modal;
                     $scope.modal.show();
+                    $scope.shapeGroups = lucidShapesData.lucidShapeGroups();
+                    $scope.parentGroups = lucidShapesData.parentGroups();
+                    $scope.toggleGroupPin = function(lucidGroup) {
+                        console.log(lucidGroup);
+                        //if pinned, unpin all
+                        if ($scope.lucidGroupPinned(lucidGroup)) {
+                            angular.forEach($scope.shapeGroups, function(shapegroup) {
+                                if (lucidGroup.groupname === shapegroup.lucidgroup && shapegroup.pinned) {
+                                    shapegroup.pinned = false;
+
+                                }
+                            });
+                        }
+                        //else pin all
+                        else {
+                            angular.forEach($scope.shapeGroups, function(shapegroup) {
+                                if (lucidGroup.groupname === shapegroup.lucidgroup && !shapegroup.pinned) {
+                                    shapegroup.pinned = true;
+
+                                }
+                            });
+                        }
+                    };
+                    $scope.lucidGroupPinned = function(lucidGroup) {
+                        var pinnedCount = 0;
+                        var groupCount = 0;
+                        //console.log('is it pinned?');
+                        angular.forEach($scope.shapeGroups, function(shapegroup) {
+                            //console.log('pin', lucidGroup.groupname, shapegroup.lucidgroup, lucidGroup.groupname === shapegroup.lucidgroup);
+                            if (lucidGroup.groupname === shapegroup.lucidgroup) {
+                                //count number in this group
+                                //console.log(lucidGroup, String(shapegroup.lucidgroup));
+                                groupCount += 1;
+                                if (shapegroup.pinned) {
+                                    //counted pinned
+                                    //console.log('pinned', shapegroup.name);
+                                    pinnedCount += 1;
+                                }
+                            }
+                        });
+                        //console.log(lucidGroup, 'pinnedCount', pinnedCount, 'length', groupCount)
+                        return (pinnedCount / groupCount);
+                    };
                     $scope.close = function() {
                         $scope.modal.hide().then(function() {
                             $scope.modal.remove();
@@ -135,6 +177,7 @@ angular.module('lucidMobile.controllers', [])
                     };
                 });
             };
+
         }
     ])
     .controller('fabCtrl', ['$scope', 'documents', '$stateParams', '$state',

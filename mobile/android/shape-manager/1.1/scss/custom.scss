@@ -151,23 +151,22 @@ $shape-library-height: 250px;
             margin-right: -10px;
         }
     }
+    .pinned-group{
+        color: $lucid-orange;
+    }
 }
 
 .rotate-icon {
-    color: $lucid-orange;
     .icon.ion-ios-arrow-forward,
     .icon.ion-android-arrow-dropright {
         transform: rotateZ(90deg);
-        color: $lucid-orange;
+        //color: $lucid-orange;
     }
 }
 
 .modal-wrapper {
     .bar-header .buttons {
         padding-top: 6px;
-    }
-    .item-icon-left .material-icons {
-        color: $lucid-orange;
     }
 }
 
@@ -487,12 +486,10 @@ i.icon.ion-android-search:before {
 }
 
 .shape-manager {
-    .slide-toggle > div {
+    .slide-toggle .item {
         //display: inline-block;
-        padding-left: 54px;
-        .item{
-            border:none;
-        }
+        padding-left: 62px;
+        border: none;
     }
 }
 
