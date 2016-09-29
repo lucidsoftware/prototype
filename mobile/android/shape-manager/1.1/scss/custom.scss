@@ -87,6 +87,18 @@ $shape-library-height: 250px;
     &.ng-hide {
         bottom: -$shape-library-height;
     }
+    &.ng-enter {
+        bottom: -$shape-library-height;
+    }
+    &.ng-enter.ng-enter-active {
+        bottom: 0;
+    }
+    &.ng-leave {
+        bottom: 0;
+    }
+    &.ng-leave.ng-leave-active {
+        bottom: -$shape-library-height;
+    }
     .scroll-content.fill-height {
         border-top: 1px solid #ddd;
         bottom: 0;

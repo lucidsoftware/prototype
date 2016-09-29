@@ -113,7 +113,7 @@ angular.module('lucidMobile.controllers', [])
             $scope.goToSlide = function(index) {
                 console.log(index);
                 console.log($scope.swiper);
-                $scope.swiper._slideTo(index, 400, function(){
+                $scope.swiper._slideTo(index, 400, function() {
                     console.log('slide to finished');
                 });
             };

@@ -9654,6 +9654,14 @@ a.button {
   background: #fff; }
   .bottom-up.ng-hide {
     bottom: -250px; }
+  .bottom-up.ng-enter {
+    bottom: -250px; }
+  .bottom-up.ng-enter.ng-enter-active {
+    bottom: 0; }
+  .bottom-up.ng-leave {
+    bottom: 0; }
+  .bottom-up.ng-leave.ng-leave-active {
+    bottom: -250px; }
   .bottom-up .scroll-content.fill-height {
     border-top: 1px solid #ddd;
     bottom: 0;

@@ -19,7 +19,7 @@
             </div>
             <div ng-drag-clone="" class="draggable-shape clone" ng-bind-html="clonedData.svg | sanitize"></div>
     </ion-content>
-    <div class="ng-hide bottom-up" ng-controller="shapeManagerCtrl" ng-show="$root.openShapeLibrary">
+    <div class="bottom-up" ng-controller="shapeManagerCtrl" ng-if="$root.openShapeLibrary">
 
         <div class="small-navigation">
             <div class="bar-light" >
@@ -169,7 +169,7 @@
         <div class="buttons col-20" ng-click="doSomething()">
             <button class="button"><i class="icon material-icons">settings</i></button>
         </div>
-        <div class="buttons col-20" ng-click="$root.openShapeLibrary = true">
+        <div class="buttons col-20" ng-click="$root.openShapeLibrary = true;">
             <button class="button"><i class="icon material-icons">add</i></button>
         </div>
     </ion-footer-bar>
