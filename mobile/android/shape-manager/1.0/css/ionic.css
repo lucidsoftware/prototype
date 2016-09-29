@@ -9644,7 +9644,7 @@ a.button {
   display: inline-block; }
 
 .bottom-up {
-  height: 200px;
+  height: 250px;
   width: 100%;
   background: #f1f1f1;
   position: absolute;
@@ -9653,7 +9653,7 @@ a.button {
   transition: all .25s ease-in-out;
   background: #fff; }
   .bottom-up.ng-hide {
-    bottom: -200px; }
+    bottom: -250px; }
   .bottom-up .scroll-content.fill-height {
     border-top: 1px solid #ddd;
     bottom: 0;
@@ -9681,16 +9681,26 @@ a.button {
     .bar-light.bottom.ng-hide {
       margin-bottom: -30px; }
 
-.icon {
-  transition: .25s ease-in-out all; }
+.shape-manager .scroll-content .icon.material-icons {
+  transition: .25s ease-in-out color;
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  height: 24px; }
+.shape-manager .scroll-content .pinned-group {
+  color: #F78D1E; }
+.shape-manager .scroll-content .item {
+  border-bottom: none; }
+  .shape-manager .scroll-content .item.activated {
+    background: #f7f7f7; }
 
 .rotate-icon {
   border-bottom: none; }
-  .rotate-icon .icon.ion-ios-arrow-forward {
+  .rotate-icon .icon.ion-android-arrow-dropright {
     transform: rotateZ(90deg); }
 
 .modal-wrapper .bar-header .buttons {
-  padding-top: 6px; }
+  padding-top: 4px; }
 .modal-wrapper .item-icon-left .material-icons {
   color: #F78D1E; }
 
@@ -9927,9 +9937,14 @@ i.icon.ion-android-search:before {
 .slide-toggle {
   transition: .3s ease-out all; }
 
-.shape-manager .slide-toggle > div {
-  display: inline-block;
-  padding: 8px; }
+.shape-manager .slide-toggle {
+  padding: 10px 0;
+  float: left;
+  width: 100%; }
+  .shape-manager .slide-toggle > div {
+    display: inline-block;
+    padding: 5px;
+    float: left; }
 
 .draggable-shape {
   width: 25%;

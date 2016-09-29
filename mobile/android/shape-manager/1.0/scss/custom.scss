@@ -4,7 +4,7 @@
 
 .col-50 .item-icon-right .icon {
     right: 0;
-    &.ion-android-more-vertical{
+    &.ion-android-more-vertical {
         padding-left: 10px;
     }
 }
@@ -16,7 +16,7 @@
 
 .col-50 {
     padding: 4px;
-    padding-bottom:2px;
+    padding-bottom: 2px;
     &:nth-child(odd) {
         padding-right: 2px;
     }
@@ -24,7 +24,7 @@
         padding-left: 2px;
     }
     .item.item-stable {
-        border-top:none;
+        border-top: none;
     }
     // &.ng-enter {
     //     animation: .25s appear;
@@ -75,7 +75,7 @@
 }
 
 .bottom-up {
-    $shape-library-height: 200px;
+    $shape-library-height: 250px;
     height: $shape-library-height;
     width: 100%;
     background: #f1f1f1;
@@ -121,20 +121,35 @@
     }
 }
 
-.icon {
-    transition: .25s ease-in-out all;
+.shape-manager .scroll-content{
+    .icon.material-icons {
+        transition: .25s ease-in-out color;
+        right: 10px;
+        top: 10px;
+        position: absolute;
+        height: 24px;
+    }
+    .pinned-group {
+        color: $lucid-orange;
+    }
+    .item {
+        border-bottom: none;
+        &.activated {
+            background: #f7f7f7;
+        }
+    }
 }
 
 .rotate-icon {
     border-bottom: none;
-    .icon.ion-ios-arrow-forward {
+    .icon.ion-android-arrow-dropright {
         transform: rotateZ(90deg);
     }
 }
 
 .modal-wrapper {
     .bar-header .buttons {
-        padding-top: 6px;
+        padding-top: 4px;
     }
     .item-icon-left .material-icons {
         color: $lucid-orange;
@@ -448,9 +463,15 @@ i.icon.ion-android-search:before {
 }
 
 .shape-manager {
-    .slide-toggle > div {
-        display: inline-block;
-        padding: 8px;
+    .slide-toggle {
+        padding: 10px 0;
+        float:left;
+        width:100%;
+        >div {
+            display: inline-block;
+            padding: 5px;
+            float: left;
+        }
     }
 }
 
@@ -706,13 +727,15 @@ img.placeholder-image {
     width: 100%;
     margin-top: -2px;
 }
-.doc-thumb-image{
-    width:100%;
+
+.doc-thumb-image {
+    width: 100%;
     height: 160px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:#fff;
+    background-color: #fff;
 }
+
 .scroll .list {
     padding-bottom: 50px;
 }

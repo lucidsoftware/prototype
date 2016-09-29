@@ -101,6 +101,7 @@ angular.module('lucidMobile.controllers', [])
                 /* Whatever options */
                 effect: 'slide',
                 initialSlide: 0,
+                pagination: false,
                 /* Initialize a scope variable with the swiper */
                 onInit: function(swiper) {
                     $scope.swiper = swiper;
