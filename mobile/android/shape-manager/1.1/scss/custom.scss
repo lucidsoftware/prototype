@@ -150,8 +150,12 @@ $shape-library-height: 250px;
             padding: 0 10px;
             margin-right: -10px;
         }
+        &.remove-flash {
+            position: absolute;
+            right: 10px;
+        }
     }
-    .pinned-group{
+    .pinned-group {
         color: $lucid-orange;
     }
 }

@@ -9701,6 +9701,9 @@ a.button {
     transition: none;
     padding: 0 10px;
     margin-right: -10px; }
+  .shape-manager .icon.remove-flash {
+    position: absolute;
+    right: 10px; }
 .shape-manager .pinned-group {
   color: #F78D1E; }
 
