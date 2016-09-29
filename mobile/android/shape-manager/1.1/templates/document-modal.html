@@ -20,6 +20,7 @@
             <div ng-drag-clone="" class="draggable-shape clone" ng-bind-html="clonedData.svg | sanitize"></div>
     </ion-content>
     <div class="ng-hide bottom-up" ng-controller="shapeManagerCtrl" ng-show="$root.openShapeLibrary">
+
         <div class="small-navigation">
             <div class="bar-light" >
                 <i class="icon material-icons" ng-click="$root.openShapeLibrary = false">close</i>
@@ -27,6 +28,20 @@
                 <span class="float-right" ng-click="$event.stopPropagation(); showShapeManager();">Manage</span>
             </div>
             <ion-content class="fill-height">
+              <ion-slides  options="{loop:true}" slider="data.slider">
+                <ion-slide-page ng-repeat="shapegroup in pinnedShapeGroups" ng-if="shapegroup.pinned">
+                  <div class="draggable-shape" 
+                                ng-drag="true" 
+                                ng-drag-data="shape" 
+                                ng-drag-success="onDragComplete($data,$event)" 
+                                ng-center-anchor="true" 
+                                ng-repeat="shape in shapegroup.shapes" 
+                                ng-bind-html="shape.svg | sanitize"> </div>
+                </ion-slide-page>
+              </ion-slides>
+            </ion-content>
+
+            <!-- <ion-content class="fill-height">
                 <ion-list 
                     ng-drop="true"
                     ng-drop-success="dropFromCanvas($data, $event, shapegroup);">
@@ -46,10 +61,10 @@
                         </div>
                     </div>
                 </ion-list>
-            </ion-content>
+            </ion-content> -->
         </div>
     </div>
-    <div class="ng-hide bottom-up" ng-controller="shapeManagerCtrl" ng-show="$root.openStyleShape && $root.selectedType != 'nothing';">
+    <div class="ng-hide bottom-up" ng-show="$root.openStyleShape && $root.selectedType != 'nothing';">
         <lucid-top-tabs>
             <lucid-top-tab name="Styles">
                 <ion-content class="fill-height">

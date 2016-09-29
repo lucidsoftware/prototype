@@ -10126,3 +10126,6 @@ img.placeholder-image {
 
 .scroll .list {
   padding-bottom: 50px; }
+
+.swiper-slide {
+  overflow: scroll; }
