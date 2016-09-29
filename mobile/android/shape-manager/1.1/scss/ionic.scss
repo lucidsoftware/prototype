@@ -14,6 +14,9 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #000 !default;
 
+// @import 'https://fonts.googleapis.com/css?family=Muli';
+// $font-family-base: "Muli", sans-serif !important;
+
 @import 'https://fonts.googleapis.com/css?family=Roboto';
 $font-family-base: "Roboto", sans-serif !important;
 $lucid-orange: #F78D1E;
@@ -43,6 +46,7 @@ $button-large-icon-size: 29px;
 $bar-padding-portrait: 11px;
 $item-light-active-bg: #fff;
 $item-light-active-text: $lucid-orange;
+$item-default-active-bg: #f7f7f7;//rgba($lucid-orange, .05);
 // $item-icon-fill-font-size: 24px;
 $bar-footer-height: 48px;
 

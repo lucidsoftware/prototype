@@ -3448,6 +3448,96 @@ angular.module('lucidShapesData', [])
             },
             pinnedShapeGroups: function() {
                 return pinnedShapes;
+            },
+            parentGroups: function() {
+                return [{
+                    name: "Default",
+                    icon: ""
+                }, {
+                    name: "Flowchart",
+                    icon: ""
+                }, {
+                    name: "Geometric",
+                    icon: ""
+                }, {
+                    name: "Android Mockup",
+                    icon: ""
+                }, {
+                    name: "Entity Relationship",
+                    icon: ""
+                }, {
+                    name: "iOS Mockup",
+                    icon: ""
+                }, {
+                    name: "Site Map",
+                    icon: ""
+                }, {
+                    name: "UI Mockup",
+                    icon: ""
+                }, {
+                    name: "UML",
+                    icon: ""
+                }, {
+                    name: "BPMN 2.0",
+                    icon: ""
+                }, {
+                    name: "Org Chart",
+                    icon: ""
+                }, {
+                    name: "Table",
+                    icon: ""
+                }, {
+                    name: "Value Stream",
+                    icon: ""
+                }, {
+                    name: "AWS Architecture",
+                    icon: ""
+                }, {
+                    name: "Azure",
+                    icon: ""
+                }, {
+                    name: "Cisco Network Diagram",
+                    icon: ""
+                }, {
+                    name: "Network Infrastructure",
+                    icon: ""
+                }, {
+                    name: "Video",
+                    icon: ""
+                }, {
+                    name: "Server Rack Diagram",
+                    icon: ""
+                }, {
+                    name: "Tech Clipart",
+                    icon: ""
+                }, {
+                    name: "Circuit Diagram",
+                    icon: ""
+                }, {
+                    name: "Data Flow Diagram",
+                    icon: ""
+                }, {
+                    name: "Enterprise Integration",
+                    icon: ""
+                }, {
+                    name: "Timeline",
+                    icon: ""
+                }, {
+                    name: "Equation",
+                    icon: ""
+                }, {
+                    name: "Floor Plan",
+                    icon: ""
+                }, {
+                    name: "Mind Map",
+                    icon: ""
+                }, {
+                    name: "Process Engineering",
+                    icon: ""
+                }, {
+                    name: "Venn Diagram",
+                    icon: ""
+                }];
             }
         };
     }]);

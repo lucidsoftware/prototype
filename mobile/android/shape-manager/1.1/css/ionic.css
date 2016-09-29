@@ -5710,7 +5710,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
 .item .item-content.active,
 .item .item-content.activated {
   border-color: #ccc;
-  background-color: #D9D9D9; }
+  background-color: #f7f7f7; }
   .item.active.item-complex > .item-content,
   .item.activated.item-complex > .item-content,
   .item-complex.active .item-content.item-complex > .item-content,
@@ -5718,7 +5718,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   .item .item-content.active.item-complex > .item-content,
   .item .item-content.activated.item-complex > .item-content {
     border-color: #ccc;
-    background-color: #D9D9D9; }
+    background-color: #f7f7f7; }
   .item.active.item-light,
   .item.activated.item-light,
   .item-complex.active .item-content.item-light,
@@ -9691,13 +9691,23 @@ a.button {
     .bar-light.bottom.ng-hide {
       margin-bottom: -30px; }
 
-.icon {
+.item {
+  transition: .25s ease-in-out color;
+  border-bottom: none; }
+
+.shape-manager .icon {
   transition: .25s ease-in-out all; }
+  .shape-manager .icon.material-icons {
+    transition: none;
+    padding: 0 10px;
+    margin-right: -10px; }
 
 .rotate-icon {
-  border-bottom: none; }
-  .rotate-icon .icon.ion-ios-arrow-forward {
-    transform: rotateZ(90deg); }
+  color: #F78D1E; }
+  .rotate-icon .icon.ion-ios-arrow-forward,
+  .rotate-icon .icon.ion-android-arrow-dropright {
+    transform: rotateZ(90deg);
+    color: #F78D1E; }
 
 .modal-wrapper .bar-header .buttons {
   padding-top: 6px; }
@@ -9944,8 +9954,9 @@ i.icon.ion-android-search:before {
   transition: .3s ease-out all; }
 
 .shape-manager .slide-toggle > div {
-  display: inline-block;
-  padding: 8px; }
+  padding-left: 54px; }
+  .shape-manager .slide-toggle > div .item {
+    border: none; }
 
 .draggable-shape {
   width: 25%;

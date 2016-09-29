@@ -136,14 +136,29 @@ $shape-library-height: 250px;
     }
 }
 
-.icon {
-    transition: .25s ease-in-out all;
+.item {
+    transition: .25s ease-in-out color;
+    border-bottom: none;
+    //border-top:none;
+}
+
+.shape-manager {
+    .icon {
+        transition: .25s ease-in-out all;
+        &.material-icons {
+            transition: none;
+            padding: 0 10px;
+            margin-right: -10px;
+        }
+    }
 }
 
 .rotate-icon {
-    border-bottom: none;
-    .icon.ion-ios-arrow-forward {
+    color: $lucid-orange;
+    .icon.ion-ios-arrow-forward,
+    .icon.ion-android-arrow-dropright {
         transform: rotateZ(90deg);
+        color: $lucid-orange;
     }
 }
 
@@ -473,8 +488,11 @@ i.icon.ion-android-search:before {
 
 .shape-manager {
     .slide-toggle > div {
-        display: inline-block;
-        padding: 8px;
+        //display: inline-block;
+        padding-left: 54px;
+        .item{
+            border:none;
+        }
     }
 }
 
