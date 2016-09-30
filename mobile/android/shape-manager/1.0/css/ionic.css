@@ -9694,15 +9694,21 @@ a.button {
   .shape-manager .scroll-content .item.activated {
     background: #f7f7f7; }
 
+.item {
+  border-bottom: none; }
+  .item.activated {
+    background: #f7f7f7; }
+
+.icon.ion-ios-arrow-forward {
+  transition: .25s ease-out all; }
+
 .rotate-icon {
   border-bottom: none; }
-  .rotate-icon .icon.ion-android-arrow-dropright {
+  .rotate-icon .icon.ion-ios-arrow-forward {
     transform: rotateZ(90deg); }
 
 .modal-wrapper .bar-header .buttons {
   padding-top: 4px; }
-.modal-wrapper .item-icon-left .material-icons {
-  color: #F78D1E; }
 
 input.header-search {
   background: #212C35;
@@ -9935,7 +9941,8 @@ i.icon.ion-android-search:before {
   box-sizing: border-box; }
 
 .slide-toggle {
-  transition: .3s ease-out all; }
+  transition: .3s ease-out all;
+  padding: 10px 0px 0px 16px; }
 
 .shape-manager .slide-toggle {
   padding: 10px 0 0 0;

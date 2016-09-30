@@ -17,7 +17,7 @@
     <ion-content>
         <ion-list ng-controller="shapeManagerCtrl">
             <div ng-repeat="shapegroup in pinnedShapeGroups | filter: $root.filter">
-                <ion-item ng-class="{'pinned-group': shapegroup.openInManager}" ng-click="shapegroup.pinned = !shapegroup.pinned">
+                <ion-item ng-class="{'pinned-group': shapegroup.pinned}" ng-click="shapegroup.pinned = !shapegroup.pinned">
                     <!-- <i class="icon ion-android-arrow-dropright"></i>  -->
                     {{shapegroup.groupname}}
                     <i class="icon material-icons" ng-if="shapegroup.pinned">check_circle</i>

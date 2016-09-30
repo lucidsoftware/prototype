@@ -1255,7 +1255,7 @@ angular.module('lucidShapesData', [])
                 "name": "Star",
                 "tags": "UML",
                 "url": "assets/icon-shapes-star.svg",
-                "svg": '<div _ngcontent-fsl-36="" class="item" lucid-default-disabled=""><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg></div>'
+                "svg": '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg>'
             }, {
                 "name": "Rectangle",
                 "tags": "UML",
@@ -1270,7 +1270,7 @@ angular.module('lucidShapesData', [])
                 "name": "Star",
                 "tags": "UML",
                 "url": "assets/icon-shapes-star.svg",
-                "svg": '<div _ngcontent-fsl-36="" class="item" lucid-default-disabled=""><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg></div>'
+                "svg": '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg>'
             }, {
                 "name": "Rectangle",
                 "tags": "UML",
@@ -1285,7 +1285,7 @@ angular.module('lucidShapesData', [])
                 "name": "Star",
                 "tags": "UML",
                 "url": "assets/icon-shapes-star.svg",
-                "svg": '<div _ngcontent-fsl-36="" class="item" lucid-default-disabled=""><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg></div>'
+                "svg": '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg>'
             }, {
                 "name": "Rectangle",
                 "tags": "UML",
@@ -1300,7 +1300,7 @@ angular.module('lucidShapesData', [])
                 "name": "Star",
                 "tags": "UML",
                 "url": "assets/icon-shapes-star.svg",
-                "svg": '<div _ngcontent-fsl-36="" class="item" lucid-default-disabled=""><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg></div>'
+                "svg": '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg>'
             }, {
                 "name": "Rectangle",
                 "tags": "UML",
@@ -1315,7 +1315,7 @@ angular.module('lucidShapesData', [])
                 "name": "Star",
                 "tags": "UML",
                 "url": "assets/icon-shapes-star.svg",
-                "svg": '<div _ngcontent-fsl-36="" class="item" lucid-default-disabled=""><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg></div>'
+                "svg": '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg>'
             }, {
                 "name": "Rectangle",
                 "tags": "UML",
@@ -1330,7 +1330,7 @@ angular.module('lucidShapesData', [])
                 "name": "Star",
                 "tags": "UML",
                 "url": "assets/icon-shapes-star.svg",
-                "svg": '<div _ngcontent-fsl-36="" class="item" lucid-default-disabled=""><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg></div>'
+                "svg": '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path d="M11.6 2a4.8 4.8 0 0 0-4.8 4.8v2.4A4.8 4.8 0 0 1 2 14a4.8 4.8 0 0 1 4.8 4.8v2.4a4.8 4.8 0 0 0 4.8 4.8m4.8 0a4.8 4.8 0 0 0 4.8-4.8v-2.4A4.8 4.8 0 0 1 26 14a4.8 4.8 0 0 1-4.8-4.8V6.8A4.8 4.8 0 0 0 16.4 2" stroke="#000" stroke-width="2" fill="none"></path></svg>'
             }],
             "pinned": false
 
@@ -3426,7 +3426,7 @@ angular.module('lucidShapesData', [])
                 "name": "Polygon",
                 "tags": "Venn Diagrams",
                 "url": "assets/icon-shapes-polygon.svg",
-                "svg": '<div _ngcontent-fsl-36="" class="item" lucid-default-disabled=""><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><defs><radialGradient gradientUnits="userSpaceOnUse" id="ltb_2200a" fx="14" fy="14" cx="14" cy="14" r="12.324"><stop offset="0%" stop-color="#f7b898" stop-opacity=".4"></stop><stop offset="60%" stop-color="#f49769" stop-opacity=".6"></stop><stop offset="100%" stop-color="#d6845c"></stop></radialGradient></defs><path d="M26 14c0 6.627-5.373 12-12 12S2 20.627 2 14 7.373 2 14 2s12 5.373 12 12z" stroke="#f49769" stroke-width="2" fill="url(#ltb_2200a)"></path></svg></div>'
+                "svg": '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><defs><radialGradient gradientUnits="userSpaceOnUse" id="ltb_2200a" fx="14" fy="14" cx="14" cy="14" r="12.324"><stop offset="0%" stop-color="#f7b898" stop-opacity=".4"></stop><stop offset="60%" stop-color="#f49769" stop-opacity=".6"></stop><stop offset="100%" stop-color="#d6845c"></stop></radialGradient></defs><path d="M26 14c0 6.627-5.373 12-12 12S2 20.627 2 14 7.373 2 14 2s12 5.373 12 12z" stroke="#f49769" stroke-width="2" fill="url(#ltb_2200a)"></path></svg>'
             }],
             "pinned": false,
         }];

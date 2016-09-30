@@ -121,7 +121,7 @@
     }
 }
 
-.shape-manager .scroll-content{
+.shape-manager .scroll-content {
     .icon.material-icons {
         transition: .25s ease-in-out color;
         right: 10px;
@@ -140,9 +140,20 @@
     }
 }
 
+.item {
+    border-bottom: none;
+    &.activated {
+        background: #f7f7f7;
+    }
+}
+
+.icon.ion-ios-arrow-forward {
+    transition: .25s ease-out all;
+}
+
 .rotate-icon {
     border-bottom: none;
-    .icon.ion-android-arrow-dropright {
+    .icon.ion-ios-arrow-forward {
         transform: rotateZ(90deg);
     }
 }
@@ -152,7 +163,7 @@
         padding-top: 4px;
     }
     .item-icon-left .material-icons {
-        color: $lucid-orange;
+        // color: $lucid-orange;
     }
 }
 
@@ -460,13 +471,14 @@ i.icon.ion-android-search:before {
 
 .slide-toggle {
     transition: .3s ease-out all;
+    padding: 10px 0px 0px 16px;
 }
 
 .shape-manager {
     .slide-toggle {
         padding: 10px 0 0 0;
-        float:left;
-        width:100%;
+        float: left;
+        width: 100%;
         >div {
             display: inline-block;
             padding: 5px;

@@ -210,7 +210,7 @@ angular.module('lucidMobile.services', [])
             create: function(documentID, folderID) {
                 var newDoc = {
                     id: documentID,
-                    name: 'Doc' + Number(documents.length) + 1,
+                    name: 'New Document',
                     insideFolder: folderID || 0,
                     thumb: 'img/thumb.jpg',
                     group: 'Recent',
