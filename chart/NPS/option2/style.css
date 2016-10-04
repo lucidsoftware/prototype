@@ -2654,15 +2654,16 @@ a {
   z-index: 50;
 }
 .nps.ng-enter {
-  transition: 0.4s linear all;
-  opacity: 0;
+  transition: 0.25s ease-out;
+  height: 0;
 }
 /* The finishing CSS styles for the enter animation */
 .nps.ng-enter.ng-enter-active {
   opacity: 1;
+  height: 137px;
 }
 .nps.ng-leave {
-  transition: 0.4s linear all;
+  transition: 0.5s linear all;
   opacity: 1;
 }
 .nps.ng-leave.ng-leave-active {
