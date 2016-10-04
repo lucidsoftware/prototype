@@ -1,0 +1,27 @@
+<div id="main-header">
+  <section class="header-left">
+    <div id="documents"><ng-include src="'http://particle.golucid.co/components/3.0/icon/icons/icon-folder-22px.svg'" class="lucid-icon-22"></ng-include></div>
+    <!-- INCLUDE FILE MENU -->
+    <ng-include src="'components/header/file-menu.html'"></ng-include>
+    <!-- END FILE MENU -->
+    <span class="save-text">{{savetext}}</span>
+  </section>
+  <section class="header-middle">
+    <h1 id="document-title" ng-init="docTitle = 'Company Org Chart'"><edit-in-place ng-model="docTitle"></edit-in-place></h1>
+  </section>
+  <section class="header-right">
+    <ul class="collaborators">
+      <li>
+        <img src="assets/collaborator.jpg">
+      </li>
+    </ul>
+    <lucid-button 
+      class="lucid-blue" 
+      ng-click="$root.showShareModal = true" 
+      icon="http://particle.golucid.co/components/3.0/icon/icons/icon-person-18px.svg">
+      Share
+    </lucid-button>
+    <span class="line"></span>
+    <div class="dd-arrow">Account</div>
+  </section>
+</div>

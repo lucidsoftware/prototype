@@ -1,0 +1,95 @@
+#main-footer {
+    position: absolute;
+    transition: all .3s ease-in-out;
+    bottom: -32px;
+    left: 0;
+    width: 100%;
+    z-index: 7;
+    background: @blue-steel-secondary;
+    color: #fff;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    width: 100%;
+    img {
+        height: 22px;
+    }
+    svg {
+        margin: 0 5px;
+        path {
+            fill: #fff;
+        }
+    }
+    .content-right {
+        flex: 0 0 auto;
+        width: 251px;
+    }
+    .content-left {
+        flex: 0 1 auto;
+        display: flex;
+        align-items: center;
+        just-content: flex-start;
+        overflow: hidden;
+    }
+    .spacer-left {
+        width: 140px;
+        height: 100%;
+        flex-shrink: 1;
+    }
+    .spacer-right {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    // ----- Page tabs ------
+    ul.page-tabs {
+        display: flex;
+        flex: 0 1 auto;
+        margin: 0 5px;
+        overflow: hidden;
+        height: 32px;
+        > li {
+            transition: all .2s ease-in-out;
+            max-width: 150px;
+            &.ng-enter  {
+                width: 0;
+                opacity: 0;
+            }
+            &.ng-enter-active {
+                width: 120px;
+                opacity: 1;
+            }
+        }
+    }
+    .page-tab {
+        text-align: center;
+        opacity: .5;
+        background: @blue-steel;
+        border-radius: 0 0 4px 4px;
+        font-size: 14px;
+        color: #fff;
+        padding: 5px 10px 6px;
+        margin-right: 2px;
+        display: flex;
+        align-contents: bottom;
+        justify-content: space-around;
+        min-width: 120px;
+        h4 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip; //ellipsis is rendering incorrectly
+            height: 15px;
+        }
+        .edit-in-place {
+            color: inherit;
+        }
+        &.current-page {
+            opacity: 1;
+            padding: 6px 10px 7px;
+        }
+    }
+}
