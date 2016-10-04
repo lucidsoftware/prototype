@@ -2654,7 +2654,7 @@ a {
   z-index: 50;
 }
 .nps.ng-enter {
-  transition: 1s linear all;
+  transition: 0.25s ease-out;
   height: 0;
 }
 /* The finishing CSS styles for the enter animation */
@@ -2663,7 +2663,7 @@ a {
   height: 137px;
 }
 .nps.ng-leave {
-  transition: 1s linear all;
+  transition: .25s linear all;
   height: 137px;
 }
 .nps.ng-leave.ng-leave-active {
