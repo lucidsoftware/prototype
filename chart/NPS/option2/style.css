@@ -2663,7 +2663,7 @@ a {
   height: 137px;
 }
 .nps.ng-leave {
-  transition: 0.25s ease-in;
+  transition: 0.25s ease-out;
 }
 .nps.ng-leave.ng-leave-active {
   opacity: 0;
