@@ -2664,8 +2664,4 @@ a {
 }
 .nps.ng-leave {
   transition: 0.25s linear all;
-  opacity: 1;
-}
-.nps.ng-leave.ng-leave-active {
-  opacity: 0;
 }
