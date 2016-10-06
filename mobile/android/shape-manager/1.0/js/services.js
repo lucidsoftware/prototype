@@ -159,9 +159,9 @@ angular.module('lucidMobile.services', [])
             thumb: 'img/thumb-3.png',
             group: 'Recent',
             pages: [{
-                blocks:[]
+                blocks: []
             }]
-        },{
+        }, {
             id: 4,
             name: 'ERD & Data Flow',
             insideFolder: 0,
@@ -169,7 +169,7 @@ angular.module('lucidMobile.services', [])
             thumb: 'img/thumb-4.png',
             group: 'Recent',
             pages: [{
-                blocks:[]
+                blocks: []
             }]
         }, {
             id: 5,
@@ -179,7 +179,7 @@ angular.module('lucidMobile.services', [])
             thumb: 'img/thumb-5.png',
             group: 'Recent',
             pages: [{
-                blocks:[]
+                blocks: []
             }]
         }];
         var documentFunctions = {
@@ -217,7 +217,7 @@ angular.module('lucidMobile.services', [])
                     pages: [{
                         'name': 'Page 1',
                         'thumb': 'assets/thumb-placeholder-flowchart.png',
-                        'id': 14543,
+                        'id': Date.now(),
                         'canvasBG': '#FFF',
                         'blocks': []
                     }]
@@ -239,7 +239,7 @@ angular.module('lucidMobile.services', [])
 
                     $scope.currentDocument = documentFunctions.getByID(documentID);
                     $rootScope.currentPage = documentFunctions.getByID(documentID).pages[0];
-                    $scope.openPages = function(){
+                    $scope.openPages = function() {
                         console.log('open pages');
                         documentFunctions.openPages(documentID);
                     };
@@ -263,7 +263,23 @@ angular.module('lucidMobile.services', [])
                     $scope.modal = modal;
                     $scope.modal.show();
                     $scope.pages = documentFunctions.getByID(documentID).pages;
+                    $scope.reorderItem = function(page, fromIndex, toIndex) {
+                        //Move the item in the array
+                        $scope.pages.splice(fromIndex, 1);
+                        $scope.pages.splice(toIndex, 0, page);
+                    };
+                    $scope.addPage = function() {
 
+                        var pageNumber = $scope.pages.length + 1;
+                        var newPage = {
+                            'name': 'Page ' + pageNumber,
+                            'thumb': 'assets/thumb-placeholder-flowchart.png',
+                            'canvasBG': '#FFF',
+                            'id': Date.now(),
+                            'blocks': [],
+                        };
+                        $scope.pages.push(newPage);
+                    };
                     $scope.close = function() {
                         console.log('close pages');
                         $scope.modal.hide().then(function() {

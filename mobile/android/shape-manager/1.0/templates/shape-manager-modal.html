@@ -20,8 +20,8 @@
                 <ion-item ng-class="{'pinned-group': shapegroup.pinned}" ng-click="shapegroup.pinned = !shapegroup.pinned">
                     <!-- <i class="icon ion-android-arrow-dropright"></i>  -->
                     {{shapegroup.groupname}}
-                    <i class="icon material-icons" ng-if="shapegroup.pinned">check_circle</i>
-                    <i class="icon material-icons" ng-if="!shapegroup.pinned">radio_button_unchecked</i>
+                    <i class="icon material-icons no-transition" ng-show="shapegroup.pinned">check_circle</i>
+                    <i class="icon material-icons no-transition" ng-show="!shapegroup.pinned">radio_button_unchecked</i>
                     <div class="slide-toggle">
                         <div ng-repeat="shape in shapegroup.shapes" ng-bind-html="shape.svg | sanitize"> </div>
                     </div>
