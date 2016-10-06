@@ -5,9 +5,9 @@
         </div>
         <h1 class="title">{{currentDocument.name}}</h1>
         <div class="buttons">
-        <button ng-click="" class="button button-clear header-item"><i class="icon material-icons">content_copy</i></button>
-        <button ng-click="" class="button button-clear header-item"><i class="material-icons">more_vert</i></button>
-    </div>
+            <button ng-click="openPages()" class="button button-clear header-item"><i class="icon material-icons">content_copy</i></button>
+            <button ng-click="" class="button button-clear header-item"><i class="material-icons">more_vert</i></button>
+        </div>
     </ion-header-bar>
     <ion-content scroll="false">
         <div class="canvas">
@@ -29,7 +29,7 @@
             </div>
             <ion-scroll class="lucid-top-tabs" direction="x" scrollbar-x="false" overflow-scroll="false">
                 <ul >
-                    <li ng-repeat="shapegroup in pinnedShapeGroups = (shapeGroups | filter: {pinned: true})" ng-class="{ selected: $index === swiper.activeIndex, 'col-50' : pinnedShapeGroups.length == 2, 'col-33' : pinnedShapeGroups.length == 3, 'col-25' : pinnedShapeGroups.length >= 4 }" class="lucid-top-tab col-25" ng-click="goToSlide($index)">
+                    <li ng-repeat="shapegroup in pinnedShapeGroups = (shapeGroups | filter: {pinned: true})" ng-class="{ selected: $index == swiper.activeIndex, 'col-50' : pinnedShapeGroups.length == 2, 'col-33' : pinnedShapeGroups.length == 3, 'col-25' : pinnedShapeGroups.length >= 4 }" class="lucid-top-tab col-25" ng-click="goToSlide($index)">
                         <span>{{shapegroup.groupname}}</span>
                     </li>
                 </ul>

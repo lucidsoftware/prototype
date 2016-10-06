@@ -149,10 +149,7 @@ $shape-library-height: 250px;
             transition: none;
             padding: 0 10px;
             margin-right: -10px;
-        }
-        &.remove-flash {
-            position: absolute;
-            right: 10px;
+            left: auto;
         }
     }
     .pinned-group {
@@ -764,4 +761,52 @@ img.placeholder-image {
 
 .swiper-slide {
     overflow: scroll;
+}
+
+.no-transition {
+    transition: none;
+}
+
+.active-page {
+    border: 2px solid $lucid-orange;
+    outline: none;
+}
+
+.pages-list {
+    .item-left-edit {
+        &.item-delete .button.icon:hover {
+            opacity: 1;
+        }
+        .material-icons {
+            color: $lucid-orange;
+            &.page-select-check {
+                display: none;
+            }
+        }
+        .selected-page {
+            .material-icons {
+                display: none;
+                &.page-select-check {
+                    display: inherit;
+                }
+            }
+        }
+    }
+    h2 {
+        padding: 30px 0;
+    }
+}
+
+.pages-footer {
+    padding: 5px 10px;
+    .col {
+        padding: 0;
+        text-align: center;
+    }
+    .col:first-child {
+        text-align: left;
+    }
+    .col:last-child {
+        text-align: right;
+    }
 }

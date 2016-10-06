@@ -239,14 +239,38 @@ angular.module('lucidMobile.services', [])
 
                     $scope.currentDocument = documentFunctions.getByID(documentID);
                     $rootScope.currentPage = documentFunctions.getByID(documentID).pages[0];
-
+                    $scope.openPages = function(){
+                        console.log('open pages');
+                        documentFunctions.openPages(documentID);
+                    };
                     $scope.close = function() {
+                        console.log('closed');
                         $scope.modal.hide().then(function() {
                             $scope.modal.remove();
                         });
                     };
                 });
 
+            },
+            openPages: function(documentID) {
+                //console.log('manage shapes');
+                var $scope = $rootScope.$new();
+                $ionicModal.fromTemplateUrl('templates/pages-modal.html', {
+                    scope: $scope,
+                    animation: 'slide-in-up',
+                    focusFirstInput: true
+                }).then(function(modal) {
+                    $scope.modal = modal;
+                    $scope.modal.show();
+                    $scope.pages = documentFunctions.getByID(documentID).pages;
+
+                    $scope.close = function() {
+                        console.log('close pages');
+                        $scope.modal.hide().then(function() {
+                            $scope.modal.remove();
+                        });
+                    };
+                });
             }
 
         };

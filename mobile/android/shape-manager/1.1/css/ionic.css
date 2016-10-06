@@ -9700,10 +9700,8 @@ a.button {
   .shape-manager .icon.material-icons {
     transition: none;
     padding: 0 10px;
-    margin-right: -10px; }
-  .shape-manager .icon.remove-flash {
-    position: absolute;
-    right: 10px; }
+    margin-right: -10px;
+    left: auto; }
 .shape-manager .pinned-group {
   color: #F78D1E; }
 
@@ -10155,3 +10153,33 @@ img.placeholder-image {
 
 .swiper-slide {
   overflow: scroll; }
+
+.no-transition {
+  transition: none; }
+
+.active-page {
+  border: 2px solid #F78D1E;
+  outline: none; }
+
+.pages-list .item-left-edit.item-delete .button.icon:hover {
+  opacity: 1; }
+.pages-list .item-left-edit .material-icons {
+  color: #F78D1E; }
+  .pages-list .item-left-edit .material-icons.page-select-check {
+    display: none; }
+.pages-list .item-left-edit .selected-page .material-icons {
+  display: none; }
+  .pages-list .item-left-edit .selected-page .material-icons.page-select-check {
+    display: inherit; }
+.pages-list h2 {
+  padding: 30px 0; }
+
+.pages-footer {
+  padding: 5px 10px; }
+  .pages-footer .col {
+    padding: 0;
+    text-align: center; }
+  .pages-footer .col:first-child {
+    text-align: left; }
+  .pages-footer .col:last-child {
+    text-align: right; }

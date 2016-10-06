@@ -19,9 +19,9 @@
             <div ng-repeat="parentGroup in parentGroups | filter: $root.filter">
                 <ion-item class="item-icon-left item-icon-right" ng-class="{'rotate-icon': parentGroup.openInManager, 'pinned-group': lucidGroupPinned(parentGroup) > 0}" ng-click="parentGroup.openInManager = !parentGroup.openInManager">
                     <i class="icon ion-android-arrow-dropright"></i> {{parentGroup.groupname}}
-                    <i class="icon material-icons remove-flash" ng-click="$event.stopPropagation(); $parent.toggleGroupPin(parentGroup)" ng-if="lucidGroupPinned(parentGroup) === 1">check_circle</i>
-                    <i class="icon material-icons remove-flash" ng-click="$event.stopPropagation(); $parent.toggleGroupPin(parentGroup)" ng-if="lucidGroupPinned(parentGroup) === 0">radio_button_unchecked</i>
-                    <i class="icon material-icons remove-flash" ng-click="$event.stopPropagation(); $parent.toggleGroupPin(parentGroup)" ng-if="lucidGroupPinned(parentGroup) > 0 && lucidGroupPinned(parentGroup) < 1">remove_circle_outline</i>
+                    <i class="icon material-icons no-transition" ng-click="$event.stopPropagation(); $parent.toggleGroupPin(parentGroup)" ng-show="lucidGroupPinned(parentGroup) === 1">check_circle</i>
+                    <i class="icon material-icons no-transition" ng-click="$event.stopPropagation(); $parent.toggleGroupPin(parentGroup)" ng-show="lucidGroupPinned(parentGroup) === 0">radio_button_unchecked</i>
+                    <i class="icon material-icons no-transition" ng-click="$event.stopPropagation(); $parent.toggleGroupPin(parentGroup)" ng-show="lucidGroupPinned(parentGroup) > 0 && lucidGroupPinned(parentGroup) < 1">remove_circle_outline</i>
                 </ion-item>
                 <div class="slide-toggle" ng-show="parentGroup.openInManager">
                     <div ng-repeat="shapegroup in shapeGroups | filter: $root.filter" ng-if="shapegroup.lucidgroup === parentGroup.groupname">

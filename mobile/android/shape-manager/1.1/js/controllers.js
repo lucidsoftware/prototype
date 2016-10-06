@@ -106,14 +106,14 @@ angular.module('lucidMobile.controllers', [])
                 onInit: function(swiper) {
                     $scope.swiper = swiper;
                 },
-                // onSlideChangeEnd: function(swiper) {
-                //     console.log('The active index is ' + swiper.activeIndex);
-                //     //$scope.activeIndex = swiper.activeIndex;
-                // }
+                onSlideChangeEnd: function(swiper) {
+                    console.log('The active index is ' + swiper.activeIndex);
+                    $scope.$apply();
+                }
             };
             $scope.goToSlide = function(index) {
                 console.log(index);
-                console.log($scope.swiper);
+                //console.log($scope.swiper);
                 $scope.swiper._slideTo(index, 400, function() {
                     console.log('slide to finished');
                 });
@@ -172,6 +172,7 @@ angular.module('lucidMobile.controllers', [])
                         return (pinnedCount / groupCount);
                     };
                     $scope.close = function() {
+                        console.log('close');
                         $scope.modal.hide().then(function() {
                             $scope.modal.remove();
                         });
