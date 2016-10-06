@@ -1,15 +1,47 @@
 <ion-modal-view>
-    <ion-header-bar class="bar bar-header bar-stable">
+    <div class="menu menu-right" ng-show="openSideMenu">
+        <ion-header-bar>
+            <h2 class="title">{{currentDocument.name}}</h2>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list>
+                <ion-item>
+                    Rename Document
+                </ion-item>
+                <ion-item>
+                    Add Collaborators
+                </ion-item>
+                <ion-item>
+                    Export Document as PDF
+                </ion-item>
+                <ion-item >
+                    Export Current Page as PNG
+                </ion-item>
+                <ion-item >
+                    Export as Visio
+                </ion-item>
+                <div class="item-divider"></div>
+                <ion-item >
+                    View Tips
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </div>
+    <div class="action-sheet-backdrop active ng-hide" ng-show="openSideMenu" ng-class="{'active': openSideMenu}" ng-click="openSideMenu = false"></div>
+    <ion-header-bar class="bar bar-header bar-stable" ng-hide="fullScreen">
         <div class="buttons buttons-left header-item">
             <button class="button button-clear button-primary" ng-click="close()"><i class="material-icons">arrow_back</i></button>
         </div>
         <h1 class="title">{{currentDocument.name}}</h1>
         <div class="buttons">
         <button ng-click="openPages()" class="button button-clear header-item"><i class="icon material-icons">content_copy</i></button>
-        <button ng-click="" class="button button-clear header-item"><i class="material-icons">more_vert</i></button>
+        <button ng-click="fullScreen = true" class="button button-clear header-item"><i class="icon material-icons">fullscreen</i></button>
+        
+        <button ng-click="$event.stopPropagation(); openSideMenu=true" class="button button-clear header-item"><i class="material-icons">more_vert</i></button>
     </div>
     </ion-header-bar>
-    <ion-content scroll="false">
+    <button ng-click="fullScreen = false" class="button close-full-screen"><i class="icon material-icons">fullscreen</i></button>
+    <ion-content scroll="false" class="full-height-scroll">
         <div class="canvas">
             <ng-include src="'templates/canvas/canvas.html'"></ng-include>
         </div>
@@ -133,7 +165,7 @@
             </lucid-top-tab>
         </lucid-top-tabs>
     </div>
-    <ion-footer-bar align-title="left" class="bar-stable">
+    <ion-footer-bar align-title="left" class="bar-stable" ng-hide="fullScreen">
         <div class="buttons col-20">
             <button class="button"><i class="icon material-icons">delete</i></button>
         </div>
