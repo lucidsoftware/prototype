@@ -33,15 +33,15 @@
 
           </ion-item>
     </ion-content>
+    <button class="lucid-fab small" ng-click="addPage()" ng-show="!edit.show">
+        <i class="icon material-icons">add</i>
+    </button>
     <ion-footer-bar align-title="center" class="bar-stable pages-footer">
         <div class="col" ng-show="edit.show">
             <button class="button button-clear">Delete</button>
         </div>
         <div class="col" ng-show="edit.show" ng-click="doSomething()">
             <button class="button button-clear">Rename</button>
-        </div>
-        <div class="buttons pull-right" ng-show="!edit.show" ng-click="">
-            <button class="button button-clear" ng-click="addPage()"><i class="icon material-icons">add</i></button>
         </div>
         <div class="col" ng-show="edit.show" ng-click="">
             <button class="button button-clear">Duplicate</button>

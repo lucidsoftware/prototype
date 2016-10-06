@@ -10038,6 +10038,14 @@ i.icon.ion-android-search:before {
         transform: rotateZ(90deg); }
         .lucid-fab i.ng-hide.ng-hide-add.pencil {
           transform: rotateZ(-90deg); }
+  .lucid-fab.small {
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px; }
+    .lucid-fab.small i {
+      right: 12px;
+      top: 12px; }
   .lucid-fab:before {
     content: '';
     width: 10px;
