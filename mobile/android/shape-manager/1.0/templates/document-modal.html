@@ -35,12 +35,9 @@
         <h1 class="title">{{currentDocument.name}}</h1>
         <div class="buttons">
         <button ng-click="openPages()" class="button button-clear header-item"><i class="icon material-icons">content_copy</i></button>
-        <button ng-click="fullScreen = true" class="button button-clear header-item"><i class="icon material-icons">fullscreen</i></button>
-        
         <button ng-click="$event.stopPropagation(); openSideMenu=true" class="button button-clear header-item"><i class="material-icons">more_vert</i></button>
     </div>
     </ion-header-bar>
-    <button ng-click="fullScreen = false" class="button close-full-screen"><i class="icon material-icons">fullscreen</i></button>
     <ion-content scroll="false" class="full-height-scroll">
         <div class="canvas">
             <ng-include src="'templates/canvas/canvas.html'"></ng-include>

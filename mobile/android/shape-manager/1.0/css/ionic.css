@@ -10163,7 +10163,7 @@ img.placeholder-image {
   padding-bottom: 50px; }
 
 .no-transition {
-  transition: none; }
+  transition: none !important; }
 
 .active-page {
   border: 2px solid #F78D1E;

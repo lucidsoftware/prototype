@@ -4,12 +4,12 @@
             <ion-nav-back-button>
             </ion-nav-back-button>
             <ion-nav-buttons side="left">
-                <button ng-show="!search.show" class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                <button ng-show="!search.show" class="button button-icon button-clear ion-navicon no-transition" menu-toggle="left">
                 </button>
-                <button ng-show="search.show" class="ng-hide button back-button buttons button-clear header-item" ng-click="$root.search = ''; search.show = false; "><i class="icon ion-android-arrow-back"></i></button>
+                <button ng-show="search.show" class="ng-hide button back-button buttons button-clear header-item no-transition" ng-click="$root.search = ''; search.show = false; "><i class="icon ion-android-arrow-back"></i></button>
             </ion-nav-buttons>
             <ion-nav-buttons side="right">
-                <button ng-show="!search.show" class="button button-clear button-icon header-item button-primary" ng-click="search.show = true"><i class="icon ion-android-search"></i></button>
+                <button ng-show="!search.show" class="button button-clear button-icon header-item button-primary no-transition" style="transition:none" ng-click="search.show = true"><i class="icon ion-android-search"></i></button>
                 <input class="header-search" select-on-load ng-model="$root.search" placeholder="Search" ng-if="search.show">
             </ion-nav-buttons>
         </ion-nav-bar>

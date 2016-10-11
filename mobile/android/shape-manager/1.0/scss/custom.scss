@@ -767,7 +767,7 @@ img.placeholder-image {
 }
 
 .no-transition {
-    transition: none;
+    transition: none !important;
 }
 
 .active-page {
