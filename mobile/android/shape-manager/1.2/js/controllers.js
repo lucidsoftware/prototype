@@ -13,12 +13,15 @@ angular.module('lucidMobile.controllers', [])
 
 
     }])
-    .controller('documentsCtrl', ['$scope', 'documents', 'folders', '$stateParams', '$ionicActionSheet',
-        function($scope, documents, folders, $stateParams, $ionicActionSheet) {
+    .controller('documentsCtrl', ['$scope', 'documents', 'folders', '$stateParams', '$ionicActionSheet', '$state',
+        function($scope, documents, folders, $stateParams, $ionicActionSheet, $state) {
             $scope.folderID = $stateParams.folderID || 0;
             console.log($scope.folderID);
             $scope.folders = folders.all();
             $scope.documents = documents.all();
+            $scope.goTo = function(state){
+                $state.go('app.folder', state);
+            };
 
             if ($stateParams.folderID) {
                 $scope.folderName = folders.getByID($stateParams.folderID).name;

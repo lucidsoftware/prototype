@@ -9614,7 +9614,8 @@ a.button {
   .col-50:nth-child(even) {
     padding-left: 2px; }
   .col-50 .item.item-stable {
-    border-top: none; }
+    border-top: none;
+    padding-right: 24px; }
   .col-50.ng-leave {
     animation: .25s appear;
     animation-direction: reverse;

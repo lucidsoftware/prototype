@@ -4,7 +4,7 @@
             <div class="item-divider padding" ng-if="filteredFolders.length>0">Folders</div>
             <div class="row" ng-show="filteredFolders.length>0">
                 <div class="col-50" ng-repeat="folder in filteredFolders = (folders | filter: {insideFolder:folderID, group:filter} | filter: $root.search)">
-                    <ion-item class="item-stable item-icon-left item-icon-right" ui-sref="app.folder({folderID:'{{folder.id}}'})">
+                    <ion-item class="item-stable item-icon-left item-icon-right" ng-click="goTo({folderID:'{{folder.id}}'})">
                         <i class="icon light" ng-if="!folder.shared"><icon-svg src="img/icons/folder-solid.svg"></icon-svg></i>
                         <i class="icon light" ng-if="folder.shared"><icon-svg src="img/icons/folder-shared-solid.svg"></icon-svg></i>{{folder.name}}
                         <i class="icon light" ng-click="$event.stopPropagation(); showFolderOptions(folder)"><icon-svg src="img/icons/more.svg"></icon-svg></i>
