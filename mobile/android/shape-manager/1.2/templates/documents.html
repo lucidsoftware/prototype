@@ -5,9 +5,9 @@
             <div class="row" ng-show="filteredFolders.length>0">
                 <div class="col-50" ng-repeat="folder in filteredFolders = (folders | filter: {insideFolder:folderID, group:filter} | filter: $root.search)">
                     <ion-item class="item-stable item-icon-left item-icon-right" ui-sref="app.folder({folderID:'{{folder.id}}'})">
-                        <i class="icon light" ng-if="!folder.shared"><icon-svg src="img/icon/folder-solid.svg"></icon-svg></i>
-                        <i class="icon light" ng-if="folder.shared"><icon-svg src="img/icon/folder-shared-solid.svg"></icon-svg></i>{{folder.name}}
-                        <i class="icon light" ng-click="$event.stopPropagation(); showFolderOptions(folder)"><icon-svg src="img/icon/more.svg"></icon-svg></i>
+                        <i class="icon light" ng-if="!folder.shared"><icon-svg src="img/icons/folder-solid.svg"></icon-svg></i>
+                        <i class="icon light" ng-if="folder.shared"><icon-svg src="img/icons/folder-shared-solid.svg"></icon-svg></i>{{folder.name}}
+                        <i class="icon light" ng-click="$event.stopPropagation(); showFolderOptions(folder)"><icon-svg src="img/icons/more.svg"></icon-svg></i>
                     </ion-item>
                 </div>
             </div>
@@ -16,9 +16,9 @@
                 <div class="col-50" ng-repeat="document in FilteredDocuments = (documents | filter: {insideFolder:folderID, group:filter} | filter: $root.search)" ng-click="openDocument(document.id)">
                     <div class="doc-thumb-image" style="background-image: url({{document.thumb}})"></div>
                     <ion-item class="item-stable item-icon-right" ng-class="{'item-icon-left': document.shared}">
-                        <i class="icon light" ng-if="document.shared"><icon-svg src="img/icon/folder-shared-solid.svg"></icon-svg></i></i>
+                        <i class="icon light" ng-if="document.shared"><icon-svg src="img/icons/folder-shared-solid.svg"></icon-svg></i></i>
                         {{document.name}}
-                        <i class="icon light" ng-click="$event.stopPropagation(); showFileOptions(document)"><icon-svg src="img/icon/more.svg"></icon-svg></i></i>
+                        <i class="icon light" ng-click="$event.stopPropagation(); showFileOptions(document)"><icon-svg src="img/icons/more.svg"></icon-svg></i></i>
                     </ion-item>
                 </div>
             </div>

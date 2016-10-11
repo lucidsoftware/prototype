@@ -30,13 +30,13 @@
     <div class="action-sheet-backdrop active ng-hide" ng-show="openSideMenu" ng-class="{'active': openSideMenu}" ng-click="openSideMenu = false"></div>
     <ion-header-bar class="bar bar-header bar-stable" ng-hide="fullScreen">
         <div class="buttons buttons-left header-item">
-            <button class="button button-icon button-clear button-primary" ng-click="close()"><icon-svg src="img/icon/back.svg"></icon-svg></button>
+            <button class="button button-icon button-clear button-primary" ng-click="close()"><icon-svg src="img/icons/back.svg"></icon-svg></button>
         </div>
         <h1 class="title">{{currentDocument.name}}</h1>
         <div class="buttons buttons-right header-item">
             <span class="right-buttons">
-                <button ng-click="openPages()" class="button button-clear button-icon header-item"><i class="icon"><icon-svg src="img/icon/pages.svg"></icon-svg></i></button>
-                <button ng-click="$event.stopPropagation(); openSideMenu=true" class="button button-icon button-clear header-item"><i class="icon"><icon-svg src="img/icon/more.svg"></icon-svg></i></button>
+                <button ng-click="openPages()" class="button button-clear button-icon header-item"><i class="icon"><icon-svg src="img/icons/pages.svg"></icon-svg></i></button>
+                <button ng-click="$event.stopPropagation(); openSideMenu=true" class="button button-icon button-clear header-item"><i class="icon"><icon-svg src="img/icons/more.svg"></icon-svg></i></button>
             </span>
         </div>
     </ion-header-bar>
@@ -45,7 +45,7 @@
             <ng-include src="'templates/canvas/canvas.html'"></ng-include>
         </div>
         <div class="bar-light icon-left bottom ng-hide" ng-show="$root.openStyleShape">
-                <i class="icon" ng-click="$root.openStyleShape = false"><icon-svg src="img/icon/close.svg"></icon-svg></i>
+                <i class="icon" ng-click="$root.openStyleShape = false"><icon-svg src="img/icons/close.svg"></icon-svg></i>
                 Select a shape to change it's properties
             </div>
             <div ng-drag-clone="" class="draggable-shape clone" ng-bind-html="clonedData.svg | sanitize"></div>
@@ -53,7 +53,7 @@
     <div class="ng-hide bottom-up" ng-controller="shapeManagerCtrl" ng-show="$root.openShapeLibrary">
         <div class="small-navigation">
             <div class="bar-light icon-left" >
-                <i class="icon" ng-click="$root.openShapeLibrary = false"><icon-svg src="img/icon/close.svg"></icon-svg></i>
+                <i class="icon" ng-click="$root.openShapeLibrary = false"><icon-svg src="img/icons/close.svg"></icon-svg></i>
                 Shapes
                 <span class="float-right" ng-click="$event.stopPropagation(); showShapeManager();">Manage</span>
             </div>
@@ -64,7 +64,7 @@
                     <div ng-repeat="shapegroup in pinnedShapeGroups" ng-if="shapegroup.pinned">
                         <ion-item class="item-icon-right" ng-class="{'rotate-icon': !shapegroup.closed}" ng-click="shapegroup.closed = !shapegroup.closed">
                             {{shapegroup.groupname}}
-                            <i class="icon disclosure-arrow"><icon-svg src="img/icon/disclosure-arrow.svg"></icon-svg></i>
+                            <i class="icon disclosure-arrow"><icon-svg src="img/icons/disclosure-arrow.svg"></icon-svg></i>
                         </ion-item>
                         <div class="slide-toggle" ng-show="!shapegroup.closed">
                             <div class="draggable-shape" 
@@ -166,19 +166,19 @@
     </div>
     <ion-footer-bar align-title="left" class="bar-stable" ng-hide="fullScreen">
         <div class="buttons col-20">
-            <button class="button"><i class="icon active"><icon-svg src="img/icon/trash.svg"></icon-svg></i></button>
+            <button class="button"><i class="icon active"><icon-svg src="img/icons/trash.svg"></icon-svg></i></button>
         </div>
         <div class="buttons col-20" ng-click="doSomething()">
-            <button class="button"><i class="icon active"><icon-svg src="img/icon/undo.svg"></icon-svg></i></button>
+            <button class="button"><i class="icon active"><icon-svg src="img/icons/undo.svg"></icon-svg></i></button>
         </div>
         <div class="buttons col-20" ng-click="$root.openStyleShape = !$root.openStyleShape">
-            <button class="button"><i class="icon active"><icon-svg src="img/icon/styles.svg"></icon-svg></i></button>
+            <button class="button"><i class="icon active"><icon-svg src="img/icons/styles.svg"></icon-svg></i></button>
         </div>
         <div class="buttons col-20" ng-click="doSomething()">
-            <button class="button"><i class="icon active"><icon-svg src="img/icon/wrench.svg"></icon-svg></i></button>
+            <button class="button"><i class="icon active"><icon-svg src="img/icons/wrench.svg"></icon-svg></i></button>
         </div>
         <div class="buttons col-20" ng-click="$root.openShapeLibrary = true">
-            <button class="button"><i class="icon active"><icon-svg src="img/icon/plus-circle.svg"></icon-svg></i></button>
+            <button class="button"><i class="icon active"><icon-svg src="img/icons/plus-circle.svg"></icon-svg></i></button>
         </div>
     </ion-footer-bar>
 </ion-modal-view>

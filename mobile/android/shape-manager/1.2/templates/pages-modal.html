@@ -1,7 +1,7 @@
 <ion-modal-view>
     <ion-header-bar class="bar bar-header bar-stable">
         <div class="buttons buttons-left header-item" ng-show="!search.show">
-            <button class="button button-clear button-primary button-icon" ng-click="close()"><i class="icon active"><icon-svg src="img/icon/close.svg"></icon-svg></i></button>
+            <button class="button button-clear button-primary button-icon" ng-click="close()"><i class="icon active"><icon-svg src="img/icons/close.svg"></icon-svg></i></button>
         </div>
         <h1 class="title">Pages</h1>
         <div class="buttons buttons-right" >
@@ -24,8 +24,8 @@
             <img ng-src="{{page.img}}" ng-class="{'active-page' : page == $root.currentPage}">
             <h2>{{page.name}}</h2>
             <ion-delete-button ng-click="$parent.$parent.selectedPage = page" ng-class="{'selected-page': $parent.$parent.selectedPage == page}">
-                <i class="icon no-transition checkmark checked"><icon-svg src="img/icon/multiselect-active.svg"></icon-svg></i>
-                    <i class="icon no-transition checkmark"><icon-svg src="img/icon/radio.svg"></icon-svg></i>
+                <i class="icon no-transition checkmark checked"><icon-svg src="img/icons/multiselect-active.svg"></icon-svg></i>
+                    <i class="icon no-transition checkmark"><icon-svg src="img/icons/radio.svg"></icon-svg></i>
             </ion-delete-button>
             <ion-reorder-button class="ion-navicon"
                                 on-reorder="reorderItem(page, $fromIndex, $toIndex)">
