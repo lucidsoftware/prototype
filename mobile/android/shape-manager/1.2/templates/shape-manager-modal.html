@@ -1,0 +1,32 @@
+<ion-modal-view class="shape-manager">
+    <ion-header-bar class="bar bar-header bar-stable">
+        <div class="buttons buttons-left header-item" ng-show="!search.show">
+            <button class="button button-clear button-primary" ng-click="close()"><i class="icon material-icons">close</i></button>
+        </div>
+        <h1 class="title" ng-show="!search.show">Manage Shapes</h1>
+        <div class="buttons buttons-right" ng-show="!search.show">
+            <span class="right-buttons">
+                <button class="button button-clear button-primary" ng-click="search.show = true"><i class="icon material-icons">search</i></button>
+            </span>
+        </div>
+        <div class="buttons buttons-left header-item" ng-show="search.show">
+            <button class="button button-clear button-primary" ng-click="$root.filter = ''; search.show = false; "><i class="material-icons">arrow_back</i></button>
+        </div>
+        <input class="header-search" select-on-load ng-model="$root.filter" placeholder="Search" ng-if="search.show">
+    </ion-header-bar>
+    <ion-content>
+        <ion-list ng-controller="shapeManagerCtrl">
+            <div ng-repeat="shapegroup in pinnedShapeGroups | filter: $root.filter">
+                <ion-item ng-class="{'pinned-group': shapegroup.pinned}" ng-click="shapegroup.pinned = !shapegroup.pinned">
+                    <!-- <i class="icon ion-android-arrow-dropright"></i>  -->
+                    {{shapegroup.groupname}}
+                    <i class="icon material-icons no-transition" ng-show="shapegroup.pinned">check_circle</i>
+                    <i class="icon material-icons no-transition" ng-show="!shapegroup.pinned">radio_button_unchecked</i>
+                    <div class="slide-toggle">
+                        <div ng-repeat="shape in shapegroup.shapes" ng-bind-html="shape.svg | sanitize"> </div>
+                    </div>
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>
