@@ -4,7 +4,7 @@ To customize the look and feel of Ionic, you can override the variables
 in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:*/
-@import "https://fonts.googleapis.com/css?family=Roboto";
+@import "https://fonts.googleapis.com/css?family=Muli";
 .platform-android .bar .title {
   margin-left: 21px; }
 
@@ -3334,7 +3334,7 @@ body,
   word-wrap: break-word;
   font-size: 14px;
   font-family: -apple-system;
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Muli", sans-serif !important;
   line-height: 20px;
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
@@ -3589,7 +3589,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #212C35;
   font-weight: 500;
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Muli", sans-serif !important;
   line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
@@ -5710,7 +5710,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
 .item .item-content.active,
 .item .item-content.activated {
   border-color: #ccc;
-  background-color: #D9D9D9; }
+  background-color: #f7f7f7; }
   .item.active.item-complex > .item-content,
   .item.activated.item-complex > .item-content,
   .item-complex.active .item-content.item-complex > .item-content,
@@ -5718,7 +5718,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   .item .item-content.active.item-complex > .item-content,
   .item .item-content.activated.item-complex > .item-content {
     border-color: #ccc;
-    background-color: #D9D9D9; }
+    background-color: #f7f7f7; }
   .item.active.item-light,
   .item.activated.item-light,
   .item-complex.active .item-content.item-light,
@@ -7422,7 +7422,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Roboto", sans-serif !important; }
+  font-family: "Muli", sans-serif !important; }
 
 .item-input {
   display: -webkit-box;
@@ -9643,6 +9643,19 @@ a.button {
   text-align: center;
   display: inline-block; }
 
+.platform-android .bar.fix-left-align .title.title-left {
+  left: 52px !important; }
+
+.button.button-icon {
+  height: 32px;
+  width: 32px;
+  padding: 4px !important;
+  margin: 0;
+  min-height: 0;
+  outline: none;
+  min-width: 0;
+  border: none; }
+
 .bottom-up {
   height: 250px;
   width: 100%;
@@ -9669,9 +9682,12 @@ a.button {
   font-size: 16px;
   background: #f0f0f0;
   color: #212C35; }
-  .bar-light .icon.material-icons {
-    padding-top: 9px;
-    vertical-align: top; }
+  .bar-light.icon-left {
+    padding-left: 32px; }
+  .bar-light .icon {
+    position: absolute;
+    top: 6px;
+    left: 5px; }
   .bar-light.bottom {
     position: absolute;
     bottom: 0;
@@ -9681,13 +9697,17 @@ a.button {
     .bar-light.bottom.ng-hide {
       margin-bottom: -30px; }
 
-.shape-manager .scroll-content .icon.material-icons {
+.shape-manager .scroll-content .icon.checkmark {
   right: 10px;
   top: 10px;
   position: absolute;
   height: 24px; }
+  .shape-manager .scroll-content .icon.checkmark svg path {
+    fill: #333; }
 .shape-manager .scroll-content .pinned-group {
   color: #F78D1E; }
+  .shape-manager .scroll-content .pinned-group .icon.checkmark svg path {
+    fill: #F78D1E; }
 .shape-manager .scroll-content .item {
   border-bottom: none; }
   .shape-manager .scroll-content .item.activated {
@@ -9698,16 +9718,13 @@ a.button {
   .item.activated {
     background: #f7f7f7; }
 
-.icon.ion-ios-arrow-forward {
+.icon.disclosure-arrow {
   transition: .25s ease-out all; }
 
 .rotate-icon {
   border-bottom: none; }
-  .rotate-icon .icon.ion-ios-arrow-forward {
+  .rotate-icon .icon.disclosure-arrow {
     transform: rotateZ(90deg); }
-
-.modal-wrapper .bar-header .buttons {
-  padding-top: 4px; }
 
 input.header-search {
   background: #212C35;
@@ -9987,6 +10004,13 @@ i.icon.ion-android-search:before {
   .menu.menu-left .item.active .icon,
   .menu.menu-right .item.active .icon {
     color: #F78D1E; }
+.menu.menu-left .item-content.activated,
+.menu.menu-right .item-content.activated {
+  background: #f7f7f7;
+  color: #F78D1E; }
+  .menu.menu-left .item-content.activated svg path,
+  .menu.menu-right .item-content.activated svg path {
+    fill: #F78D1E; }
 
 .pane.view {
   background: #212C35; }
@@ -10171,13 +10195,15 @@ img.placeholder-image {
 
 .pages-list .item-left-edit.item-delete .button.icon:hover {
   opacity: 1; }
-.pages-list .item-left-edit .material-icons {
-  color: #F78D1E; }
-  .pages-list .item-left-edit .material-icons.page-select-check {
-    display: none; }
-.pages-list .item-left-edit .selected-page .material-icons {
+.pages-list .item-left-edit .checkmark {
+  color: #F78D1E;
+  display: inherit; }
+  .pages-list .item-left-edit .checkmark.checked {
+    display: none;
+    color: #F78D1E; }
+.pages-list .item-left-edit .selected-page .checkmark {
   display: none; }
-  .pages-list .item-left-edit .selected-page .material-icons.page-select-check {
+  .pages-list .item-left-edit .selected-page .checkmark.checked {
     display: inherit; }
 .pages-list h2 {
   padding: 30px 0; }
@@ -10228,3 +10254,11 @@ img.placeholder-image {
 
 .bar-footer.ng-hide {
   bottom: -48px; }
+
+.icon.light svg path {
+  fill: #fff; }
+.icon.active svg path {
+  fill: #F78D1E; }
+
+.right-buttons .button-icon {
+  top: 6px; }

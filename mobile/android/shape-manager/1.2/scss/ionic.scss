@@ -14,8 +14,9 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #000 !default;
 
-@import 'https://fonts.googleapis.com/css?family=Roboto';
-$font-family-base: "Roboto", sans-serif !important;
+@import 'https://fonts.googleapis.com/css?family=Muli';
+$font-family-base: "Muli", sans-serif !important;
+$headings-font-weight:500;
 $lucid-orange: #F78D1E;
 $postitive: #353C42;
 $base-color: $stable !default;
@@ -45,6 +46,7 @@ $item-light-active-bg: #fff;
 $item-light-active-text: $lucid-orange;
 // $item-icon-fill-font-size: 24px;
 $bar-footer-height: 48px;
+$item-default-active-bg: #f7f7f7;
 
 .platform-android .bar .title {
     margin-left: 21px;
@@ -58,3 +60,4 @@ body, body *{
 // Include all of Ionic
 @import "../lib/ionic/scss/ionic.scss";
 @import "custom.scss";
+@import "_icons.scss";

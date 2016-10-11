@@ -73,7 +73,19 @@
         display: inline-block;
     }
 }
-
+.platform-android .bar.fix-left-align .title.title-left{
+    left:52px!important;
+}
+.button.button-icon {
+    height: 32px;
+    width: 32px;
+    padding: 4px !important;
+    margin: 0;
+    min-height: 0;
+    outline: none;
+    min-width: 0;
+    border: none;
+}
 .bottom-up {
     $shape-library-height: 250px;
     height: $shape-library-height;
@@ -96,7 +108,6 @@
         }
     }
 }
-
 .bar-light {
     height: 44px;
     line-height: 44px;
@@ -105,9 +116,13 @@
     font-size: 16px;
     background: #f0f0f0;
     color: #212C35;
-    .icon.material-icons {
-        padding-top: 9px;
-        vertical-align: top;
+    &.icon-left{
+        padding-left: 32px;
+    }
+    .icon {
+        position:absolute;
+        top: 6px;
+        left:5px;
     }
     &.bottom {
         position: absolute;
@@ -122,7 +137,10 @@
 }
 
 .shape-manager .scroll-content {
-    .icon.material-icons {
+    .icon.checkmark {
+        svg path{
+            fill: #333;
+        }
         //transition: .25s ease-in-out color;
         right: 10px;
         top: 10px;
@@ -131,6 +149,9 @@
     }
     .pinned-group {
         color: $lucid-orange;
+        .icon.checkmark svg path{
+            fill: $lucid-orange;
+        }
     }
     .item {
         border-bottom: none;
@@ -147,25 +168,25 @@
     }
 }
 
-.icon.ion-ios-arrow-forward {
+.icon.disclosure-arrow {
     transition: .25s ease-out all;
 }
 
 .rotate-icon {
     border-bottom: none;
-    .icon.ion-ios-arrow-forward {
+    .icon.disclosure-arrow {
         transform: rotateZ(90deg);
     }
 }
 
-.modal-wrapper {
-    .bar-header .buttons {
-        padding-top: 4px;
-    }
-    .item-icon-left .material-icons {
-        // color: $lucid-orange;
-    }
-}
+// .modal-wrapper {
+//     .bar-header .buttons {
+//         padding-top: 4px;
+//     }
+//     .item-icon-left .material-icons {
+//         // color: $lucid-orange;
+//     }
+// }
 
 input.header-search {
     background: $stable;
@@ -533,6 +554,13 @@ i.icon.ion-android-search:before {
             color: $lucid-orange;
         }
     }
+    .item-content.activated{
+        background: #f7f7f7;
+        color:$lucid-orange;
+        svg path{
+            fill: $lucid-orange;
+        }
+    }
     // .divider{
     //     border-top:1px solid blue !important;
     // }
@@ -780,16 +808,18 @@ img.placeholder-image {
         &.item-delete .button.icon:hover {
             opacity: 1;
         }
-        .material-icons {
-            color: $lucid-orange;
-            &.page-select-check {
+        .checkmark {
+            color: $lucid-orange;//change color on deselected pages?
+            display:inherit;
+            &.checked {
                 display: none;
+                color: $lucid-orange;
             }
         }
         .selected-page {
-            .material-icons {
+            .checkmark {
                 display: none;
-                &.page-select-check {
+                &.checked {
                     display: inherit;
                 }
             }

@@ -1,0 +1,16 @@
+.icon {
+    &.light svg path {
+        fill: #fff
+    }
+    &.active svg path {
+        fill: $lucid-orange;
+    }
+}
+.right-buttons .button-icon{
+	top:6px;
+}
+.platform-android .bar .back-button .icon:before {
+    // content: url('../img/icon/back.svg');
+    //top: 3px;
+    //position: absolute;
+}

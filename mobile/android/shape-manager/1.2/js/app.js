@@ -56,4 +56,13 @@ angular.module('lucidMobile', ['ionic', 'lucidMobile.controllers', 'lucidMobile.
             'http://particle.golucid.co/components/**',
             'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/**'
         ]);
-    }]);
+    }])
+    .directive('iconSvg', function() {
+        return {
+            replace: true,
+            restrict: 'E',
+            templateUrl: function(elem, attrs) {
+                return attrs.src;
+            }
+        };
+    });

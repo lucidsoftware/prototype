@@ -1,15 +1,17 @@
 <ion-side-menus enable-menu-with-back-views="false">
     <ion-side-menu-content>
-        <ion-nav-bar class="bar-stable">
-            <ion-nav-back-button>
+        <ion-nav-bar class="bar-stable fix-left-align">
+            <ion-nav-back-button class="button-clear no-transition button-icon" ng-show="!search.show">
+                <i class="icon"><icon-svg src="img/icon/back.svg"></icon-svg></i>
             </ion-nav-back-button>
             <ion-nav-buttons side="left">
-                <button ng-show="!search.show" class="button button-icon button-clear ion-navicon no-transition" menu-toggle="left">
+                <button ng-show="!search.show" class="button button-icon button-clear no-transition" menu-toggle="left">
+                    <icon-svg src="img/icon/menu.svg"></icon-svg>
                 </button>
-                <button ng-show="search.show" class="ng-hide button back-button buttons button-clear header-item no-transition" ng-click="$root.search = ''; search.show = false; "><i class="icon ion-android-arrow-back"></i></button>
+                <button ng-show="search.show" class="ng-hide button buttons button-icon button-clear header-item no-transition" ng-click="$root.search = ''; search.show = false; "><i class="icon"><icon-svg src="img/icon/back.svg"></icon-svg></i></button>
             </ion-nav-buttons>
             <ion-nav-buttons side="right">
-                <button ng-show="!search.show" class="button button-clear button-icon header-item button-primary no-transition" style="transition:none" ng-click="search.show = true"><i class="icon ion-android-search"></i></button>
+                <button ng-show="!search.show" class="button button-clear button-icon header-item button-primary no-transition button-icon" style="transition:none" ng-click="search.show = true"><i class="icon active"><icon-svg src="img/icon/search.svg"></icon-svg></i></button>
                 <input class="header-search" select-on-load ng-model="$root.search" placeholder="Search" ng-if="search.show">
             </ion-nav-buttons>
         </ion-nav-bar>
@@ -23,35 +25,38 @@
         <ion-content>
             <ion-list>
                 <ion-item class="item-icon-left" menu-close href="#/app/documents/" ng-class="getClass('/app/documents/')">
-                    <i class="icon material-icons">folder</i>My Documents
+                    <i class="icon" ng-if="getClass('/app/documents/') !== 'active'"><icon-svg src="img/icon/folder.svg"></icon-svg></i>
+                    <i class="icon active" ng-if="getClass('/app/documents/') == 'active'"><icon-svg src="img/icon/folder-solid.svg"></icon-svg></i> My Documents
                 </ion-item>
                 <ion-item class="item-icon-left" menu-close href="#/app/documents/shared with me" ng-class="getClass('/app/documents/shared with me')">
-                    <i class="icon material-icons">folder_shared</i>Shared with me
+                    <i class="icon" ng-if="getClass('/app/documents/shared with me') !== 'active'"><icon-svg src="img/icon/folder-shared.svg"></icon-svg></i>
+                    <i class="icon active" ng-if="getClass('/app/documents/shared with me') == 'active'"><icon-svg src="img/icon/folder-shared-solid.svg"></icon-svg></i> Shared with me
                 </ion-item>
                 <ion-item class="item-icon-left" menu-close href="#/app/documents/recent" ng-class="getClass('/app/documents/recent')">
-                    <i class="icon material-icons">access_time</i>Recent
+                    <i class="icon" ng-if="getClass('/app/documents/recent') !== 'active'"><icon-svg src="img/icon/recent.svg"></icon-svg></i>
+                    <i class="icon active" ng-if="getClass('/app/documents/recent') == 'active'"><icon-svg src="img/icon/recent-solid.svg"></icon-svg></i> Recent
                 </ion-item>
                 <div class="item-divider"></div>
                 <ion-item class="item-icon-left" menu-close href="#/app/documents">
-                    <i class="icon material-icons">account_circle</i>My Account
+                    <i class="icon"><icon-svg src="img/icon/person.svg"></icon-svg></i>My Account
                 </ion-item>
                 <ion-item class="item-icon-left" menu-close href="#/app/documents">
-                    <i class="icon material-icons">notifications</i>Notifications
+                    <i class="icon"><icon-svg src="img/icon/notifications.svg"></icon-svg></i>Notifications
                 </ion-item>
                 <ion-item class="item-icon-left" menu-close href="#/app/documents">
-                    <i class="icon material-icons">delete</i>Recover from trash
+                    <i class="icon"><icon-svg src="img/icon/trash.svg"></icon-svg></i>Recover from trash
                 </ion-item>
                 <ion-item class="item-icon-left" menu-close href="#/app/documents">
-                    <i class="icon material-icons">people</i>Get Support
+                    <i class="icon"><icon-svg src="img/icon/support.svg"></icon-svg></i>Get Support
                 </ion-item>
                 <ion-item class="item-icon-left" menu-close href="#/app/documents">
-                    <i class="icon material-icons">feedback</i>Send Feedback
+                    <i class="icon"><icon-svg src="img/icon/feedback.svg"></icon-svg></i>Send Feedback
                 </ion-item>
                 <ion-item class="item-icon-left" menu-close href="#/app/documents">
-                    <i class="icon material-icons">info_outline</i>Privacy Policy
+                    <i class="icon"><icon-svg src="img/icon/info-outline.svg"></icon-svg></i>Privacy Policy
                 </ion-item>
                 <ion-item class="item-icon-left" menu-close href="#/app/documents">
-                    <i class="icon material-icons">account_circle</i>Logout
+                    <i class="icon"><icon-svg src="img/icon/person.svg"></icon-svg></i>Logout
                 </ion-item>
             </ion-list>
         </ion-content>

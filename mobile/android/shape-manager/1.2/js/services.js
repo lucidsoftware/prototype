@@ -212,7 +212,6 @@ angular.module('lucidMobile.services', [])
                     id: documentID,
                     name: 'New Document',
                     insideFolder: folderID || 0,
-                    thumb: 'img/thumb.jpg',
                     group: 'Recent',
                     pages: [{
                         'name': 'Page 1',
