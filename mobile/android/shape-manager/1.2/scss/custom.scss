@@ -56,7 +56,7 @@
 }
 
 .action-sheet-has-icons .icon {
-    margin: 8px 0;
+    margin: 6px 0;
     color: #77818C;
 }
 
@@ -890,3 +890,7 @@ img.placeholder-image {
 .bar-footer.ng-hide {
     bottom: -48px;
 }
+.item-reorder .button.icon:before {
+    content: url('../img/icons/reorder-handle.svg');
+
+    }

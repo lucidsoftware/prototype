@@ -19,7 +19,7 @@ angular.module('lucidMobile.controllers', [])
             console.log($scope.folderID);
             $scope.folders = folders.all();
             $scope.documents = documents.all();
-            $scope.goTo = function(state){
+            $scope.goTo = function(state) {
                 $state.go('app.folder', state);
             };
 
@@ -32,23 +32,23 @@ angular.module('lucidMobile.controllers', [])
                 $scope.folderName = $stateParams.filter || 'My Documents';
             }
             $scope.showFileOptions = function(editDocument) {
-             console.log('action sheet', editDocument);
+                console.log('action sheet', editDocument);
                 // Show the action sheet
                 $ionicActionSheet.show({
                     buttons: [
-                        { text: '<i class="icon material-icons">text_format</i>Rename' },
-                        { text: '<i class="icon material-icons">content_copy</i>Copy' },
-                        { text: '<i class="icon material-icons">folder</i>Move' },
-                        { text: '<i class="icon material-icons">people</i>Share' }
+                        { text: '<i class="icon"><img src="img/icons/text.svg"></i>Rename' },
+                        { text: '<i class="icon"><img src="img/icons/pages.svg"></i>Copy' },
+                        { text: '<i class="icon"><img src="img/icons/folder.svg"></i>Move' },
+                        { text: '<i class="icon"><img src="img/icons/person.svg"></i>Share' }
                     ],
-                    destructiveText: '<i class="icon material-icons">delete</i>Delete',
+                    destructiveText: '<i class="icon"><img src="img/icons/trash.svg"></i>Delete',
                     cancel: function() {
                         // add cancel code..
                     },
                     buttonClicked: function(index) {
                         console.log(index);
-                        if(index === 1){
-                         documents.copy(editDocument);
+                        if (index === 1) {
+                            documents.copy(editDocument);
                         }
                         return true;
                     },
@@ -60,15 +60,15 @@ angular.module('lucidMobile.controllers', [])
                 });
             };
             $scope.showFolderOptions = function(editFolder) {
-             console.log('action sheet', editFolder);
+                console.log('action sheet', editFolder);
                 // Show the action sheet
                 $ionicActionSheet.show({
                     buttons: [
-                        { text: '<i class="icon material-icons">text_format</i>Rename' },
-                        { text: '<i class="icon material-icons">folder</i>Move' },
-                        { text: '<i class="icon material-icons">people</i>Share' }
+                        { text: '<i class="icon"><img src="img/icons/text.svg"></i>Rename' },
+                        { text: '<i class="icon"><img src="img/icons/folder.svg"></i>Move' },
+                        { text: '<i class="icon"><img src="img/icons/person.svg"></i>Share' }
                     ],
-                    destructiveText: '<i class="icon material-icons">delete</i>Delete',
+                    destructiveText: '<i class="icon"><img src="img/icons/trash.svg"></i>Delete',
                     cancel: function() {
                         // add cancel code..
                     },
@@ -93,9 +93,9 @@ angular.module('lucidMobile.controllers', [])
     ])
     .controller('shapeManagerCtrl', ['$scope', 'lucidShapesData', '$rootScope', '$ionicModal', function($scope, lucidShapesData, $rootScope, $ionicModal) {
         $scope.pinnedShapeGroups = lucidShapesData.lucidShapeGroups();
-        angular.forEach($scope.pinnedShapeGroups, function(shapegroup){
-         //open all shapegroups when opening the shapemanager
-         shapegroup.openInManager = true;
+        angular.forEach($scope.pinnedShapeGroups, function(shapegroup) {
+            //open all shapegroups when opening the shapemanager
+            shapegroup.openInManager = true;
         });
         $scope.search = {};
         $scope.showShapeManager = function() {
@@ -130,7 +130,7 @@ angular.module('lucidMobile.controllers', [])
             $scope.createDocument = function() {
                 console.log('doc create');
                 //insert folderID into create doc
-                var documentID = documents.all().length +1;
+                var documentID = documents.all().length + 1;
                 documents.create(documentID, $stateParams.folderID);
                 documents.openDocument(documentID);
                 console.log(documents.all());
