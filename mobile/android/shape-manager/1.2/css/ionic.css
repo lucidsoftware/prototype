@@ -5742,7 +5742,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   .item .item-content.active.item-stable,
   .item .item-content.activated.item-stable {
     border-color: #353C42;
-    background-color: #353C42; }
+    background-color: #4A4F53; }
     .item.active.item-stable.item-complex > .item-content,
     .item.activated.item-stable.item-complex > .item-content,
     .item-complex.active .item-content.item-stable.item-complex > .item-content,
@@ -5750,7 +5750,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
     .item .item-content.active.item-stable.item-complex > .item-content,
     .item .item-content.activated.item-stable.item-complex > .item-content {
       border-color: #353C42;
-      background-color: #353C42; }
+      background-color: #4A4F53; }
   .item.active.item-positive,
   .item.activated.item-positive,
   .item-complex.active .item-content.item-positive,
@@ -5965,10 +5965,10 @@ a.item-content {
   color: #fff; }
   .item-complex.item-stable > .item-content.active, .item-complex.item-stable > .item-content:active {
     border-color: #353C42;
-    background-color: #353C42; }
+    background-color: #4A4F53; }
     .item-complex.item-stable > .item-content.active.item-complex > .item-content, .item-complex.item-stable > .item-content:active.item-complex > .item-content {
       border-color: #353C42;
-      background-color: #353C42; }
+      background-color: #4A4F53; }
 .item-complex.item-positive > .item-content {
   border-color: #0c60ee;
   background-color: #387ef5;
