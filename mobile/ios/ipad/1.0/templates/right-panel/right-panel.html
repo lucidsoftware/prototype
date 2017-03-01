@@ -1,0 +1,90 @@
+<div id="right-panel" ng-init="segment = 'page'" ng-hide="$root.right.hide">
+    <div class="button-bar-wrapper">
+        <div class="button-bar">
+            <button class="button" ng-click="segment = 'shapes'" ng-class="{active: segment == 'shapes'}"><i class="icon"><icon-svg src="img/icons/shapes.svg"></icon-svg></i></button>
+            <button class="button" ng-click="segment = 'styles'" ng-class="{active: segment == 'styles'}"><i class="icon"><icon-svg src="img/icons/styles.svg"></icon-svg></i></button>
+            <button class="button" ng-click="segment = 'comment'" ng-class="{active: segment == 'comment'}"><i class="icon"><icon-svg src="img/icons/comment.svg"></icon-svg></i></button>
+            <button class="button" ng-click="segment = 'page'" ng-class="{active: segment == 'page'}"><i class="icon"><icon-svg src="img/icons/page.svg"></icon-svg></i></button>
+        </div>
+    </div>
+    <div ng-switch="segment">
+        <div ng-controller="shapeManagerCtrl" ng-switch-when="shapes">
+            <div class="small-navigation">
+                <div class="bar-light">
+                    Shapes
+                    <span ng-click="$event.stopPropagation(); showShapeManager();">Manage</span>
+                </div>
+                <ion-content>
+                    <ion-list ng-drop="true" ng-drop-success="dropFromCanvas($data, $event, shapegroup);">
+                        <div ng-repeat="shapegroup in pinnedShapeGroups" ng-if="shapegroup.pinned">
+                            <ion-item class="item-icon-right" ng-class="{'rotate-icon': !shapegroup.closed}" ng-click="shapegroup.closed = !shapegroup.closed">
+                                {{shapegroup.groupname}}
+                                <i class="icon disclosure-arrow"><icon-svg src="img/icons/disclosure-arrow.svg"></icon-svg></i>
+                            </ion-item>
+                            <div class="slide-toggle" ng-show="!shapegroup.closed">
+                                <div class="draggable-shape" ng-drag="true" ng-drag-data="shape" ng-drag-success="onDragComplete($data,$event)" ng-center-anchor="true" ng-repeat="shape in shapegroup.shapes" ng-bind-html="shape.svg | sanitize"> </div>
+                            </div>
+                        </div>
+                    </ion-list>
+                </ion-content>
+            </div>
+        </div>
+        <div ng-switch-when="styles">
+            <div class="bar-light">
+                Style
+            </div>
+            <ion-content>
+                <ion-list>
+                    <div class="item-divider item-icon-right" ng-class="{'rotate-icon': !shapeOptions.close}" ng-click="shapeOptions.close = !shapeOptions.close">
+                        Shape
+                        <i class="icon disclosure-arrow"><icon-svg src="img/icons/disclosure-arrow.svg"></icon-svg></i>
+                    </div>
+                    <div class="slide-toggle" ng-show="!shapeOptions.close">
+                        <img class="placeholder-image" src="img/placeholder/selected-shape_shape.png">
+                    </div>
+                    <div class="item-divider item-icon-right" ng-class="{'rotate-icon': !lineOptions.close}" ng-click="lineOptions.close = !lineOptions.close">
+                        Line
+                        <i class="icon disclosure-arrow"><icon-svg src="img/icons/disclosure-arrow.svg"></icon-svg></i>
+                    </div>
+                    <div class="slide-toggle" ng-show="!lineOptions.close">
+                        <img class="placeholder-image" src="img/placeholder/selected-shape_line.png">
+                    </div>
+                    <div class="item-divider item-icon-right" ng-class="{'rotate-icon': !shapeText.close}" ng-click="shapeText.close = !shapeText.close">
+                        Text
+                        <i class="icon disclosure-arrow"><icon-svg src="img/icons/disclosure-arrow.svg"></icon-svg></i>
+                    </div>
+                    <div class="slide-toggle" ng-show="!shapeText.close">
+                        <img class="placeholder-image" src="img/placeholder/selected-shape_text.png">
+                    </div>
+                    <div class="item-divider item-icon-right" ng-class="{'rotate-icon': !savedstyles.close}" ng-click="savedstyles.close = !savedstyles.close">
+                        Shape Styles
+                        <i class="icon disclosure-arrow"><icon-svg src="img/icons/disclosure-arrow.svg"></icon-svg></i>
+                    </div>
+                    <div class="slide-toggle" ng-show="!savedstyles.close">
+                        <img class="placeholder-image" src="img/placeholder/selected-shape_styles.png">
+                    </div>
+                </ion-list>
+            </ion-content>
+        </div>
+        <div ng-switch-when="comment">
+            <div class="bar-light">
+                Active Comments
+            </div>
+            <ion-content>
+                <ion-list>
+                    <img class="placeholder-image" src="img/placeholder/comment-panel_active.png">
+                </ion-list>
+            </ion-content>
+        </div>
+        <div ng-switch-when="page">
+            <div class="bar-light">
+                Page Settings
+            </div>
+            <ion-content>
+                <ion-list>
+                    <img class="placeholder-image" src="img/placeholder/settings-panel_root.png">
+                </ion-list>
+            </ion-content>
+        </div>
+    </div>
+</div>

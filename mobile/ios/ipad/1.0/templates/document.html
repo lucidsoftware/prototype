@@ -1,0 +1,24 @@
+<ion-view view-title="My Document">
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-buttons side="left">
+            <button class="button documents-icon"><i class="icon active "><icon-svg src="img/icons/documents.svg"></icon-svg></i></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button"><i class="icon active"><icon-svg src="img/icons/undo.svg"></icon-svg></i></button>
+            <button class="button"><i class="icon active"><icon-svg src="img/icons/share-ios.svg"></icon-svg></i></button>
+            <button class="button" ng-click="openPages()"><i class="icon active"><icon-svg src="img/icons/pages.svg"></icon-svg></i></button>
+            <button class="button" ng-click="$root.right.hide = !$root.right.hide" ng-switch="!$root.right.hide">
+                <i class="icon active no-transition" ng-switch-when="false"><icon-svg src="img/icons/right-panel.svg"></icon-svg></i>
+                <i class="icon active no-transition" ng-switch-when="true"><icon-svg src="img/icons/right-panel-close.svg"></icon-svg></i>
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <div class="canvas" ng-click="$root.selectedType = !$root.selectedType">
+        <ng-include src="'templates/canvas/canvas.html'"></ng-include>
+    </div>
+    <!-- <div class="bar-light icon-left bottom ng-hide" ng-show="$root.openStyleShape">
+            <i class="icon" ng-click="$root.openStyleShape = false"><icon-svg src="img/icons/close.svg"></icon-svg></i> Select a shape to change it's properties
+        </div> -->
+    <div ng-drag-clone="" class="draggable-shape clone" ng-bind-html="clonedData.svg | sanitize"></div>
+    <ng-include src="'templates/right-panel/right-panel.html'"></ng-include>
+</ion-view>

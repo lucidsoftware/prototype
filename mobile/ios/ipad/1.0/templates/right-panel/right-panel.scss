@@ -1,0 +1,117 @@
+.icon-open {
+    svg path:last-child {
+        transform: rotateY(180deg) translateX(-18px);
+    }
+}
+
+#right-panel {
+    position: absolute;
+    top: 43px;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    border-left: 1px solid #999;
+    background: #FFF;
+    transition: .25s ease-in-out all;
+    &.ng-hide {
+        right: -320px;
+    }
+    .slide-toggle {
+        padding: 0;
+        opacity: 1;
+        &.ng-animate {
+            overflow: hidden;
+        }
+    }
+    .item-divider {
+        transition: all .25s ease-in-out;
+        position: relative;
+        background: #FAFAFA;
+        color: #333;
+        padding-left: 10px;
+        padding-top: 20px;
+        border-top: 1px solid #D3D3D3;
+        border-color: #D3D3D3;
+        text-transform: uppercase;
+        font-weight: 300;
+        &.rotate-icon {
+            border-bottom: 1px solid #D3D3D3;
+        }
+        .icon.disclosure-arrow {
+            right: 5px;
+            bottom: -5px;
+            top: inherit;
+        }
+        &:first-child {
+            margin-top: -1px;
+            // border-top: 1px solid #FAFAFA;
+        }
+    }
+    .list >div:first-child .item {
+        margin-top: -1px;
+    }
+    .has-header {
+        top: 81px;
+        margin-top: 0px;
+        padding-top: 0;
+        .scroll {
+            margin-top: -1px;
+        }
+    }
+    img.placeholder-image {
+        margin-bottom: -7px;
+        margin-top: -1px;
+    }
+}
+
+.bar-light {
+    background: #fff;
+    font-size: 17px;
+    >span {
+        color: $lucid-orange;
+        position: absolute;
+        right: 10px;
+    }
+    border-bottom: 1px solid #D3D3D3;
+}
+
+.button-bar-wrapper {
+    padding: 7px 10px 0px 10px;
+    height: 37px;
+    background: transparent;
+    position: relative;
+    .button-bar > .button {
+        background: #fff;
+        color: $lucid-orange;
+        min-height: 30px;
+        height: 30px;
+        line-height: 32px;
+        font-size: 13px;
+        border: 1px solid $lucid-orange;
+        border-left: 0px;
+        padding-top: 3px;
+        i {
+            // height: 40px;
+            // padding: 5px 0;
+            text-align: center;
+            vertical-align: middle;
+            svg {
+                width: 24px;
+                margin-top: -1px;
+            }
+            svg path {
+                fill: $lucid-orange;
+            }
+        }
+        &:first-child {
+            border-left: 1px solid $lucid-orange;
+        }
+        &.active {
+            background: $lucid-orange;
+            color: #FFF;
+            svg path {
+                fill: #FFF;
+            }
+        }
+    }
+}

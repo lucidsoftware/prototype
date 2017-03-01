@@ -1,0 +1,24 @@
+<ion-modal-view class="shape-manager">
+    <ion-header-bar class="bar bar-header bar-light">
+        <h1 class="title" ng-show="!search.show">Manage Shapes</h1>
+        <div class="buttons buttons-left header-item">
+            <button class="button button-clear button-primary" ng-click="close()">Done</button>
+        </div>
+    </ion-header-bar>
+    <input class="header-search" select-on-load ng-model="$root.filter" placeholder="Search">
+    <ion-content>
+        <ion-list ng-controller="shapeManagerCtrl">
+            <div ng-repeat="shapegroup in pinnedShapeGroups | filter: $root.filter">
+                <ion-item ng-class="{'pinned-group': shapegroup.pinned}" ng-click="shapegroup.pinned = !shapegroup.pinned">
+                    <!-- <i class="icon ion-android-arrow-dropright"></i>  -->
+                    {{shapegroup.groupname}}
+                    <i class="icon no-transition checkmark" ng-show="shapegroup.pinned"><icon-svg src="img/icons/multiselect-active.svg"></icon-svg></i>
+                    <i class="icon no-transition checkmark" ng-show="!shapegroup.pinned"><icon-svg src="img/icons/radio.svg"></icon-svg></i>
+                    <div class="slide-toggle">
+                        <div ng-repeat="shape in shapegroup.shapes" ng-bind-html="shape.svg | sanitize"> </div>
+                    </div>
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>
