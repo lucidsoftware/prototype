@@ -124,25 +124,4 @@ angular.module('lucidMobile.controllers', [])
                 };
             });
         };
-    }])
-    .controller('fabCtrl', ['$scope', 'documents', '$stateParams', '$state',
-        function($scope, documents, $stateParams) {
-            $scope.clickFab = function() {
-                if ($scope.openFab) {
-                    $scope.createDocument();
-                    $scope.openFab = false;
-                } else {
-
-                    $scope.openFab = true;
-                }
-            };
-            $scope.createDocument = function() {
-                console.log('doc create');
-                //insert folderID into create doc
-                var documentID = documents.all().length + 1;
-                documents.create(documentID, $stateParams.folderID);
-                documents.openDocument(documentID);
-                console.log(documents.all());
-            };
-        }
-    ]);
+    }]);

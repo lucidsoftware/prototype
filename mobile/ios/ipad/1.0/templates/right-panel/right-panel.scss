@@ -62,11 +62,24 @@
         margin-bottom: -7px;
         margin-top: -1px;
     }
+    .zero-state-selection {
+        background: #fafafa;
+        position: absolute;
+        opacity: .5;
+        top: 81px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+    }
 }
 
 .bar-light {
     background: #fff;
     font-size: 17px;
+    .button {
+        line-height: 35px;
+    }
     >span {
         color: $lucid-orange;
         position: absolute;

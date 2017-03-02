@@ -2,7 +2,7 @@ angular.module('lucidCanvas', [])
     .controller('canvasCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
 
         $scope.blocks = $rootScope.currentPage.blocks;
-        $rootScope.selectedType = 'nothing';
+        $rootScope.selectedType = false;
         $scope.deselectBlock = function() {
             var deselect = JSON.parse(JSON.stringify($rootScope.selectedBlock));
             $rootScope.selectedBlock = deselect;

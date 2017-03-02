@@ -20,9 +20,9 @@ angular.module('lucidMobile.services', [])
                     "swatchnumber": 1,
                     "borderwidth": 3,
                     "borderstyle": "solid",
-                    "comment": {
-                        "text": "yep this is a comment"
-                    },
+                    // "comment": {
+                    //     "text": "yep this is a comment"
+                    // },
                     "table": true,
                     "text": {
                         "verticalalignment": "middle",

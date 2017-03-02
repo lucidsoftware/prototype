@@ -10486,11 +10486,22 @@ img.placeholder-image {
   #right-panel img.placeholder-image {
     margin-bottom: -7px;
     margin-top: -1px; }
+  #right-panel .zero-state-selection {
+    background: #fafafa;
+    position: absolute;
+    opacity: .5;
+    top: 81px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100; }
 
 .bar-light {
   background: #fff;
   font-size: 17px;
   border-bottom: 1px solid #D3D3D3; }
+  .bar-light .button {
+    line-height: 35px; }
   .bar-light > span {
     color: #F78D1E;
     position: absolute;

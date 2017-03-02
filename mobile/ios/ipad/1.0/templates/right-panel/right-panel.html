@@ -1,4 +1,4 @@
-<div id="right-panel" ng-init="segment = 'page'" ng-hide="$root.right.hide">
+<div id="right-panel" ng-init="segment = 'shapes'" ng-hide="$root.right.hide">
     <div class="button-bar-wrapper">
         <div class="button-bar">
             <button class="button" ng-click="segment = 'shapes'" ng-class="{active: segment == 'shapes'}"><i class="icon"><icon-svg src="img/icons/shapes.svg"></icon-svg></i></button>
@@ -32,6 +32,9 @@
         <div ng-switch-when="styles">
             <div class="bar-light">
                 Style
+            </div>
+            <div class="zero-state-selection" ng-if="!$root.selectedType">
+                
             </div>
             <ion-content>
                 <ion-list>
