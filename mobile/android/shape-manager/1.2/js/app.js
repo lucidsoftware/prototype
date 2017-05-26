@@ -53,7 +53,7 @@ angular.module('lucidMobile', ['ionic', 'lucidMobile.controllers', 'lucidMobile.
             // Allow same origin resource loads.
             'self',
             // Allow loading from our assets domain.  Notice the difference between * and **.
-            'http://particle.golucid.co/components/**',
+            'https://lucidsoftware.github.io/particle/components/**',
             'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/**'
         ]);
     }])

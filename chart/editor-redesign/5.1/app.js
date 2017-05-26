@@ -128,7 +128,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 collaborator.svg = null;
             }
             if (data.name === 'Marketing' || data.name === 'Team' || data.name === 'group') {
-                collaborator.svg = 'http://particle.golucid.co/components/1.2/icon/icons/icon-team-22px.svg';
+                collaborator.svg = 'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-team-22px.svg';
             }
             $scope.collaborators.push(collaborator);
             $scope.dummyData = {

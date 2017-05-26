@@ -1,20 +1,20 @@
 <html ng-app="particleApp">
 <head>
     <!-- Angular -->
-    <script src= "http://particle.golucid.co/lib/angular/angular.min.js" type="text/javascript"></script>
-    <script src= "http://particle.golucid.co/lib/angular/angular-animate.min.js" type="text/javascript"></script>
-    <script src="http://particle.golucid.co/lib/angular/angular-route.min.js" type="text/javascript"></script>
+    <script src= "https://lucidsoftware.github.io/particle/lib/angular/angular.min.js" type="text/javascript"></script>
+    <script src= "https://lucidsoftware.github.io/particle/lib/angular/angular-animate.min.js" type="text/javascript"></script>
+    <script src="https://lucidsoftware.github.io/particle/lib/angular/angular-route.min.js" type="text/javascript"></script>
 
     <!-- Lucid Components -->
-    <script src="http://particle.golucid.co/components/2.0/components-min.js" type="text/javascript"></script>
-    <link href="http://particle.golucid.co/components/2.0/components.css" type="text/css" rel="stylesheet" />
+    <script src="https://lucidsoftware.github.io/particle/components/2.0/components-min.js" type="text/javascript"></script>
+    <link href="https://lucidsoftware.github.io/particle/components/2.0/components.css" type="text/css" rel="stylesheet" />
     
     <!-- Other Libs -->
-    <script src= "http://particle.golucid.co/lib/Sortable.min.js" type="text/javascript"></script>
-    <script src= "http://particle.golucid.co/lib/ng-sortable.js" type="text/javascript"></script>
-    <script src="http://particle.golucid.co/lib/svg-morpheus.js" type="text/javascript"></script>
-    <script src="http://particle.golucid.co/lib/ngDraggable.js" type="text/javascript"></script>
-    <script src="http://particle.golucid.co/lib/angular-drag-and-drop-lists.min.js" type="text/javascript"></script>
+    <script src= "https://lucidsoftware.github.io/particle/lib/Sortable.min.js" type="text/javascript"></script>
+    <script src= "https://lucidsoftware.github.io/particle/lib/ng-sortable.js" type="text/javascript"></script>
+    <script src="https://lucidsoftware.github.io/particle/lib/svg-morpheus.js" type="text/javascript"></script>
+    <script src="https://lucidsoftware.github.io/particle/lib/ngDraggable.js" type="text/javascript"></script>
+    <script src="https://lucidsoftware.github.io/particle/lib/angular-drag-and-drop-lists.min.js" type="text/javascript"></script>
 
     <!-- Prototype Specific -->
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -64,14 +64,14 @@
         </lucid-buttcon-popover>
         <div class="bell" ng-init="showAlert=true">
           <div class="bubble lucid-animate" ng-show="showAlert">1</div>
-          <lucid-buttcon-popover class="help popover-list" ng-click="showAlert=false" showpopover="bell.show" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-bell-22px.svg" width="311">
+          <lucid-buttcon-popover class="help popover-list" ng-click="showAlert=false" showpopover="bell.show" icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-bell-22px.svg" width="311">
               <header>Notifications<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg"></header>
             <div class="notifications"><img ng-click="addOnsModal.show=true" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-notification.png"/></div>
           </lucid-buttcon-popover>
         </div>
         
 
-          <lucid-buttcon-popover class="account-settings popover-list" showpopover="account.show" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-person-large-22px.svg" width="135">
+          <lucid-buttcon-popover class="account-settings popover-list" showpopover="account.show" icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-person-large-22px.svg" width="135">
               <div class="lucid-select-wrapper">
                   <ul class="lucid-select-dropdown" ng-click="account.show = false;">
                       <li class="lucid-select-option">
@@ -305,9 +305,9 @@
                       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-bluesteel.svg" class="lucid-icon-22 lucid-shapes-gear">
                       <span class="lucid-more-shapes">Shapes</span>
                       </span>
-                    <lucid-buttcon ng-hide="$root.manageshapes" icon="http://particle.golucid.co/components/0.0/icon/img/search-dark.svg" class="lucid-shapes-search" ng-click="searchshapes = !searchshapes; focusSearch(searchshapes); $root.showSearchTip = !$root.showSearchTip" active="searchshapes">
+                    <lucid-buttcon ng-hide="$root.manageshapes" icon="https://lucidsoftware.github.io/particle/components/0.0/icon/img/search-dark.svg" class="lucid-shapes-search" ng-click="searchshapes = !searchshapes; focusSearch(searchshapes); $root.showSearchTip = !$root.showSearchTip" active="searchshapes">
                     </lucid-buttcon>
-                    <lucid-buttcon-popover ng-hide="$root.manageshapes" showpopover="importdropdown.show" class="import-image-icon" icon="http://particle.golucid.co/components/1.2/icon/icons/icon-image-22px.svg" width="105">
+                    <lucid-buttcon-popover ng-hide="$root.manageshapes" showpopover="importdropdown.show" class="import-image-icon" icon="https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-image-22px.svg" width="105">
                     <div class="lucid-select-wrapper">
                       <ul class="lucid-select-dropdown" ng-click="importdropdown.show = false;">
                         <li class="lucid-select-option">
@@ -328,23 +328,23 @@
 
                           <div class="lucid-select-wrapper search-dropdown" click-outside="searchDropdown = false">
                                 <div class="search-dropdown-button" ng-init="searchType = 'Lucidchart'" ng-click="searchDropdown = !searchDropdown; $root.searchTipDismissed = true;">
-                                  <ng-include ng-show="searchType == 'Lucidchart'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
-                                  <ng-include ng-show="searchType == 'Google Images'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
-                                  <ng-include ng-show="searchType == 'Iconfinder'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
+                                  <ng-include ng-show="searchType == 'Lucidchart'" class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
+                                  <ng-include ng-show="searchType == 'Google Images'" class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
+                                  <ng-include ng-show="searchType == 'Iconfinder'" class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
                                 </div>
                                 <div class="lucid-select-dropdown" ng-show="searchDropdown">
                                     <div>
                                         <ul>
                                             <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Lucidchart'">
-                                                <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
+                                                <ng-include class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
                                                 <span>Lucidchart</span>
                                             </li>
                                             <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Google Images'">
-                                                <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
+                                                <ng-include class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
                                                 <span>Google Images</span>
                                             </li>
                                             <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Iconfinder'">
-                                                <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
+                                                <ng-include class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
                                                 <span>Iconfinder</span>
                                             </li>
                                         </ul>
@@ -354,7 +354,7 @@
 
                           <input id="search-shapes-input" ng-model="searchgroups.input" placeholder="Search {{searchType}}..." ng-enter="searchShapeGroups(searchgroups.input)">
 
-                          <ng-include class="lucid-icon search-x" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-18px.svg'" ng-click="searchShapeGroups(null); searchgroups.input = ''; searchgroups.searched = false;"></ng-include>
+                          <ng-include class="lucid-icon search-x" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-x-18px.svg'" ng-click="searchShapeGroups(null); searchgroups.input = ''; searchgroups.searched = false;"></ng-include>
                       </div>
                       <!-- Start Search Shapes -->
                       <div class="lucid-shapes-scroll">
@@ -379,7 +379,7 @@
                                       <span class="shape-group-name">{{shapegroup.groupname}}</span>
                                     </div>
                                     <div class="pin-library search-shapes-pin" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
-                                        <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                                        <ng-include src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
                                     </div>
                                     <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
                                       <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
@@ -445,7 +445,7 @@
                                     </div>
                                     <div class="shape-group-top">
                                       <span class="shape-group-name"> {{shapegroup.groupname}}</span>
-                                      <span class="lucid-close-icon" ng-show="$root.manageshapes" ng-click="unPinGroup(shapegroup)"><ng-include src="'http://particle.golucid.co/components/2.0/icon/icons/icon-x-18px.svg'"></ng-include></span>
+                                      <span class="lucid-close-icon" ng-show="$root.manageshapes" ng-click="unPinGroup(shapegroup)"><ng-include src="'https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-x-18px.svg'"></ng-include></span>
                                     </div>
                                     <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
                                       <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
@@ -524,7 +524,7 @@
                               <input type="search" placeholder="Search Shapes" ng-model="searchShapes">
                               <img class="lucid-search-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-search-white.svg">
                           </div>
-                          <ng-include ng-click="toggleShapesManager();" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-22px.svg'" class="lucid-close-icon lucid-icon fill-dark">
+                          <ng-include ng-click="toggleShapesManager();" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-x-22px.svg'" class="lucid-close-icon lucid-icon fill-dark">
                           </ng-include>
                       </div>
                   </div>
@@ -563,7 +563,7 @@
                                       <edit-in-place class="shape-group-name" placeholder="Group Name" ng-model="shapegroup.groupname" edit="shapegroup.edit"></edit-in-place>
 
                                       <div class="lucid-shape-group-top-right-icons" ng-show="shapegroup.custom">
-                                          <lucid-buttcon-popover showpopover="customgroupdropdown.show" class="gear-dropdown-icon lucid-select-dropdown-wrapper lucid-icon fill-white" icon="http://particle.golucid.co/components/1.2/icon/icons/icon-gear-22px.svg" width="106">
+                                          <lucid-buttcon-popover showpopover="customgroupdropdown.show" class="gear-dropdown-icon lucid-select-dropdown-wrapper lucid-icon fill-white" icon="https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-gear-22px.svg" width="106">
                                             <div class="lucid-select-wrapper">
                                               <ul class="lucid-select-dropdown" ng-click="customgroupdropdown.show = false;">
                                                 <li class="lucid-select-option" ng-click="$root.shareModal = true">Share</li>
@@ -576,7 +576,7 @@
                                       </div>
                                     </div>
                                     <div class="pin-library" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
-                                        <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                                        <ng-include src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
                                     </div>
                                     <div class="slide-toggle" ng-hide="hideshapes">
                                         <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
@@ -631,7 +631,7 @@
                                       <span class="shape-group-name">{{lucidGroup.groupname}}</span>
                                     </div>
                                     <div class="pin-library" ng-click="$parent.toggleGroupPin(lucidGroup); $event.stopPropagation();" ng-class="{'pinned': lucidGroupPinned(lucidGroup)}">
-                                        <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                                        <ng-include src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
                                     </div>
                                     <div class="group-icon-wrapper lucid-drawer-wrapper" ng-click="setGroup(lucidGroup.groupname);">
                                       <img ng-src="{{lucidGroup.image}}">
@@ -670,7 +670,7 @@
                                                   <span class="shape-group-name">{{shapegroup.groupname}}</span>
                                                 </div>
                                                 <div class="pin-library" ng-click="$parent.togglePin(shapegroup); $event.stopPropagation();" ng-class="{'pinned': shapegroup.pinned}">
-                                                    <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                                                    <ng-include src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
                                                 </div>
                                                 <div class="slide-toggle" ng-hide="hideshapes">
                                                     <ul class="shapes-wrapper"
@@ -746,7 +746,7 @@
           <!-- BEGIN TEXT ALIGNMENT -->
           <li class="middle" ng-controller="textAlignmentCtrl" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
             <lucid-buttcon-popover 
-              icon="http://particle.golucid.co/components/1.0/icon/img/morph-text-alignment.svg" 
+              icon="https://lucidsoftware.github.io/particle/components/1.0/icon/img/morph-text-alignment.svg" 
               width="96"
               showpopover="textAlignment.show">
                 <div class="lucid-wrapper-overflow-hidden">
@@ -782,7 +782,7 @@
                     </li>
                   <li class="divider"></li>
                   <li class="color">
-                      <lucid-buttcon icon="http://particle.golucid.co/components/0.1/icon/img/colorpicker-solid-22px.svg" label="color"></lucid-buttcon>
+                      <lucid-buttcon icon="https://lucidsoftware.github.io/particle/components/0.1/icon/img/colorpicker-solid-22px.svg" label="color"></lucid-buttcon>
                     </li>
                     <li>
                       <lucid-input-stepper label="offset" number="3" unit="px" width="60" class="condensed"></lucid-input-stepper>
@@ -826,7 +826,7 @@
           <!-- BEGIN LINE PATH -->
           <li class="left" ng-controller="linePathCtrl" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block' || $root.selectedType == 'table'}">
             <lucid-buttcon-popover 
-              icon="http://particle.golucid.co/components/1.0/icon/img/morph-path-style.svg" 
+              icon="https://lucidsoftware.github.io/particle/components/1.0/icon/img/morph-path-style.svg" 
               width="32"
               showpopover="pathStylePopover.show">
                 <div class="lucid-wrapper-overflow-hidden">
@@ -841,22 +841,22 @@
           <span class="line"></span>
           <!-- BEGIN MISC. OPTIONS -->
           <li class="small left" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
-            <lucid-buttcon-popover icon="http://particle.golucid.co/components/2.0/icon/icons/icon-lightning-22px.svg" width="217">
+            <lucid-buttcon-popover icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-lightning-22px.svg" width="217">
               <ul ng-init="link.type = 'None'" class="hotspot-options">
                     <li>
-                        <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-x-22px.svg" alignment="center" label="None" active="link.type == 'None'" ng-click="link.type='None'"></lucid-buttcon>
+                        <lucid-buttcon icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-x-22px.svg" alignment="center" label="None" active="link.type == 'None'" ng-click="link.type='None'"></lucid-buttcon>
                     </li>
                     <li>
-                        <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-page-outline-22px.svg" alignment="center" label="Page" active= "link.type == 'Page'"ng-click="link.type='Page'"></lucid-buttcon>
+                        <lucid-buttcon icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-page-outline-22px.svg" alignment="center" label="Page" active= "link.type == 'Page'"ng-click="link.type='Page'"></lucid-buttcon>
                     </li>
                     <li>
-                        <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-layers-22px.svg" alignment="center" label="Layers" active="link.type == 'Layers'" ng-click="link.type='Layers'"></lucid-buttcon>
+                        <lucid-buttcon icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-layers-22px.svg" alignment="center" label="Layers" active="link.type == 'Layers'" ng-click="link.type='Layers'"></lucid-buttcon>
                     </li>
                     <li>
-                        <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-link-22px.svg" alignment="center" label="Link" active="link.type == 'Link'" ng-click="link.type='Link'"></lucid-buttcon>
+                        <lucid-buttcon icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-link-22px.svg" alignment="center" label="Link" active="link.type == 'Link'" ng-click="link.type='Link'"></lucid-buttcon>
                     </li>
                     <li>
-                        <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-envelope-22px.svg" alignment="center" label="Email" active="link.type == 'email'" ng-click="link.type='email'"></lucid-buttcon>
+                        <lucid-buttcon icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-envelope-22px.svg" alignment="center" label="Email" active="link.type == 'email'" ng-click="link.type='email'"></lucid-buttcon>
                     </li>
                 </ul>
                 <div class="hotlink-tab-content" ng-if="link.type !='None'">
@@ -960,7 +960,7 @@
               <lucid-collapse-bar title="Page">
                 <ul class="page-settings">
                   <li>
-                    <lucid-buttcon icon="http://particle.golucid.co/components/0.1/icon/img/colorpicker-solid-22px.svg" label="color"></lucid-buttcon>
+                    <lucid-buttcon icon="https://lucidsoftware.github.io/particle/components/0.1/icon/img/colorpicker-solid-22px.svg" label="color"></lucid-buttcon>
                   </li>
                   <li class="no-padding">
                     <lucid-select class="condensed" width="165" label="page size" options="['Letter (8.5 x 11)', 'Tabloid (11 x 17)']"><lucid-select>
@@ -972,7 +972,7 @@
                     <lucid-input-stepper label="scale" number="100" unit="%" width="70" class="condensed"></lucid-input-stepper>
                   </li>
                   <li class="no-padding">
-                    <lucid-buttcon icon="http://particle.golucid.co/components/0.0/icon/img/add-comment-dark.svg" label="fit" class="condensed"></lucid-buttcon>
+                    <lucid-buttcon icon="https://lucidsoftware.github.io/particle/components/0.0/icon/img/add-comment-dark.svg" label="fit" class="condensed"></lucid-buttcon>
                   </li>
                 </ul>
               </lucid-collapse-bar>
@@ -988,7 +988,7 @@
                     <lucid-toggle label="SNAP" toggle="false"></lucid-toggle>
                   </li>
                   <li>
-                    <lucid-buttcon icon="http://particle.golucid.co/components/0.0/icon/img/add-comment-dark.svg" label="reset" class="condensed"></lucid-buttcon>
+                    <lucid-buttcon icon="https://lucidsoftware.github.io/particle/components/0.0/icon/img/add-comment-dark.svg" label="reset" class="condensed"></lucid-buttcon>
                   </li>
                 </ul>
               </lucid-collapse-bar>
@@ -1055,13 +1055,13 @@
                   <div class="image-container" ng-click="showPermissions = !showPermissions;">
                     <img class="avatar" ng-src="{{ person.image }}" ng-if="person.image && !person.svg" />
                     <ng-include class="lucid-icon fill-white lucid-buttcon avatar" ng-if="person.svg" src="person.svg"></ng-include>
-                    <lucid-buttcon-popover class="permissions popover-list" showpopover="dropdown.show" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-pencil-22px.svg" width="110">
+                    <lucid-buttcon-popover class="permissions popover-list" showpopover="dropdown.show" icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-pencil-22px.svg" width="110">
                       <div class="lucid-select-wrapper">
                           <ul class="lucid-select-dropdown" ng-click="dropdown.show = false;">
-                              <li class="lucid-select-option" ng-click="person.role = 'Editor'"><ng-include class="selected-checkmark" src="'http://particle.golucid.co/components/2.0/icon/icons/icon-check-18px.svg'" ng-if="person.role == 'Editor'"></ng-include>Editor</li>
+                              <li class="lucid-select-option" ng-click="person.role = 'Editor'"><ng-include class="selected-checkmark" src="'https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-check-18px.svg'" ng-if="person.role == 'Editor'"></ng-include>Editor</li>
                               <li class="lucid-select-option" ng-click="person.role = 'Commenter'">
-                                <ng-include class="selected-checkmark" src="'http://particle.golucid.co/components/2.0/icon/icons/icon-check-18px.svg'" ng-if="person.role == 'Commenter'"></ng-include>Commenter</li>
-                              <li class="lucid-select-option" ng-click="person.role = 'Viewer'"><ng-include class="selected-checkmark" src="'http://particle.golucid.co/components/2.0/icon/icons/icon-check-18px.svg'" ng-if="person.role == 'Viewer'"></ng-include>Viewer</li>
+                                <ng-include class="selected-checkmark" src="'https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-check-18px.svg'" ng-if="person.role == 'Commenter'"></ng-include>Commenter</li>
+                              <li class="lucid-select-option" ng-click="person.role = 'Viewer'"><ng-include class="selected-checkmark" src="'https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-check-18px.svg'" ng-if="person.role == 'Viewer'"></ng-include>Viewer</li>
                           </ul>
                       </div>
                   </lucid-buttcon-popover>
@@ -1112,11 +1112,11 @@
             <span>Table Settings</span>
           </li>
           <li>
-            <lucid-buttcon class="reversed-text lucid-icon fill-white" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-table-grid-22px.svg" label="grid"></lucid-buttcon>
+            <lucid-buttcon class="reversed-text lucid-icon fill-white" icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-table-grid-22px.svg" label="grid"></lucid-buttcon>
           </li>
           <li class="reversed-text">
-            <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-table-grid-column-22px.svg" class="has-label reversed-text lucid-icon fill-white"></lucid-buttcon>
-            <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-table-grid-row-22px.svg" class="has-label reversed-text lucid-icon fill-white"></lucid-buttcon>
+            <lucid-buttcon icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-table-grid-column-22px.svg" class="has-label reversed-text lucid-icon fill-white"></lucid-buttcon>
+            <lucid-buttcon icon="https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-table-grid-row-22px.svg" class="has-label reversed-text lucid-icon fill-white"></lucid-buttcon>
             <div class="input-label" style="margin-top:2px">
                 <span>merge</span>
             </div>
@@ -1140,29 +1140,29 @@
   <lucid-modal showmodal="$root.showShareModal" width="810" height="645" title="Share" class="share-modal">
     <!-- Insert modal content here -->
     <lucid-finger-tabs>
-      <lucid-finger-tab name="Collaborate" icon=" http://particle.golucid.co/components/0.0/icon/img/share-dark.svg" selected>
+      <lucid-finger-tab name="Collaborate" icon=" https://lucidsoftware.github.io/particle/components/0.0/icon/img/share-dark.svg" selected>
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/share-placeholder-collaborate.png">
       </lucid-finger-tab>
-      <lucid-finger-tab name="Publish" icon=" http://particle.golucid.co/components/0.0/icon/img/link-dark.svg">
+      <lucid-finger-tab name="Publish" icon=" https://lucidsoftware.github.io/particle/components/0.0/icon/img/link-dark.svg">
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/share-placeholder-publish.png">
       </lucid-finger-tab>
-      <lucid-finger-tab name="Facebook" icon="http://particle.golucid.co/components/0.0/icon/img/share-dark.svg">
+      <lucid-finger-tab name="Facebook" icon="https://lucidsoftware.github.io/particle/components/0.0/icon/img/share-dark.svg">
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/share-placeholder-social.png">
       </lucid-finger-tab>
-      <lucid-finger-tab name="Embed" icon=" http://particle.golucid.co/components/0.0/icon/img/html-dark.svg">
+      <lucid-finger-tab name="Embed" icon=" https://lucidsoftware.github.io/particle/components/0.0/icon/img/html-dark.svg">
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/share-placeholder-embed.png">
       </lucid-finger-tab>
     </lucid-finger-tabs>
   </lucid-modal>
   <lucid-modal showmodal="$root.showImportModal" width="590" height="460" title="Import Files" confirm="Import" cancel="Nevermind">
     <lucid-finger-tabs>
-      <lucid-finger-tab name="On your computer" icon="http://particle.golucid.co/components/0.0/icon/img/icon-computer-bluesteel-22px.svg" selected>
+      <lucid-finger-tab name="On your computer" icon="https://lucidsoftware.github.io/particle/components/0.0/icon/img/icon-computer-bluesteel-22px.svg" selected>
           Import SVG, Visio, and other files from your computer.
       </lucid-finger-tab>
-      <lucid-finger-tab name="Dropbox" icon="http://particle.golucid.co/components/0.0/icon/img/icon-dropbox-bluesteel-22px.svg">
+      <lucid-finger-tab name="Dropbox" icon="https://lucidsoftware.github.io/particle/components/0.0/icon/img/icon-dropbox-bluesteel-22px.svg">
           Import SVG, Visio, and other files from your computer.
       </lucid-finger-tab>
-      <lucid-finger-tab name="Google Drive" icon="http://particle.golucid.co/components/0.0/icon/img/icon-googledrive-bluesteel-22px.svg">
+      <lucid-finger-tab name="Google Drive" icon="https://lucidsoftware.github.io/particle/components/0.0/icon/img/icon-googledrive-bluesteel-22px.svg">
           Import SVG, Visio, and other files from your computer.
       </lucid-finger-tab>
     </lucid-finger-tabs>
